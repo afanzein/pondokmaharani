@@ -1,13 +1,9 @@
-<?php
-  //==================================== HOME ====================================
-  if ($page == 'home') {
-  ?>
-  <div class="content-wrapper">
+ <div class="content-wrapper">
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1><?php echo  $judul; ?></h1>
+            <h1><?php echo  $title; ?></h1>
           </div>
         </div>
       </div>
@@ -19,14 +15,14 @@
           <div class="col-lg-6 col-12">
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3><?php echo $jml_material; ?></h3>
+                <h3><?php  ?></h3>
 
-                <p>Jumlah material</p>
+                <p>Jumlah Pemesanan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-cube"></i>
               </div>
-              <a href="<?php echo base_url('dashboard/material') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('admin/pemesanan/pemesanan') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -61,11 +57,9 @@
 
         </div>
         <div class="card-footer">
-          Create @2022
+          Created @2023
         </div>
       </div>
 
     </section>
   </div>
-<?php
-}
