@@ -1,55 +1,52 @@
 <?php 
-    class M_akun extends CI_Model{
+    class M_statuspemesanan extends CI_Model{
 
         public function __construct()
         {
             $this->load->database();
-            return $this->db->get('tb_akun')->result();
+            return $this->db->get('tb_status_pemesanan')->result();
         }
 
-    public function dt_akun()
+            public function dt_status_pemesanan()
     {
-        $this->db->select('id_akun, email, username, password, id_role');
-        $this->db->from('tb_akun');
+        $this->db->select('sp.id_status_pemesanan, p.id_pemesanan, sp.status');
+        $this->db->from('tb_status_pemesanan sp');
+        $this->db->join('tb_pemesanan p', 'sp.id_pemesanan = p.id_pemesanan');
         $query = $this->db->get();
-        return $query->result_array();        
+        return $query->result_array();
     }
 
-    public function dt_akun_insert()
+    public function dt_status_pemesanan_insert()
     {
         $data = array(
-            'email' => $this->input->post('email'),
-            'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
-            'id_role' => $this->input->post('id_role')
+            'id_pemesanan' => $this->input->post('id_pemesanan'),
+            'status' => $this->input->post('status')
         );
-        return $this->db->insert('tb_akun', $data);
+        return $this->db->insert('tb_status_pemesanan', $data);
     }
 
-    public function dt_akun_update($id)
+    public function dt_status_pemesanan_update($id)
     {
         $data = array(
-            'email' => $this->input->post('email'),
-            'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
-            'id_role' => $this->input->post('id_role')
+            'id_pemesanan' => $this->input->post('id_pemesanan'),
+            'status' => $this->input->post('status')
         );
-        $this->db->where('id_akun', $id);
-        return $this->db->update('tb_akun', $data);
+        $this->db->where('id_status_pemesanan', $id);
+        return $this->db->update('tb_status_pemesanan', $data);
     }
 
     public function dd_role()
     {
-        $roles = $this->get('tb_role');
-    
+        $query = $this->db->get('tb_role');
+        $result = $query->result();
+
         $id_role = array('-Pilih-');
         $nama_role = array('-Pilih-');
-        
-        foreach ($roles as $role) {
-            array_push($id_role, $role['id_role']);
-            array_push($nama_role, $role['nama_role']);
+
+        for ($i = 0; $i < count($result); $i++) {
+            array_push($id_role, $result[$i]->id_role);
+            array_push($nama_role, $result[$i]->nama_role);
         }
-        
         return array_combine($id_role, $nama_role);
     }
 

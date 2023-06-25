@@ -39,7 +39,7 @@
   <!-- Site wrapper -->
   <div class="wrapper">
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="main-header navbar navbar-expand navbar-teal navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -57,7 +57,7 @@
       <!-- Brand Logo -->
       <a href="<?php echo base_url(); ?>dashboard" class="brand-link">
         <img src="<?php echo base_url(); ?>assets/img/telkom_akses.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Pondol Maharani Admin</span>
+        <span class="brand-text font-weight-light">Pondok Maharani</span>
       </a>
 
       <!-- Sidebar -->

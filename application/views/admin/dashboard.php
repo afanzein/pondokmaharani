@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-6 col-12">
-            <div class="small-box bg-danger">
+            <div class="small-box bg-primary">
               <div class="inner">
                 <h3><?php  ?></h3>
 
