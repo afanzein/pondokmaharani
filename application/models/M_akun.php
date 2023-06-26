@@ -7,13 +7,15 @@
             return $this->db->get('tb_akun')->result();
         }
 
-    public function dt_akun()
-    {
-        $this->db->select('id_akun, email, username, password, id_role');
-        $this->db->from('tb_akun');
-        $query = $this->db->get();
-        return $query->result_array();        
-    }
+        public function dt_akun()
+        {
+            $this->db->select('a.id_akun, a.email, a.username, a.password, r.id_role');
+            $this->db->from('tb_akun a');
+            $this->db->join('tb_role r', 'a.id_role = r.id_role');
+            $query = $this->db->get();
+            return $query->result_array();
+        }
+        
 
     public function dt_akun_insert()
     {
@@ -38,6 +40,15 @@
         return $this->db->update('tb_akun', $data);
     }
 
+    function hapus_data($tabel, $kolom, $id)  
+    {
+        $this->db->delete($tabel, array($kolom => $id));
+        if (!$this->db->affected_rows())
+            return (FALSE);
+        else
+            return (TRUE);
+    }
+
     public function dd_role()
     {
         $roles = $this->get('tb_role');
@@ -52,6 +63,7 @@
         
         return array_combine($id_role, $nama_role);
     }
+
 
     public function get($table, $data = null, $where = null)
     {

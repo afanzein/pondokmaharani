@@ -1,24 +1,24 @@
 <?php
-class Akun extends CI_Controller{
+class Tamu extends CI_Controller{
 
     function __construct()
     {
         parent::__construct();
-        $this->load->model('M_akun');
+        $this->load->model('M_tamu');
     }
 
 public function index()
     {
-        $data['title']='List Akun';
-        $data['akun']=$this->M_akun->dt_akun();
+        $data['title']='List Tamu';
+        $data['tamu']=$this->M_tamu->dt_tamu();
         $this->load->view('admin/header', $data);
-        $this->load->view('admin/akun/v_akun');
+        $this->load->view('admin/tamu/v_tamu');
         $this->load->view('admin/footer');
     }
 
-    public function akun_insert()
+    public function tamu_insert()
 	{
-		$data['title'] = 'Tambah Data Akun';
+		$data['title'] = 'Tambah Data Tamu';
 
 		$this->form_validation->set_rules('email','Email',
 		'required',array('required' => '%s harus diisi.'));
@@ -27,19 +27,19 @@ public function index()
 		$this->form_validation->set_rules('password', 'Password', 
         'required|min_length[4]|max_length[16]', array('required' => '%s harus diisi.'));
 		$this->form_validation->set_rules('id_role', 'Pilih Role', 'callback_dd_cek');
-        $data['ddrole'] = $this->M_akun->dd_role();
+        $data['ddrole'] = $this->M_tamu->dd_role();
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
-            $this->load->view('admin/akun/v_insert');
+            $this->load->view('admin/tamu/v_insert');
             $this->load->view('admin/footer');
 		} else {
-			$this->M_akun->dt_akun_insert();
-			redirect(base_url('akun'));
+			$this->M_tamu->dt_akun_insert();
+			redirect(base_url('tamu'));
 		}
 	}
-	public function akun_update($id = FALSE)
+	public function tamu_update($id = FALSE)
 	{
-		$data['title'] = 'Update Data Akun';
+		$data['title'] = 'Update Data Tamu';
 		$this->form_validation->set_rules('email','Email',
 		'required',array('required' => '%s harus diisi.'));
 		$this->form_validation->set_rules('username', 'Username', 
@@ -47,23 +47,23 @@ public function index()
 		$this->form_validation->set_rules('password', 'Password', 
         'required|min_length[4]|max_length[16]', array('required' => '%s harus dipilih'));
 		$this->form_validation->set_rules('id_role', 'Pilih Role', 'callback_dd_cek');
-        $data['d'] = $this->M_akun->cari_data('tb_akun', 'id_akun', $id);
-        $data['ddrole'] = $this->M_akun->dd_role();
+        $data['d'] = $this->M_tamu->cari_data('tb_akun', 'id_akun', $id);
+        $data['ddrole'] = $this->M_tamu->dd_role();
 
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
-            $this->load->view('admin/akun/v_update');
+            $this->load->view('admin/tamu/v_update');
             $this->load->view('admin/footer');
 		} else {
-			$this->M_akun->dt_akun_update($id);
-			redirect(base_url('akun'));
+			$this->M_tamu->dt_akun_update($id);
+			redirect(base_url('tamu'));
 		}
 	}
 
-public function akun_delete($id)
+public function tamu_delete($id)
 	{
-		$this->m_akun->hapus_data('tb_akun', 'id_akun', $id);
-		redirect(base_url('akun'));
+		$this->M_tamu->hapus_data('tb_akun', 'id_akun', $id);
+		redirect(base_url('tamu'));
 	}
 
     function dd_cek($str)    //Untuk Validasi DropDown jika tidak dipilih

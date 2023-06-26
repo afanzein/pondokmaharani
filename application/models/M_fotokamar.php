@@ -7,35 +7,44 @@
             return $this->db->get('tb_foto_kamar')->result();
         }
 
-        public function dt_foto_kamar()
-{
-    $this->db->select('fk.id_foto, tk.nama_tipe_kamar, fk.nama_foto, fk.deskripsi_foto');
-    $this->db->from('tb_foto_kamar fk');
-    $this->db->join('tb_tipe_kamar tk', 'fk.id_tipe_kamar = tk.id_tipe_kamar');
-    $query = $this->db->get();
-    return $query->result_array();
-}
+            public function dt_foto_kamar()
+    {
+        $this->db->select('fk.id_foto, tk.nama_tipe_kamar, fk.nama_foto, fk.deskripsi_foto');
+        $this->db->from('tb_foto_kamar fk');
+        $this->db->join('tb_tipe_kamar tk', 'fk.id_tipe_kamar = tk.id_tipe_kamar');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
-public function dt_foto_kamar_insert()
-{
-    $data = array(
-        'id_tipe_kamar' => $this->input->post('id_tipe_kamar'),
-        'nama_foto' => $this->input->post('nama_foto'),
-        'deskripsi_foto' => $this->input->post('deskripsi_foto')
-    );
-    return $this->db->insert('tb_foto_kamar', $data);
-}
+    public function dt_foto_kamar_insert()
+    {
+        $data = array(
+            'id_tipe_kamar' => $this->input->post('id_tipe_kamar'),
+            'nama_foto' => $this->input->post('nama_foto'),
+            'deskripsi_foto' => $this->input->post('deskripsi_foto')
+        );
+        return $this->db->insert('tb_foto_kamar', $data);
+    }
 
-public function dt_foto_kamar_update($id)
-{
-    $data = array(
-        'id_tipe_kamar' => $this->input->post('id_tipe_kamar'),
-        'nama_foto' => $this->input->post('nama_foto'),
-        'deskripsi_foto' => $this->input->post('deskripsi_foto')
-    );
-    $this->db->where('id_foto', $id);
-    return $this->db->update('tb_foto_kamar', $data);
-}
+    public function dt_foto_kamar_update($id)
+    {
+        $data = array(
+            'id_tipe_kamar' => $this->input->post('id_tipe_kamar'),
+            'nama_foto' => $this->input->post('nama_foto'),
+            'deskripsi_foto' => $this->input->post('deskripsi_foto')
+        );
+        $this->db->where('id_foto', $id);
+        return $this->db->update('tb_foto_kamar', $data);
+    }
+
+    function hapus_data($tabel, $kolom, $id)  
+    {
+        $this->db->delete($tabel, array($kolom => $id));
+        if (!$this->db->affected_rows())
+            return (FALSE);
+        else
+            return (TRUE);
+    }
 
     public function dd_role()
     {

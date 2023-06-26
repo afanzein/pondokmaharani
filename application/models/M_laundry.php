@@ -40,7 +40,14 @@
         return $this->db->update('tb_laundry', $data);
     }
 
-        
+    function hapus_data($tabel, $kolom, $id)  
+    {
+        $this->db->delete($tabel, array($kolom => $id));
+        if (!$this->db->affected_rows())
+            return (FALSE);
+        else
+            return (TRUE);
+    }
 
     public function dd_role()
     {
