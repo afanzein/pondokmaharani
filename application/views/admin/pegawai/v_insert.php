@@ -13,40 +13,77 @@
         <div class="card">
           <div class="card-body">
   
-            <form method="POST" action="<?php echo base_url('akun/akun_insert/'); ?>" class="form-horizontal">
+            <form method="POST" action="<?php echo base_url('pegawai/pegawai_insert/'); ?>" class="form-horizontal">
   
               <div class="card-body">
   
                 <div class="form-group row">
-                  <label for="email" class="col-sm-2 col-form-label">Email</label>
+                  <label for="nik_pegawai" class="col-sm-2 col-form-label">NIK</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="email" id="email" value="<?php echo set_value('email'); ?>" placeholder="Masukkan Email">
-                    <span class="badge badge-warning"><?php echo strip_tags(form_error('email')); ?></span>
+                    <input type="text" class="form-control" name="nik_pegawai" id="nik_pegawai" placeholder="Masukkan NIK">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('nik_pegawai')); ?></span>
                   </div>
                 </div>
 
                 <div class="form-group row">
-                  <label for="username" class="col-sm-2 col-form-label">Username</label>
+                  <label for="nama_pegawai" class="col-sm-2 col-form-label">Nama</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="username" id="username" value="<?php echo set_value('username'); ?>" placeholder="Masukkan Username">
-                    <span class="badge badge-warning"><?php echo strip_tags(form_error('username')); ?></span>
+                    <input type="text" class="form-control" name="nama_pegawai" id="nama_pegawai" placeholder="Masukkan Nama">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('nama_pegawai')); ?></span>
                   </div>
                 </div>
 
                 <div class="form-group row">
-                  <label for="password" class="col-sm-2 col-form-label">Password</label>
+                  <label for="jenis_kelamin" class="col-sm-2 col-form-label">Gender</label>
                   <div class="col-sm-10">
-                    <input type="password" class="form-control" name="password" id="password" value="<?php echo set_value('password'); ?>" placeholder="Masukkan Password">
-                    <span class="badge badge-warning"><?php echo strip_tags(form_error('password')); ?></span>
+                    <label >
+                    <input type="radio"  name="jenis_kelamin" id="jenis_kelamin" value="L"> Laki-Laki
+                  </label>
+                  <label >
+                    <input type="radio"  name="jenis_kelamin" id="jenis_kelamin" value="P"> Perempuan
+                  </label>
+                  <span class="badge badge-warning"><?php echo strip_tags(form_error('jenis_kelamin')); ?></span>
+                  </div>
+                </div>
+  
+                <div class="form-group row">
+                    <label for="tanggal lahir" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                      <div class="col-sm-10">
+                        <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir">
+                        <span class="badge badge-warning"><?php echo strip_tags(form_error('tgl_lahir')); ?></span>
+                      </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="jabatan" class="col-sm-2 col-form-label">Jabatan</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="jabatan" id="jabatan" placeholder="Masukkan jabatan">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('jabatan')); ?></span>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="no_telp" class="col-sm-2 col-form-label">No Telp.</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="Masukkan no_telp">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('no_telp')); ?></span>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Alamat" id="Alamat" placeholder="Masukkan Alamat">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('Alamat')); ?></span>
                   </div>
                 </div>
 
               <div class="form-group row">
-                  <label for="id_role" class="col-sm-2 col-form-label">ID Role</label>
+                  <label for="id_akun" class="col-sm-2 col-form-label">ID Akun</label>
                   <div class="col-sm-10">
-                  <select class="form-control" name="id_role" id="id_role" 
-                  value="<?php echo form_dropdown('id_role', $ddrole, set_value('id_role')); ?>  
-                    <span class= "badge badge-warning"><?php echo strip_tags(form_error('id_role')); ?></span>
+                  <select class="form-control" name="id_akun" id="id_akun" 
+                  value="<?php echo form_dropdown('id_akun', $ddakun, set_value('id_akun')); ?>  
+                    <span class= "badge badge-warning"><?php echo strip_tags(form_error('id_akun')); ?></span>
                   </div>
                 </div>
 

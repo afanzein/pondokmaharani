@@ -55,19 +55,19 @@
             return (TRUE);
     }
 
-    public function dd_role()
+    public function dd_pegawai()
     {
-        $query = $this->db->get('tb_role');
+        $query = $this->db->get('tb_akun');
         $result = $query->result();
 
-        $id_role = array('-Pilih-');
-        $nama_role = array('-Pilih-');
-
+        $id_akun = array('-Pilih-');
+        $email = array('-Pilih-');
+        
         for ($i = 0; $i < count($result); $i++) {
-            array_push($id_role, $result[$i]->id_role);
-            array_push($nama_role, $result[$i]->nama_role);
+            array_push($id_akun, $result[$i]->id_akun);
+            array_push($email, $result[$i]->email);
         }
-        return array_combine($id_role, $nama_role);
+        return array_combine($id_akun, $email);
     }
 
     public function get($table, $data = null, $where = null)

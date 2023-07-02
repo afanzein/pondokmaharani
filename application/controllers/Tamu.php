@@ -20,14 +20,20 @@ public function index()
 	{
 		$data['title'] = 'Tambah Data Tamu';
 
-		$this->form_validation->set_rules('email','Email',
-		'required',array('required' => '%s harus diisi.'));
-		$this->form_validation->set_rules('username', 'Username', 
-        'required|min_length[4]|max_length[45]', array('required' => '%s harus diisi.'));
-		$this->form_validation->set_rules('password', 'Password', 
-        'required|min_length[4]|max_length[16]', array('required' => '%s harus diisi.'));
-		$this->form_validation->set_rules('id_role', 'Pilih Role', 'callback_dd_cek');
-        $data['ddrole'] = $this->M_tamu->dd_role();
+		$this->form_validation->set_rules('nik_tamu','NIK',
+		'required|min_length[16]|max_length[45]',array('required' => '%s NIK harus diisi.'));
+        $this->form_validation->set_rules('nama_tamu','Nama',
+		'required|min_length[3]|max_length[45]',array('required' => '%s harus diisi.'));
+        $this->form_validation->set_rules('jenis_kelamin','Jenkel',
+		'required',array('required' => '%s harus dipilih.'));
+        $this->form_validation->set_rules('tgl_lahir','Tanggal Lahir',
+		'required',array('required' => '%s harus dipilih.'));
+		$this->form_validation->set_rules('no_telp', 'notelp', 
+        'required|min_length[5]|max_length[13]', array('required' => '%s harus diisi.'));
+		$this->form_validation->set_rules('alamat', 'Alamat', 
+        'required', array('required' => '%s harus diisi.'));
+		$this->form_validation->set_rules('id_akun', 'Pilih Email', 'callback_dd_cek');
+        $data['ddakun'] = $this->M_tamu->dd_akun();
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
             $this->load->view('admin/tamu/v_insert');
@@ -40,15 +46,21 @@ public function index()
 	public function tamu_update($id = FALSE)
 	{
 		$data['title'] = 'Update Data Tamu';
-		$this->form_validation->set_rules('email','Email',
-		'required',array('required' => '%s harus diisi.'));
-		$this->form_validation->set_rules('username', 'Username', 
-        'required|min_length[4]|max_length[45]', array('required' => '%s harus dipilih'));
-		$this->form_validation->set_rules('password', 'Password', 
-        'required|min_length[4]|max_length[16]', array('required' => '%s harus dipilih'));
-		$this->form_validation->set_rules('id_role', 'Pilih Role', 'callback_dd_cek');
-        $data['d'] = $this->M_tamu->cari_data('tb_akun', 'id_akun', $id);
-        $data['ddrole'] = $this->M_tamu->dd_role();
+		$this->form_validation->set_rules('nik_pegawai','NIK',
+		'required|min_length[16]|max_length[16]',array('required' => '%s NIK harus diisi.'));
+        $this->form_validation->set_rules('nama_pegawai','Nama',
+		'required|min_length[3]|max_length[45]',array('required' => '%s harus diisi.'));
+        $this->form_validation->set_rules('jenis_kelamin','Jenkel',
+		'required',array('required' => '%s harus dipilih.'));
+        $this->form_validation->set_rules('tgl_lahir','Tanggal Lahir',
+		'required',array('required' => '%s harus dipilih.'));
+		$this->form_validation->set_rules('no_telp', 'notelp', 
+        'required|min_length[5]|max_length[13]', array('required' => '%s harus diisi.'));
+		$this->form_validation->set_rules('alamat', 'Alamat', 
+        'required', array('required' => '%s harus diisi.'));
+		$this->form_validation->set_rules('id_akun', 'Pilih Email', 'callback_dd_cek');
+        $data['d'] = $this->M_tamu->cari_data('tb_tamu', 'nik_tamu', $id);
+        $data['ddakun'] = $this->M_tamu->dd_akun();
 
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
@@ -62,7 +74,7 @@ public function index()
 
 public function tamu_delete($id)
 	{
-		$this->M_tamu->hapus_data('tb_akun', 'id_akun', $id);
+		$this->M_tamu->hapus_data('tb_tamu', 'nik_tamu', $id);
 		redirect(base_url('tamu'));
 	}
 
