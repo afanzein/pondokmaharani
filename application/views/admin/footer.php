@@ -4,9 +4,9 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 1.0.0
     </div>
-    [Telkom Akses WH Banjarmasin@2023]
-    <strong>Copyright &copy; 2022-2023 <a href="<?= base_url("dashboard")?>">Simawar</a>.</strong> All rights reserved.
-  
+    [Hotel & Boarding House - Pondok Maharani @2023]
+    <strong>Copyright &copy; 2022-2023 <a href="<?= base_url("dashboard")?>">Pondok Maharani</a>.</strong> All rights reserved.
+ 
  <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->

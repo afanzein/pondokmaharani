@@ -65,7 +65,7 @@
                 <div class="form-group row">
                   <label for="jabatan" class="col-sm-2 col-form-label">Jabatan</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="jabatan" id="jabatan" placeholder="Masukkan jabatan">
+                    <input type="text" class="form-control" name="jabatan" id="jabatan" value="<?php echo set_value('jabatan',$d['jabatan']); ?>" placeholder="Masukkan jabatan">
                     <span class="badge badge-warning"><?php echo strip_tags(form_error('jabatan')); ?></span>
                   </div>
                 </div>
@@ -73,7 +73,7 @@
                 <div class="form-group row">
                   <label for="no_telp" class="col-sm-2 col-form-label">No Telp.</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="Masukkan no_telp">
+                    <input type="tel" pattern="[0-9]+" class="form-control" name="no_telp" id="no_telp" value="<?php echo set_value('no_telp',$d['no_telp']); ?>" placeholder="Masukkan no_telp">
                     <span class="badge badge-warning"><?php echo strip_tags(form_error('no_telp')); ?></span>
                   </div>
                 </div>

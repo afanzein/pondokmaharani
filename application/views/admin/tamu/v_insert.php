@@ -13,23 +13,23 @@
         <div class="card">
           <div class="card-body">
   
-            <form method="POST" action="<?php echo base_url('pegawai/pegawai_insert/'); ?>" class="form-horizontal">
+            <form method="POST" action="<?php echo base_url('tamu/tamu_insert/'); ?>" class="form-horizontal">
   
               <div class="card-body">
   
                 <div class="form-group row">
-                  <label for="nik_pegawai" class="col-sm-2 col-form-label">NIK</label>
+                  <label for="nik_tamu" class="col-sm-2 col-form-label">NIK</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nik_pegawai" id="nik_pegawai" placeholder="Masukkan NIK">
-                    <span class="badge badge-warning"><?php echo strip_tags(form_error('nik_pegawai')); ?></span>
+                    <input type="text" class="form-control" name="nik_tamu" id="nik_tamu" placeholder="Masukkan NIK">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('nik_tamu')); ?></span>
                   </div>
                 </div>
 
                 <div class="form-group row">
-                  <label for="nama_pegawai" class="col-sm-2 col-form-label">Nama</label>
+                  <label for="nama_tamu" class="col-sm-2 col-form-label">Nama</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nama_pegawai" id="nama_pegawai" placeholder="Masukkan Nama">
-                    <span class="badge badge-warning"><?php echo strip_tags(form_error('nama_pegawai')); ?></span>
+                    <input type="text" class="form-control" name="nama_tamu" id="nama_tamu" placeholder="Masukkan Nama">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('nama_tamu')); ?></span>
                   </div>
                 </div>
 
@@ -52,14 +52,6 @@
                         <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir">
                         <span class="badge badge-warning"><?php echo strip_tags(form_error('tgl_lahir')); ?></span>
                       </div>
-                </div>
-
-                <div class="form-group row">
-                  <label for="jabatan" class="col-sm-2 col-form-label">Jabatan</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" name="jabatan" id="jabatan" placeholder="Masukkan jabatan">
-                    <span class="badge badge-warning"><?php echo strip_tags(form_error('jabatan')); ?></span>
-                  </div>
                 </div>
 
                 <div class="form-group row">

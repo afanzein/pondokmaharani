@@ -24,11 +24,11 @@ public function index()
 		'required|min_length[16]|max_length[45]',array('required' => '%s NIK harus diisi.'));
         $this->form_validation->set_rules('nama_tamu','Nama',
 		'required|min_length[3]|max_length[45]',array('required' => '%s harus diisi.'));
-        $this->form_validation->set_rules('jenis_kelamin','Jenkel',
+        $this->form_validation->set_rules('jenis_kelamin','Gender',
 		'required',array('required' => '%s harus dipilih.'));
         $this->form_validation->set_rules('tgl_lahir','Tanggal Lahir',
 		'required',array('required' => '%s harus dipilih.'));
-		$this->form_validation->set_rules('no_telp', 'notelp', 
+		$this->form_validation->set_rules('no_telp', 'No Telp.', 
         'required|min_length[5]|max_length[13]', array('required' => '%s harus diisi.'));
 		$this->form_validation->set_rules('alamat', 'Alamat', 
         'required', array('required' => '%s harus diisi.'));
@@ -46,15 +46,15 @@ public function index()
 	public function tamu_update($id = FALSE)
 	{
 		$data['title'] = 'Update Data Tamu';
-		$this->form_validation->set_rules('nik_pegawai','NIK',
+		$this->form_validation->set_rules('nik_tamu','NIK',
 		'required|min_length[16]|max_length[16]',array('required' => '%s NIK harus diisi.'));
-        $this->form_validation->set_rules('nama_pegawai','Nama',
+        $this->form_validation->set_rules('nama_tamu','Nama',
 		'required|min_length[3]|max_length[45]',array('required' => '%s harus diisi.'));
-        $this->form_validation->set_rules('jenis_kelamin','Jenkel',
+        $this->form_validation->set_rules('jenis_kelamin','Gender',
 		'required',array('required' => '%s harus dipilih.'));
         $this->form_validation->set_rules('tgl_lahir','Tanggal Lahir',
 		'required',array('required' => '%s harus dipilih.'));
-		$this->form_validation->set_rules('no_telp', 'notelp', 
+		$this->form_validation->set_rules('no_telp', 'No Telp.', 
         'required|min_length[5]|max_length[13]', array('required' => '%s harus diisi.'));
 		$this->form_validation->set_rules('alamat', 'Alamat', 
         'required', array('required' => '%s harus diisi.'));
