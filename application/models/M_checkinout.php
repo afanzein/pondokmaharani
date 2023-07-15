@@ -9,7 +9,7 @@
 
         public function dt_checkinout()
         {
-            $this->db->select('cio.id_checkinout, p.id_pemesanan, cio.tgl_checkin, cio.tgl_checkout');
+            $this->db->select('cio.id_checkinout, p.id_pemesanan, p.nik_tamu, cio.tgl_checkin, cio.tgl_checkout');
             $this->db->from('tb_checkinout cio');
             $this->db->join('tb_pemesanan p', 'cio.id_pemesanan = p.id_pemesanan');
             $query = $this->db->get();

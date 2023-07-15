@@ -9,7 +9,7 @@
 
             public function dt_status_pemesanan()
     {
-        $this->db->select('sp.id_status_pemesanan, p.id_pemesanan, sp.status');
+        $this->db->select('sp.id_status_pemesanan, p.id_pemesanan, p.tgl_pemesanan, sp.status');
         $this->db->from('tb_status_pemesanan sp');
         $this->db->join('tb_pemesanan p', 'sp.id_pemesanan = p.id_pemesanan');
         $query = $this->db->get();

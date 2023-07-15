@@ -94,6 +94,12 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="<?php echo base_url('statuspemesanan'); ?>" class="nav-link">
+                    <i class="fas fa-info-circle nav-icon"></i>
+                    <p>Status Pemesanan</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="<?php echo base_url('laundry'); ?>" class="nav-link">
                     <i class="fa fa-tshirt nav-icon"></i>
                     <p>Laundry</p>
