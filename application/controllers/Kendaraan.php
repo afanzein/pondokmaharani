@@ -19,11 +19,11 @@ public function index()
     public function kendaraan_insert()
 	{
 		$data['title'] = 'Tambah Data Kendaraan';
-        $this->form_validation->set_rules('nik_tamu', 'Pilih Tamu', 'callback_dd_cek');
-        $this->form_validation->set_rules('nik_tamu', 'Jenis Kendaraan', 'callback_dd_cek');
+        $this->form_validation->set_rules('nik_tamu', 'Nama Tamu', 'callback_dd_cek');
+        $this->form_validation->set_rules('jenis_kendaraan', 'Jenis Kendaraan', 'callback_dd_kendaraan');
 		$this->form_validation->set_rules('plat_nomor','Plat Nomor',
 		'required|min_length[3]|max_length[9]',array('required' => '%s harus diisi.'));
-        $data['ddkendaraan'] = $this->M_kendaraan->dd_role();
+        $data['ddtamu'] = $this->M_kendaraan->dd_tamu();
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
             $this->load->view('admin/kendaraan/v_insert');
@@ -36,12 +36,12 @@ public function index()
 	public function kendaraan_update($id = FALSE)
 	{
 		$data['title'] = 'Update Data Kendaraan';
-        $this->form_validation->set_rules('nik_tamu', 'Pilih Tamu', 'callback_dd_cek');
-        $this->form_validation->set_rules('nik_tamu', 'Jenis Kendaraan', 'callback_dd_cek');
+        $this->form_validation->set_rules('nik_tamu', 'Nama Tamu', 'callback_dd_cek');
+        $this->form_validation->set_rules('jenis_kendaraan', 'Jenis Kendaraan', 'callback_dd_kendaraan');
 		$this->form_validation->set_rules('plat_nomor','Plat Nomor',
 		'required|min_length[3]|max_length[9]',array('required' => '%s harus diisi.'));
         $data['d'] = $this->M_kendaraan->cari_data('tb_kendaraan', 'id_kendaraan', $id);
-        $data['ddkendaraan'] = $this->M_kendaraan->dd_kendaraan();
+        $data['ddtamu'] = $this->M_kendaraan->dd_tamu();
 
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
@@ -63,6 +63,15 @@ public function kendaraan_delete($id)
 {
 	if ($str == '-Pilih-') {
 	  $this->form_validation->set_message('dd_cek', '%s harus dipilih');
+	  return FALSE;
+	} else
+	  return TRUE;
+}
+
+function dd_kendaraan($str)    //Untuk Validasi DropDown jika tidak dipilih
+{
+	if ($str == '-Pilih-') {
+	  $this->form_validation->set_message('dd_kendaraan', '%s harus dipilih');
 	  return FALSE;
 	} else
 	  return TRUE;

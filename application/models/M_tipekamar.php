@@ -9,7 +9,7 @@
 
         public function dt_tipe_kamar()
     {
-        $this->db->select('tk.id_tipe_kamar, tk.nama_tipe_kamar, tk.fasilitas, tk.harga_permalam, tk.harga_perminggu, tk.harga_perbulan');
+        $this->db->select('id_tipe_kamar, nama_tipe_kamar, fasilitas, harga_permalam, harga_perminggu, harga_perbulan');
         $this->db->from('tb_tipe_kamar');
         $query = $this->db->get();
         return $query->result_array();
@@ -47,21 +47,6 @@
             return (FALSE);
         else
             return (TRUE);
-    }
-
-    public function dd_role()
-    {
-        $query = $this->db->get('tb_role');
-        $result = $query->result();
-
-        $id_role = array('-Pilih-');
-        $nama_role = array('-Pilih-');
-
-        for ($i = 0; $i < count($result); $i++) {
-            array_push($id_role, $result[$i]->id_role);
-            array_push($nama_role, $result[$i]->nama_role);
-        }
-        return array_combine($id_role, $nama_role);
     }
 
     public function get($table, $data = null, $where = null)

@@ -20,7 +20,7 @@
                 <div class="form-group row">
                   <label for="nik_pegawai" class="col-sm-2 col-form-label">NIK</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nik_pegawai" id="nik_pegawai" placeholder="Masukkan NIK">
+                    <input type="numeric" pattern="[0-9]+"  class="form-control" name="nik_pegawai" id="nik_pegawai" placeholder="Masukkan NIK">
                     <span class="badge badge-warning"><?php echo strip_tags(form_error('nik_pegawai')); ?></span>
                   </div>
                 </div>
@@ -83,7 +83,7 @@
                   <div class="col-sm-10">
                   <select class="form-control" name="id_akun" id="id_akun" 
                   value="<?php echo form_dropdown('id_akun', $ddakun, set_value('id_akun')); ?>  
-                    <span class= "badge badge-warning"><?php echo strip_tags(form_error('id_akun')); ?></span>
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('id_akun')); ?></span>
                   </div>
                 </div>
 

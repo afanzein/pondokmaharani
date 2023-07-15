@@ -44,8 +44,8 @@
               <div class="form-group row">
                   <label for="id_role" class="col-sm-2 col-form-label">ID Role</label>
                   <div class="col-sm-10">
-                  <select class="form-control" name="id_role" id="id_role" 
-                  value="<?php echo form_dropdown('id_role', $ddrole, set_value('id_role')); ?>  
+                  <select class="form-control" name="id_role" id="id_role"
+                  value="<?php echo form_dropdown('id_role', $ddrole, set_value('id_role')); ?>
                     <span class= "badge badge-warning"><?php echo strip_tags(form_error('id_role')); ?></span>
                   </div>
                 </div>

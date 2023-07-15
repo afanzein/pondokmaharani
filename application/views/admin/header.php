@@ -75,42 +75,54 @@
                 </li>
 
                 <li class="nav-item"> 
-              <a href="<?php echo base_url('dashboard'); ?>" class="nav-link ">
-                <i class="nav-icon fas fa-book"></i>
-                <p>Pemesanan</p>
+              <a href="" class="nav-link ">
+                <i class="nav-icon fas fa-hotel"></i>
+                <p>Kelola Kostel</p>
                 <i class="right fas fa-angle-left"></i>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-hotel nav-icon"></i>
+                  <a href="<?php echo base_url('pemesanan'); ?>" class="nav-link">
+                    <i class="fas fa-book nav-icon"></i>
                     <p>Reservasi Kamar</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-tshirt nav-icon"></i>
+                  <a href="<?php echo base_url('checkinout'); ?>" class="nav-link">
+                    <i class="far fa-calendar nav-icon"></i>
+                    <p>Check In & Check Out</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('laundry'); ?>" class="nav-link">
+                    <i class="fa fa-tshirt nav-icon"></i>
                     <p>Laundry</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('kendaraan'); ?>" class="nav-link">
+                    <i class="fa fa-car nav-icon"></i>
+                    <p>Kendaraan Tamu</p>
                   </a>
                 </li>
               </ul>
                 </li>
 
                 <li class="nav-item"> 
-              <a href="<?php echo base_url('dashboard'); ?>" class="nav-link ">
+              <a href="" class="nav-link ">
                 <i class="nav-icon fas fa-cash-register"></i>
                 <p>Pembayaran</p>
                 <i class="right fas fa-angle-left"></i>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?php echo base_url('pembayaran'); ?>" class="nav-link">
                     <i class="fas fa-coins nav-icon"></i>
                     <p>Pembayaran</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?php echo base_url('detailpembayaran'); ?>" class="nav-link">
                     <i class="fas fa-receipt nav-icon"></i>
                     <p>Detail Pembayaran</p>
                   </a>
@@ -119,24 +131,59 @@
                 </li>
                 
                 <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-bed"></i>
+              <a href="" class="nav-link">
+                <i class="nav-icon fas fa-door-open"></i>
                 <p>
-                  Kamar
+                  Data Kamar
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <a href="<?php echo base_url('kamar'); ?>" class="nav-link">
+                    <i class="fas fa-bed nav-icon"></i>
                     <p>Kamar</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <a href="<?php echo base_url('tipekamar'); ?>" class="nav-link">
+                    <i class="fas fa-bed nav-icon"></i>
                     <p>Tipe Kamar</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('fotokamar'); ?>" class="nav-link">
+                    <i class="fas fa-image nav-icon"></i>
+                    <p>Upload Foto Kamar</p>
+                  </a>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                  Data Profil
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?php echo base_url('akun'); ?>" class="nav-link">
+                    <i class="fas fa-key nav-icon"></i>
+                    <p>Akun</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('tamu'); ?>" class="nav-link">
+                    <i class="fas fa-user nav-icon"></i>
+                    <p>Profil Tamu</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url('pegawai'); ?>" class="nav-link">
+                    <i class="fas fa-user-secret nav-icon"></i>
+                    <p>Profil Pegawai</p>
                   </a>
                 </li>
               </ul>

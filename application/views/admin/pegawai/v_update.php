@@ -16,7 +16,7 @@
             </div>
             <div class="card-body">
     
-              <?php echo validation_errors(); ?>
+
     
               <form method="POST" action="<?php echo base_url('akun/akun_update/' . $d['id_akun']); ?>" class="form-horizontal">
     
@@ -25,7 +25,7 @@
                 <div class="form-group row">
                   <label for="nik_pegawai" class="col-sm-2 col-form-label">NIK</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nik_pegawai" id="nik_pegawai" value="<?php echo set_value('nik_pegawai',$d['nik_pegawai']); ?>" placeholder="Masukkan NIK">
+                    <input type="numeric" pattern="[0-9]+"  class="form-control" name="nik_pegawai" id="nik_pegawai" value="<?php echo set_value('nik_pegawai',$d['nik_pegawai']); ?>" placeholder="Masukkan NIK">
                     <span class="badge badge-warning"><?php echo strip_tags(form_error('nik_pegawai')); ?></span>
                   </div>
                 </div>
@@ -79,10 +79,10 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+                  <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="Alamat" id="Alamat" placeholder="Masukkan Alamat">
-                    <span class="badge badge-warning"><?php echo strip_tags(form_error('Alamat')); ?></span>
+                    <input type="text" class="form-control" name="alamat" id="alamat" value="<?php echo set_value('alamat',$d['alamat']); ?>" placeholder="Masukkan Alamat">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('alamat')); ?></span>
                   </div>
                 </div>
 

@@ -20,7 +20,7 @@
                 <div class="form-group row">
                   <label for="nik_tamu" class="col-sm-2 col-form-label">NIK</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nik_tamu" id="nik_tamu" placeholder="Masukkan NIK">
+                    <input type="numeric" pattern="[0-9]+" class="form-control" name="nik_tamu" id="nik_tamu" placeholder="Masukkan NIK">
                     <span class="badge badge-warning"><?php echo strip_tags(form_error('nik_tamu')); ?></span>
                   </div>
                 </div>
