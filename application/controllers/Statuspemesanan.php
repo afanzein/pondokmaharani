@@ -16,6 +16,16 @@ public function index()
     $this->load->view('admin/footer');
 }
 
+public function update_status()
+{
+    $id_status_pemesanan = $this->input->get('id');
+    $status = $this->input->get('status');
+    // Update the status in the model
+    $this->M_statuspemesanan->dt_update_status($id_status_pemesanan, $status);
+
+    // Redirect to the page where the table is displayed
+    redirect(base_url('statuspemesanan'));
+}
 
 }
 ?>

@@ -46,18 +46,6 @@
                                 <span class="badge badge-warning"><?php echo strip_tags(form_error('id_kamar')); ?></span>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="id_status_pemesanan" class="col-sm-2 col-form-label">Status Pemesanan</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" name="id_status_pemesanan" id="id_status_pemesanan">
-                                    <?php foreach ($ddstatus as $data) { ?>
-                                        <option value="<?php echo $data['id_status_pemesanan']; ?>" <?php if ($d['id_status_pemesanan'] == $data['id_status_pemesanan']) echo 'selected'; ?>><?php echo $data['status']; ?></option>
-                                    <?php } ?>
-                                </select>
-                                <span class="badge badge-warning"><?php echo strip_tags(form_error('id_status_pemesanan')); ?></span>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Update</button>

@@ -71,10 +71,10 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+                  <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="Alamat" id="Alamat" placeholder="Masukkan Alamat">
-                    <span class="badge badge-warning"><?php echo strip_tags(form_error('Alamat')); ?></span>
+                    <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan alamat">
+                    <span class="badge badge-warning"><?php echo strip_tags(form_error('alamat')); ?></span>
                   </div>
                 </div>
 

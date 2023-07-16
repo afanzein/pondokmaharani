@@ -26,7 +26,6 @@ class Pemesanan extends CI_Controller{
         $this->form_validation->set_rules('id_status_pemesanan', 'ID Status Pemesanan', 'callback_dd_cek');
 
         $data['ddkamar'] = $this->M_pemesanan->dd_kamar();
-        $data['ddstatus'] = $this->M_pemesanan->dd_status();
         $data['ddtamu'] = $this->M_pemesanan->dd_tamu();
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
@@ -47,7 +46,6 @@ class Pemesanan extends CI_Controller{
         $this->form_validation->set_rules('id_status_pemesanan', 'ID Status Pemesanan', 'callback_dd_cek');
 
         $data['ddkamar'] = $this->M_pemesanan->dd_kamar();
-        $data['ddstatus'] = $this->M_pemesanan->dd_status();
         $data['ddtamu'] = $this->M_pemesanan->dd_tamu();
         $data['d'] = $this->M_pemesanan->cari_data('tb_pemesanan', 'id_pemesanan', $id);
 

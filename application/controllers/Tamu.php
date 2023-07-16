@@ -30,16 +30,15 @@ public function index()
 		'required',array('required' => '%s harus dipilih.'));
 		$this->form_validation->set_rules('no_telp', 'No Telp.', 
         'required|min_length[5]|max_length[13]', array('required' => '%s harus diisi.'));
-		$this->form_validation->set_rules('alamat', 'Alamat', 
-        'required', array('required' => '%s harus diisi.'));
+		$this->form_validation->set_rules('alamat','Alamat','required',array('required' => '%s harus diisi.'));
 		$this->form_validation->set_rules('id_akun', 'Pilih Email', 'callback_dd_cek');
-        $data['ddakun'] = $this->M_tamu->dd_akun();
+        $data['ddakun'] = $this->M_tamu->dd_tamu();
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
             $this->load->view('admin/tamu/v_insert');
             $this->load->view('admin/footer');
 		} else {
-			$this->M_tamu->dt_akun_insert();
+			$this->M_tamu->dt_tamu_insert();
 			redirect(base_url('tamu'));
 		}
 	}
@@ -60,14 +59,14 @@ public function index()
         'required', array('required' => '%s harus diisi.'));
 		$this->form_validation->set_rules('id_akun', 'Pilih Email', 'callback_dd_cek');
         $data['d'] = $this->M_tamu->cari_data('tb_tamu', 'nik_tamu', $id);
-        $data['ddakun'] = $this->M_tamu->dd_akun();
+        $data['ddakun'] = $this->M_tamu->dd_tamu();
 
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
             $this->load->view('admin/tamu/v_update');
             $this->load->view('admin/footer');
 		} else {
-			$this->M_tamu->dt_akun_update($id);
+			$this->M_tamu->dt_tamu_update($id);
 			redirect(base_url('tamu'));
 		}
 	}

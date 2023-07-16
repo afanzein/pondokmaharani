@@ -13,7 +13,7 @@
             $this->db->from('tb_pemesanan p');
             $this->db->join('tb_tamu t', 'p.nik_tamu = t.nik_tamu');
             $this->db->join('tb_kamar k', 'p.id_kamar = k.id_kamar');
-            $this->db->join('tb_status_pemesanan s', 'p.id_status_pemesanan = s.id_status_pemesanan');
+            $this->db->join('tb_status_pemesanan s', 'p.id_pemesanan = s.id_pemesanan');
             $query = $this->db->get();
             return $query->result_array();
         }
@@ -23,8 +23,7 @@
             $data = array(
                 'tgl_pemesanan' => $this->input->post('tgl_pemesanan'),
                 'nik_tamu' => $this->input->post('nik_tamu'),
-                'id_kamar' => $this->input->post('id_kamar'),
-                'id_status_pemesanan' => $this->input->post('id_status_pemesanan')
+                'id_kamar' => $this->input->post('id_kamar')
             );
             return $this->db->insert('tb_pemesanan', $data);
         }
@@ -34,8 +33,7 @@
             $data = array(
                 'tgl_pemesanan' => $this->input->post('tgl_pemesanan'),
                 'nik_tamu' => $this->input->post('nik_tamu'),
-                'id_kamar' => $this->input->post('id_kamar'),
-                'id_status_pemesanan' => $this->input->post('id_status_pemesanan')
+                'id_kamar' => $this->input->post('id_kamar')
             );
             $this->db->where('id_pemesanan', $id);
             return $this->db->update('tb_pemesanan', $data);
@@ -65,20 +63,6 @@
         return array_combine($id_kamar, $nomor_kamar);
     }
 
-    public function dd_status()
-    {
-        $query = $this->db->get('tb_status_pemesanan');
-        $result = $query->result();
-
-        $id_status_pemesanan = array('-Pilih-');
-        $status = array('-Pilih-');
-
-        for ($i = 0; $i < count($result); $i++) {
-            array_push($id_status_pemesanan, $result[$i]->id_status_pemesanan);
-            array_push($status, $result[$i]->status);
-        }
-        return array_combine($id_status_pemesanan, $status);
-    }
 
     public function dd_tamu()
     {
@@ -89,8 +73,8 @@
         $nama = array('-Pilih-');
 
         for ($i = 0; $i < count($result); $i++) {
-            array_push($nik, $result[$i]->nik);
-            array_push($nama, $result[$i]->nama);
+            array_push($nik, $result[$i]->nik_tamu);
+            array_push($nama, $result[$i]->nama_tamu);
         }
         return array_combine($nik, $nama);
     }

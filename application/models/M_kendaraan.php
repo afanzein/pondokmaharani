@@ -55,8 +55,8 @@
         $nama = array('-Pilih-');
 
         for ($i = 0; $i < count($result); $i++) {
-            array_push($nik, $result[$i]->nik);
-            array_push($nama, $result[$i]->nama);
+            array_push($nik, $result[$i]->nik_tamu);
+            array_push($nama, $result[$i]->nama_tamu);
         }
         return array_combine($nik, $nama);
     }

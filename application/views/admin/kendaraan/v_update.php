@@ -16,7 +16,7 @@
             </div>
             <div class="card-body">
                 <?php echo validation_errors(); ?>
-                <form method="POST" action="<?php echo base_url('kendaraan/kendaraan_update/'.$kendaraan['id_kendaraan']); ?>" class="form-horizontal">
+                <form method="POST" action="<?php echo base_url('kendaraan/kendaraan_update/'.$d['id_kendaraan']); ?>" class="form-horizontal">
                     <div class="card-body">
                         
                     <div class="form-group row">
@@ -33,8 +33,8 @@
                             <div class="col-sm-10">
                                 <select class="form-control" name="jenis_kendaraan" id="jenis_kendaraan">
                                     <option value="">-Pilih Jenis Kendaraan-</option>
-                                    <option value="Roda Empat" <?php if ($kendaraan['jenis_kendaraan'] == 'Roda Empat') echo 'selected'; ?>>Roda Empat</option>
-                                    <option value="Roda Dua" <?php if ($kendaraan['jenis_kendaraan'] == 'Roda Dua') echo 'selected'; ?>>Roda Dua</option>
+                                    <option value="Roda Empat" <?php if ($d['jenis_kendaraan'] == 'Roda Empat') echo 'selected'; ?>>Roda Empat</option>
+                                    <option value="Roda Dua" <?php if ($d['jenis_kendaraan'] == 'Roda Dua') echo 'selected'; ?>>Roda Dua</option>
                                 </select>
                                 <span class="badge badge-warning"><?php echo strip_tags(form_error('jenis_kendaraan')); ?></span>
                             </div>
@@ -43,7 +43,7 @@
                         <div class="form-group row">
                             <label for="plat_nomor" class="col-sm-2 col-form-label">Plat Nomor</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="plat_nomor" id="plat_nomor" value="<?php echo $kendaraan['plat_nomor']; ?>" placeholder="Masukkan Plat Nomor">
+                                <input type="text" class="form-control" name="plat_nomor" id="plat_nomor" value="<?php echo $d['plat_nomor']; ?>" placeholder="Masukkan Plat Nomor">
                                 <span class="badge badge-warning"><?php echo strip_tags(form_error('plat_nomor')); ?></span>
                             </div>
                         </div>

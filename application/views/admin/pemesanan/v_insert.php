@@ -48,18 +48,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label for="id_status_pemesanan" class="col-sm-2 col-form-label">Status Pemesanan</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" name="id_status_pemesanan" id="id_status_pemesanan">
-                                <?php foreach ($ddstatus as $id_status_pemesanan => $status) { ?>
-                                    <option value="<?php echo $id_status_pemesanan; ?>" <?php echo set_select('id_status_pemesanan', $id_status_pemesanan); ?>><?php echo $status; ?></option>
-                                <?php } ?>
-                            </select>
-                            <span class="badge badge-warning"><?php echo strip_tags(form_error('id_status_pemesanan')); ?></span>
-                        </div>
-                    </div>
-
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Simpan</button>
                     </div>

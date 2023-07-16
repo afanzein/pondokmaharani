@@ -49,8 +49,8 @@
                     <input type="radio"  name="jenis_kelamin" id="jenis_kelamin"
                     value="P" <?php if($d['jenis_kelamin']=='P') echo 'checked'?>> Perempuan                 
                   </label>
-                  <span class="badge badge-warning"><?php echo strip_tags(form_error('jenis_kelamin')); ?></span>
-                  </div>
+                </div>
+                <span class="badge badge-warning"><?php echo strip_tags(form_error('jenis_kelamin')); ?></span>
                 </div>
   
                 <div class="form-group row">
@@ -73,7 +73,7 @@
                 <div class="form-group row">
                   <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="alamat" id="alamat" value="<?php echo set_value('alamat',$d['alamat']); ?>" placeholder="Masukkan Alamat">
+                    <input type="text" class="form-control" name="alamat" id="alamat" value="<?php echo set_value('alamat',$d['alamat']); ?>" placeholder="Masukkan alamat">
                     <span class="badge badge-warning"><?php echo strip_tags(form_error('alamat')); ?></span>
                   </div>
                 </div>

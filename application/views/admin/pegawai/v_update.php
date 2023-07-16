@@ -18,7 +18,7 @@
     
 
     
-              <form method="POST" action="<?php echo base_url('akun/akun_update/' . $d['id_akun']); ?>" class="form-horizontal">
+              <form method="POST" action="<?php echo base_url('pegawai/pegawai_update/' . $d['nik_pegawai']); ?>" class="form-horizontal">
     
                 <div class="card-body">
     

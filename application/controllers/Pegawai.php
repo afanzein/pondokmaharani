@@ -10,7 +10,7 @@ class Pegawai extends CI_Controller{
 public function index()
     {
         $data['title']='List Akun';
-        $data['pegawai']=$this->M_akun->dt_akun();
+        $data['pegawai']=$this->M_pegawai->dt_pegawai();
         $this->load->view('admin/header', $data);
         $this->load->view('admin/pegawai/v_pegawai');
         $this->load->view('admin/footer');
@@ -35,10 +35,10 @@ public function index()
 		$this->form_validation->set_rules('alamat', 'Alamat', 
         'required', array('required' => '%s harus diisi.'));
 		$this->form_validation->set_rules('id_akun', 'Pilih Email', 'callback_dd_cek');
-        $data['ddakun'] = $this->M_pegawai->dd_akun();
+        $data['ddakun'] = $this->M_pegawai->dd_pegawai();
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
-            $this->load->view('admin/akun/v_insert');
+            $this->load->view('admin/pegawai/v_insert');
             $this->load->view('admin/footer');
 		} else {
 			$this->M_pegawai->dt_pegawai_insert();
@@ -64,11 +64,11 @@ public function index()
         'required', array('required' => '%s harus diisi.'));
 		$this->form_validation->set_rules('id_akun', 'Pilih Email', 'callback_dd_cek');
         $data['d'] = $this->M_pegawai->cari_data('tb_pegawai', 'nik_pegawai', $id);
-        $data['ddakun'] = $this->M_pegawai->dd_akun();
+        $data['ddakun'] = $this->M_pegawai->dd_pegawai();
 
 		if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/header', $data);
-            $this->load->view('admin/akun/v_update');
+            $this->load->view('admin/pegawai/v_update');
             $this->load->view('admin/footer');
 		} else {
 			$this->M_pegawai->dt_pegawai_update($id);

@@ -16,47 +16,11 @@
         return $query->result_array();
     }
 
-    public function dt_status_pemesanan_insert()
+    public function dt_update_status($id_status_pemesanan, $status)
     {
-        $data = array(
-            'id_pemesanan' => $this->input->post('id_pemesanan'),
-            'status' => $this->input->post('status')
-        );
-        return $this->db->insert('tb_status_pemesanan', $data);
-    }
-
-    public function dt_status_pemesanan_update($id)
-    {
-        $data = array(
-            'id_pemesanan' => $this->input->post('id_pemesanan'),
-            'status' => $this->input->post('status')
-        );
-        $this->db->where('id_status_pemesanan', $id);
-        return $this->db->update('tb_status_pemesanan', $data);
-    }
-
-    function hapus_data($tabel, $kolom, $id)  
-    {
-        $this->db->delete($tabel, array($kolom => $id));
-        if (!$this->db->affected_rows())
-            return (FALSE);
-        else
-            return (TRUE);
-    }
-
-    public function dd_role()
-    {
-        $query = $this->db->get('tb_role');
-        $result = $query->result();
-
-        $id_role = array('-Pilih-');
-        $nama_role = array('-Pilih-');
-
-        for ($i = 0; $i < count($result); $i++) {
-            array_push($id_role, $result[$i]->id_role);
-            array_push($nama_role, $result[$i]->nama_role);
-        }
-        return array_combine($id_role, $nama_role);
+       // Update the 'status' column for the specified 'id_status_pemesanan'
+    $this->db->where('id_status_pemesanan', $id_status_pemesanan);
+    $this->db->update('tb_status_pemesanan', array('status' => $status));
     }
 
     public function get($table, $data = null, $where = null)

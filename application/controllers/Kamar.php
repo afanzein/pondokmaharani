@@ -20,7 +20,7 @@ public function kamar_insert()
 {
     $data['title'] = 'Tambah Data Kamar';
 
-    $this->form_validation->set_rules('nomor_kamar', 'Nomor Kamar', 'required|min_length[3]|max_length[45]', array('required' => '%s harus diisi.'));
+    $this->form_validation->set_rules('nomor_kamar', 'Nomor Kamar', 'required|min_length[2]|max_length[45]', array('required' => '%s harus diisi.'));
     $this->form_validation->set_rules('id_tipe_kamar', 'Tipe Kamar', 'callback_dd_tipe');
     $this->form_validation->set_rules('status_kamar', 'Status Kamar', 'callback_dd_cek');
     $data['ddtipekamar'] = $this->M_kamar->dd_tipekamar();
@@ -38,7 +38,7 @@ public function kamar_insert()
 public function kamar_update($id = FALSE)
 {
     $data['title'] = 'Update Data Kamar';
-    $this->form_validation->set_rules('nomor_kamar', 'Nomor Kamar', 'required|min_length[3]|max_length[45]', array('required' => '%s harus diisi.'));
+    $this->form_validation->set_rules('nomor_kamar', 'Nomor Kamar', 'required|min_length[2]|max_length[45]', array('required' => '%s harus diisi.'));
     $this->form_validation->set_rules('id_tipe_kamar', 'Tipe Kamar', 'callback_dd_tipe');
     $this->form_validation->set_rules('status_kamar', 'Status Kamar', 'callback_dd_cek');
     
