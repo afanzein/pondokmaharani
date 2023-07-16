@@ -46,19 +46,19 @@
             return (TRUE);
     }
 
-    public function dd_role()
+    public function dd_tipekamar()
     {
-        $query = $this->db->get('tb_role');
+        $query = $this->db->get('tb_tipe_kamar');
         $result = $query->result();
 
-        $id_role = array('-Pilih-');
-        $nama_role = array('-Pilih-');
+        $id_tipe_kamar = array('-Pilih-');
+        $nama_tipe_kamar = array('-Pilih-');
 
         for ($i = 0; $i < count($result); $i++) {
-            array_push($id_role, $result[$i]->id_role);
-            array_push($nama_role, $result[$i]->nama_role);
+            array_push($id_tipe_kamar, $result[$i]->id_tipe_kamar);
+            array_push($nama_tipe_kamar, $result[$i]->nama_tipe_kamar);
         }
-        return array_combine($id_role, $nama_role);
+        return array_combine($id_tipe_kamar, $nama_tipe_kamar);
     }
 
     public function get($table, $data = null, $where = null)
