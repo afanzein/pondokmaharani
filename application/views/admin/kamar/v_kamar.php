@@ -30,16 +30,16 @@
                         <tbody>
                             <?php
                             $no = 1;
-                            foreach ($kamar as $k) {
+                            foreach ($kamar as $data) {
                                 ?>
                                 <tr>
                                     <td><?php echo $no++; ?></td>
-                                    <td><?php echo $k['nomor_kamar']; ?></td>
-                                    <td><?php echo $k['nama_tipe_kamar']; ?></td>
-                                    <td><?php echo $k['status_kamar']; ?></td>
+                                    <td><?php echo $data['nomor_kamar']; ?></td>
+                                    <td><?php echo $data['nama_tipe_kamar']; ?></td>
+                                    <td><?php echo $data['status_kamar']; ?></td>
                                     <td>
-                                        <a href="<?php echo base_url('kamar/kamar_update/' . $k['id_kamar']); ?>" class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="<?php echo base_url('kamar/kamar_delete/' . $k['id_kamar']); ?>" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="<?php echo base_url('kamar/kamar_update/' . $data['id_kamar']); ?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="<?php echo base_url('kamar/kamar_delete/' . $data['id_kamar']); ?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             <?php } ?>

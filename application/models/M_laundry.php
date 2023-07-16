@@ -49,19 +49,19 @@
             return (TRUE);
     }
 
-    public function dd_role()
+    public function dd_pemesanan()
     {
-        $query = $this->db->get('tb_role');
+        $query = $this->db->get('tb_pemesanan');
         $result = $query->result();
 
-        $id_role = array('-Pilih-');
-        $nama_role = array('-Pilih-');
+        $id_pemesanan = array('-Pilih-');
+        $nik_tamu = array('-Pilih-');
 
         for ($i = 0; $i < count($result); $i++) {
-            array_push($id_role, $result[$i]->id_role);
-            array_push($nama_role, $result[$i]->nama_role);
+            array_push($id_pemesanan, $result[$i]->id_pemesanan);
+            array_push($nik_tamu, $result[$i]->nik_tamu);
         }
-        return array_combine($id_role, $nama_role);
+        return array_combine($id_pemesanan, $nik_tamu);
     }
 
     public function get($table, $data = null, $where = null)

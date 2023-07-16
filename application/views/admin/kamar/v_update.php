@@ -29,7 +29,6 @@
                             <label for="id_tipe_kamar" class="col-sm-2 col-form-label">Tipe Kamar</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="id_tipe_kamar" id="id_tipe_kamar">
-                                    <option value="-Pilih-">-Pilih-</option>
                                     <?php foreach ($tipekamar as $tk) { ?>
                                         <option value="<?php echo $tk['id_tipe_kamar']; ?>" <?php if ($d['id_tipe_kamar'] == $tk['id_tipe_kamar']) echo 'selected'; ?>><?php echo $tk['nama_tipe_kamar']; ?></option>
                                     <?php } ?>

@@ -16,22 +16,22 @@
         return $query->result_array();
     }
 
-    public function dt_foto_kamar_insert()
+    public function dt_foto_kamar_insert($id_tipe_kamar, $nama_foto, $deskripsi_foto)
     {
         $data = array(
-            'id_tipe_kamar' => $this->input->post('id_tipe_kamar'),
-            'nama_foto' => $this->input->post('nama_foto'),
-            'deskripsi_foto' => $this->input->post('deskripsi_foto')
+            'id_tipe_kamar' => $id_tipe_kamar,
+            'nama_foto' => $nama_foto,
+            'deskripsi_foto' => $deskripsi_foto
         );
         return $this->db->insert('tb_foto_kamar', $data);
     }
 
-    public function dt_foto_kamar_update($id)
+    public function dt_foto_kamar_update($id, $id_tipe_kamar, $nama_foto, $deskripsi_foto)
     {
         $data = array(
-            'id_tipe_kamar' => $this->input->post('id_tipe_kamar'),
-            'nama_foto' => $this->input->post('nama_foto'),
-            'deskripsi_foto' => $this->input->post('deskripsi_foto')
+            'id_tipe_kamar' => $id_tipe_kamar,
+            'nama_foto' => $nama_foto,
+            'deskripsi_foto' => $deskripsi_foto
         );
         $this->db->where('id_foto', $id);
         return $this->db->update('tb_foto_kamar', $data);
@@ -46,19 +46,19 @@
             return (TRUE);
     }
 
-    public function dd_role()
+    public function dd_tipekamar()
     {
-        $query = $this->db->get('tb_role');
+        $query = $this->db->get('tb_tipe_kamar');
         $result = $query->result();
 
-        $id_role = array('-Pilih-');
-        $nama_role = array('-Pilih-');
+        $id_tipe_kamar = array('-Pilih-');
+        $nama_tipe_kamar = array('-Pilih-');
 
         for ($i = 0; $i < count($result); $i++) {
-            array_push($id_role, $result[$i]->id_role);
-            array_push($nama_role, $result[$i]->nama_role);
+            array_push($id_tipe_kamar, $result[$i]->id_tipe_kamar);
+            array_push($nama_tipe_kamar, $result[$i]->nama_tipe_kamar);
         }
-        return array_combine($id_role, $nama_role);
+        return array_combine($id_tipe_kamar, $nama_tipe_kamar);
     }
 
     public function get($table, $data = null, $where = null)

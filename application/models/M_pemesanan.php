@@ -50,20 +50,51 @@
                 return (TRUE);
         }
 
-    public function dd_role()
+    public function dd_kamar()
     {
-        $query = $this->db->get('tb_role');
+        $query = $this->db->get('tb_kamar');
         $result = $query->result();
 
-        $id_role = array('-Pilih-');
-        $nama_role = array('-Pilih-');
+        $id_kamar = array('-Pilih-');
+        $nomor_kamar = array('-Pilih-');
 
         for ($i = 0; $i < count($result); $i++) {
-            array_push($id_role, $result[$i]->id_role);
-            array_push($nama_role, $result[$i]->nama_role);
+            array_push($id_kamar, $result[$i]->id_kamar);
+            array_push($nomor_kamar, $result[$i]->nomor_kamar);
         }
-        return array_combine($id_role, $nama_role);
+        return array_combine($id_kamar, $nomor_kamar);
     }
+
+    public function dd_status()
+    {
+        $query = $this->db->get('tb_status_pemesanan');
+        $result = $query->result();
+
+        $id_status_pemesanan = array('-Pilih-');
+        $status = array('-Pilih-');
+
+        for ($i = 0; $i < count($result); $i++) {
+            array_push($id_status_pemesanan, $result[$i]->id_status_pemesanan);
+            array_push($status, $result[$i]->status);
+        }
+        return array_combine($id_status_pemesanan, $status);
+    }
+
+    public function dd_tamu()
+    {
+        $query = $this->db->get('tb_tamu');
+        $result = $query->result();
+
+        $nik = array('-Pilih-');
+        $nama = array('-Pilih-');
+
+        for ($i = 0; $i < count($result); $i++) {
+            array_push($nik, $result[$i]->nik);
+            array_push($nama, $result[$i]->nama);
+        }
+        return array_combine($nik, $nama);
+    }
+
 
     public function get($table, $data = null, $where = null)
     {
