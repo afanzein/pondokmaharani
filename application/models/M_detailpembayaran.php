@@ -9,28 +9,28 @@
 
         public function dt_detail_pembayaran()
         {
-            $this->db->select('dp.id_detail_pembayaran, p.id_pemesanan, dp.item_pembayaran, dp.jumlah_pembayaran, dp.subtotal');
+            $this->db->select('dp.id_detail_pembayaran, dp.id_pembayaran, dp.item_pembayaran, dp.jumlah_pembayaran, dp.subtotal');
             $this->db->from('tb_detail_pembayaran dp');
-            $this->db->join('tb_pemesanan p', 'dp.id_pemesanan = p.id_pemesanan');
+            $this->db->join('tb_pembayaran p', 'dp.id_pembayaran = p.id_pembayaran');
             $query = $this->db->get();
             return $query->result_array();
         }
-        
+    
         public function dt_detail_pembayaran_insert()
         {
             $data = array(
-                'id_pemesanan' => $this->input->post('id_pemesanan'),
+                'id_pembayaran' => $this->input->post('id_pembayaran'),
                 'item_pembayaran' => $this->input->post('item_pembayaran'),
                 'jumlah_pembayaran' => $this->input->post('jumlah_pembayaran'),
                 'subtotal' => $this->input->post('subtotal')
             );
             return $this->db->insert('tb_detail_pembayaran', $data);
         }
-        
+    
         public function dt_detail_pembayaran_update($id)
         {
             $data = array(
-                'id_pemesanan' => $this->input->post('id_pemesanan'),
+                'id_pembayaran' => $this->input->post('id_pembayaran'),
                 'item_pembayaran' => $this->input->post('item_pembayaran'),
                 'jumlah_pembayaran' => $this->input->post('jumlah_pembayaran'),
                 'subtotal' => $this->input->post('subtotal')
@@ -48,19 +48,19 @@
             return (TRUE);
     }
 
-    public function dd_role()
+    public function dd_pembayaran()
     {
-        $query = $this->db->get('tb_role');
+        $query = $this->db->get('tb_pembayaran');
         $result = $query->result();
 
-        $id_role = array('-Pilih-');
-        $nama_role = array('-Pilih-');
+        $id_pembayaran = array('-Pilih-');
+        $tgl_pembayaran = array('-Pilih-');
 
         for ($i = 0; $i < count($result); $i++) {
-            array_push($id_role, $result[$i]->id_role);
-            array_push($nama_role, $result[$i]->nama_role);
+            array_push($id_pembayaran, $result[$i]->id_pembayaran);
+            array_push($tgl_pembayaran, $result[$i]->tgl_pembayaran);
         }
-        return array_combine($id_role, $nama_role);
+        return array_combine($id_pembayaran, $tgl_pembayaran);
     }
 
     public function get($table, $data = null, $where = null)
