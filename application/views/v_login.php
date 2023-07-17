@@ -51,7 +51,7 @@
      
         <form action="<?php echo base_url("login"); ?>" method="post">
           <div class="input-group mb-3">
-            <input type="text" name="USERNAME" class="form-control" placeholder="Username">
+            <input type="text" name="USERNAME" class="form-control" placeholder="Username or Email">
             <span class="badge badge-warning"><?php echo strip_tags(form_error('USERNAME')); ?></span>
             <div class="input-group-append">
               <div class="input-group-text">

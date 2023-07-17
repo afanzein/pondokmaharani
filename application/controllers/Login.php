@@ -18,19 +18,21 @@ class Login extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view("v_login", $data);
         } else {
-            $user = $this->M_login->cek_login();
+            $user = $this->M_login->cek_login(); // Use M_login model
 
             if ($user) {
                 $role = $user['id_role'];
+                $this->session->set_userdata('role', $role); // Set user role in session
+                
                 if ($role == 1 || $role == 2) {
-                    // Redirect to admin dashboard
+                    // Redirect manager or admin to dashboard
                     redirect(base_url("dashboard"));
                 } else if ($role == 3) {
-                    // Redirect to user page
+                    // Redirect user to user page
                     redirect(base_url("user"));
                 }
             } else {
-                $this->session->set_flashdata('message', 'Username atau password salah');
+                $this->session->set_flashdata('message', 'Username or Email or Password is incorrect');
                 $this->load->view("v_login", $data);
             }
         }       
@@ -38,6 +40,8 @@ class Login extends CI_Controller {
 
     public function logout()
     {
+        $this->session->unset_userdata('role'); // Remove user role from session
+        
         unset(
             $_SESSION['USERNAME'],
             $_SESSION['PASSWORD']
