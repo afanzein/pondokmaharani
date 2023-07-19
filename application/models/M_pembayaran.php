@@ -9,7 +9,7 @@
 
         public function dt_pembayaran()
         {
-            $this->db->select('p.id_pembayaran, p.id_pemesanan, p.tgl_pembayaran, p.total_pembayaran, p.status_pembayaran');
+            $this->db->select('p.id_pembayaran, p.id_pemesanan, p.tgl_pembayaran, p.status_pembayaran');
             $this->db->from('tb_pembayaran p');
             $this->db->join('tb_pemesanan pem', 'p.id_pemesanan = pem.id_pemesanan');
             $query = $this->db->get();
@@ -21,7 +21,6 @@
             $data = array(
                 'id_pemesanan' => $this->input->post('id_pemesanan'),
                 'tgl_pembayaran' => $this->input->post('tgl_pembayaran'),
-                'total_pembayaran' => $this->input->post('total_pembayaran'),
                 'status_pembayaran' => $this->input->post('status_pembayaran')
             );
             return $this->db->insert('tb_pembayaran', $data);
@@ -32,7 +31,6 @@
             $data = array(
                 'id_pemesanan' => $this->input->post('id_pemesanan'),
                 'tgl_pembayaran' => $this->input->post('tgl_pembayaran'),
-                'total_pembayaran' => $this->input->post('total_pembayaran'),
                 'status_pembayaran' => $this->input->post('status_pembayaran')
             );
             $this->db->where('id_pembayaran', $id);

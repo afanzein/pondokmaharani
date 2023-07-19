@@ -20,7 +20,6 @@
                             <th>Item Pembayaran</th>
                             <th>Jumlah Pembayaran</th>
                             <th>Subtotal</th>
-                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <?php foreach ($detail_pembayaran as $data) { ?>
@@ -29,10 +28,6 @@
                             <td><?php echo $data['item_pembayaran']; ?></td>
                             <td><?php echo $data['jumlah_pembayaran']; ?></td>
                             <td><?php echo $data['subtotal']; ?></td>
-                            <td>
-                                <a href="<?php echo base_url('detailpembayaran/detailpembayaran_update/') . $data['id_detail_pembayaran']; ?>"> <i class="fas fa-pencil-alt"></i> </a>
-                                <a href="<?php echo base_url('detailpembayaran/detailpembayaran_delete/') . $data['id_detail_pembayaran']; ?>" onclick="return confirm('Yakin menghapus detail pembayaran?');"><i class="fas fa-trash-alt"></i></a>
-                            </td>
                         </tr>
                     <?php } ?>
                 </table>

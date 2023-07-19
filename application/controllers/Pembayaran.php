@@ -23,7 +23,6 @@ class Pembayaran extends CI_Controller
 
         $this->form_validation->set_rules('id_pemesanan', 'ID Pemesanan', 'callback_dd_cek');
         $this->form_validation->set_rules('tgl_pembayaran', 'Tanggal Pembayaran', 'required');
-        $this->form_validation->set_rules('total_pembayaran', 'Total Pembayaran', 'required');
         $this->form_validation->set_rules('status_pembayaran', 'Status Pembayaran', 'callback_dd_cek');
 
         $data['ddpemesanan'] = $this->M_pembayaran->dd_pemesanan();
@@ -44,7 +43,6 @@ class Pembayaran extends CI_Controller
         
         $this->form_validation->set_rules('id_pemesanan', 'ID Pemesanan', 'callback_dd_cek');
         $this->form_validation->set_rules('tgl_pembayaran', 'Tanggal Pembayaran', 'required');
-        $this->form_validation->set_rules('total_pembayaran', 'Total Pembayaran', 'required');
         $this->form_validation->set_rules('status_pembayaran', 'Status Pembayaran', 'callback_dd_cek');
         
         $data['ddpemesanan'] = $this->M_pembayaran->dd_pemesanan();

@@ -22,7 +22,9 @@
               <th>NIK Tamu</th>
               <th>Jenis Kendaraan</th>
               <th>Plat Nomor</th>
+              <?php if ($this->session->userdata('role') == 1): ?>
               <th>Aksi</th>
+              <?php endif; ?>
             </tr>
           </thead>
           <tbody>
@@ -32,6 +34,7 @@
                 <td><?php echo $data['nik_tamu']; ?></td>
                 <td><?php echo $data['jenis_kendaraan']; ?></td>
                 <td><?php echo $data['plat_nomor']; ?></td>
+                <?php if ($this->session->userdata('role') == 1): ?>
                 <td>
                   <a href="<?php echo base_url('kendaraan/kendaraan_update/') . $data['id_kendaraan']; ?>">
                     <i class="fas fa-pencil-alt"></i>
@@ -40,6 +43,7 @@
                     <i class="fas fa-trash-alt"></i>
                   </a>
                 </td>
+                <?php endif; ?>
               </tr>
             <?php } ?>
           </tbody>

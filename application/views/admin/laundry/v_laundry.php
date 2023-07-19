@@ -24,9 +24,11 @@
                             <th>ID Pemesanan</th>
                             <th>Tanggal Pemesanan</th>
                             <th>Harga Satuan</th>
-                            <th>Jumlah <?php echo $title; ?></th>
+                            <th>Jumlah Berat (Kg)</th>
                             <th>Subtotal</th>
-                            <th>Action</th>
+                            <?php if ($this->session->userdata('role') == 1): ?>
+                            <th>Aksi</th>
+                            <?php endif; ?>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,10 +40,12 @@
                                 <td><?php echo $data['harga_satuan']; ?></td>
                                 <td><?php echo $data['jumlah_laundry']; ?></td>
                                 <td><?php echo $data['subtotal']; ?></td>
+                                <?php if ($this->session->userdata('role') == 1): ?>
                                 <td>
                                     <a href="<?php echo base_url('laundry/laundry_update/' . $data['id_laundry']); ?>" class="btn btn-sm btn-primary">Edit</a>
                                     <a href="<?php echo base_url('laundry/laundry_delete/' . $data['id_laundry']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this <?php echo $title; ?>?')">Delete</a>
                                 </td>
+                                <?php endif; ?>
                             </tr>
                         <?php } ?>
                     </tbody>

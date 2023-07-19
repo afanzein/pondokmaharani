@@ -38,14 +38,6 @@
             </div>
 
             <div class="form-group row">
-              <label for="total_pembayaran" class="col-sm-2 col-form-label">Total Pembayaran</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="total_pembayaran" id="total_pembayaran" placeholder="Masukkan Total Pembayaran">
-                <span class="badge badge-warning"><?php echo strip_tags(form_error('total_pembayaran')); ?></span>
-              </div>
-            </div>
-
-            <div class="form-group row">
               <label for="status_pembayaran" class="col-sm-2 col-form-label">Status Pembayaran</label>
               <div class="col-sm-10">
                 <select class="form-control" name="status_pembayaran" id="status_pembayaran">

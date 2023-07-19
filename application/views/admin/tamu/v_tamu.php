@@ -24,7 +24,9 @@
                   <th>No. Telp</th>
                   <th>alamat</th>
                   <th>ID Akun</th>
+                  <?php if ($this->session->userdata('role') == 1): ?>
                   <th>Aksi</th>
+                  <?php endif; ?>
                 </tr>
               </thead>
               <?php $i = 1;
@@ -37,10 +39,12 @@
                   <td><?php echo $data['no_telp'] ?></td>
                   <td><?php echo $data['alamat'] ?></td>
                   <td><?php echo $data['id_akun']?></td>
+                  <?php if ($this->session->userdata('role') == 1): ?>
                   <td>
                   <a href=<?php echo base_url("tamu/tamu_update/") . $data['nik_tamu']; ?>> <i class="fas fa-pencil-alt"></i> </a>
                   <a href=<?php echo base_url("tamu/tamu_delete/") . $data['nik_tamu']; ?> onclick="return confirm('Yakin menghapus staff: <?php echo $data['nama_tamu']; ?> ?');" ;><i class="fas fa-trash-alt"></i></a>
-                </td>
+                  </td>
+                  <?php endif; ?>
                 </tr>
               <?php
               }

@@ -24,7 +24,9 @@
                                 <th>Nomor Kamar</th>
                                 <th>Tipe Kamar</th>
                                 <th>Status Kamar</th>
-                                <th>Action</th>
+                                <?php if ($this->session->userdata('role') == 1): ?>
+                                <th>Aksi</th>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,10 +39,12 @@
                                     <td><?php echo $data['nomor_kamar']; ?></td>
                                     <td><?php echo $data['nama_tipe_kamar']; ?></td>
                                     <td><?php echo $data['status_kamar']; ?></td>
+                                    <?php if ($this->session->userdata('role') == 1): ?>
                                     <td>
                                         <a href="<?php echo base_url('kamar/kamar_update/' . $data['id_kamar']); ?>" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="<?php echo base_url('kamar/kamar_delete/' . $data['id_kamar']); ?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
+                                    <?php endif; ?>
                                 </tr>
                             <?php } ?>
                         </tbody>

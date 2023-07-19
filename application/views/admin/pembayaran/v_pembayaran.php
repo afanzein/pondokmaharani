@@ -19,9 +19,7 @@
               <th>ID Pembayaran</th>
               <th>ID Pemesanan</th>
               <th>Tanggal Pembayaran</th>
-              <th>Total Pembayaran</th>
               <th>Status Pembayaran</th>
-              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -30,12 +28,7 @@
                 <td><?php echo $data['id_pembayaran']; ?></td>
                 <td><?php echo $data['id_pemesanan']; ?></td>
                 <td><?php echo $data['tgl_pembayaran']; ?></td>
-                <td><?php echo $data['total_pembayaran']; ?></td>
                 <td><?php echo $data['status_pembayaran']; ?></td>
-                <td>
-                  <a href="<?php echo base_url('pembayaran/pembayaran_update/') . $data['id_pembayaran']; ?>"><i class="fas fa-pencil-alt"></i></a>
-                  <a href="<?php echo base_url('pembayaran/pembayaran_delete/') . $data['id_pembayaran']; ?>" onclick="return confirm('Yakin menghapus pembayaran dengan ID: <?php echo $data['id_pembayaran']; ?>?');"><i class="fas fa-trash-alt"></i></a>
-                </td>
               </tr>
             <?php } ?>
           </tbody>
