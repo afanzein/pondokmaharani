@@ -48,6 +48,22 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                    <label for="tgl_checkin" class="col-sm-2 col-form-label">Tanggal Check-In</label>
+                      <div class="col-sm-10">
+                        <input type="date" class="form-control" name="tgl_checkin" id="tgl_checkin" min="<?php echo date('Y-m-d'); ?>>
+                        <span class="badge badge-warning"><?php echo strip_tags(form_error('tgl_checkin')); ?></span>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                    <label for="tgl_checkout" class="col-sm-2 col-form-label">Tanggal Check-Out</label>
+                      <div class="col-sm-10">
+                        <input type="date" class="form-control" name="tgl_checkout" id="tgl_checkout" min="<?php echo date('Y-m-d'); ?>>
+                        <span class="badge badge-warning"><?php echo strip_tags(form_error('tgl_checkout')); ?></span>
+                      </div>
+                    </div>
+
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Simpan</button>
                     </div>

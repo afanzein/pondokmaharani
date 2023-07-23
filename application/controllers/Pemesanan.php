@@ -24,6 +24,18 @@ class Pemesanan extends CI_Controller{
         $this->form_validation->set_rules('nik_tamu', 'NIK Tamu', 'callback_dd_cek');
         $this->form_validation->set_rules('id_kamar', 'ID Kamar', 'callback_dd_cek');
         $this->form_validation->set_rules('id_status_pemesanan', 'ID Status Pemesanan', 'callback_dd_cek');
+        $this->form_validation->set_rules(
+            'tgl_checkin',
+            'Tanggal Check-In',
+            'required|callback_check_date_after_today',
+            array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-In tidak boleh sebelum tanggal sekarang.')
+        );
+        $this->form_validation->set_rules(
+            'tgl_checkout',
+            'Tanggal Check-Out',
+            'required|callback_check_date_after_today',
+            array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-Out tidak boleh sebelum tanggal sekarang.')
+        );
 
         $data['ddkamar'] = $this->M_pemesanan->dd_kamar();
         $data['ddtamu'] = $this->M_pemesanan->dd_tamu();
@@ -44,6 +56,18 @@ class Pemesanan extends CI_Controller{
         $this->form_validation->set_rules('nik_tamu', 'NIK Tamu', 'callback_dd_cek');
         $this->form_validation->set_rules('id_kamar', 'ID Kamar', 'callback_dd_cek');
         $this->form_validation->set_rules('id_status_pemesanan', 'ID Status Pemesanan', 'callback_dd_cek');
+        $this->form_validation->set_rules(
+            'tgl_checkin',
+            'Tanggal Check-In',
+            'required|callback_check_date_after_today',
+            array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-In tidak boleh sebelum tanggal sekarang.')
+        );
+        $this->form_validation->set_rules(
+            'tgl_checkout',
+            'Tanggal Check-Out',
+            'required|callback_check_date_after_today',
+            array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-Out tidak boleh sebelum tanggal sekarang.')
+        );
 
         $data['ddkamar'] = $this->M_pemesanan->dd_kamar();
         $data['ddtamu'] = $this->M_pemesanan->dd_tamu();
@@ -73,6 +97,18 @@ class Pemesanan extends CI_Controller{
         } else {
             return TRUE;
         }
+    }
+
+    public function check_date_after_today($date)
+    {
+        $selected_date = strtotime(date($date));
+        $current_date = strtotime(date('Y-m-d'));
+
+        if ($selected_date < $current_date) {
+            return false;
+        }
+
+        return true;
     }
 }
 ?>

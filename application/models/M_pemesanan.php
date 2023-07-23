@@ -16,17 +16,52 @@
             $this->db->join('tb_status_pemesanan s', 'p.id_pemesanan = s.id_pemesanan');
             $query = $this->db->get();
             return $query->result_array();
-        }
+        }            
         
         public function dt_pemesanan_insert()
         {
-            $data = array(
-                'tgl_pemesanan' => $this->input->post('tgl_pemesanan'),
-                'nik_tamu' => $this->input->post('nik_tamu'),
-                'id_kamar' => $this->input->post('id_kamar')
-            );
-            return $this->db->insert('tb_pemesanan', $data);
+            // Assuming you have received the form data and stored it in variables
+            $tgl_pemesanan = $this->input->post('tgl_pemesanan');
+            $nik_tamu = $this->input->post('nik_tamu');
+            $id_kamar = $this->input->post('id_kamar');
+            $tgl_checkin = $this->input->post('tgl_checkin');
+            $tgl_checkout = $this->input->post('tgl_checkout');
+            try {
+                // Step 1: Insert reservation details into tb_pemesanan table
+                $data_pemesanan = array(
+                    'tgl_pemesanan' => $tgl_pemesanan,
+                    'nik_tamu' => $nik_tamu,
+                    'id_kamar' => $id_kamar
+                );
+                $this->db->insert('tb_pemesanan', $data_pemesanan);
+
+                // Success: Reservation details inserted into tb_pemesanan
+        
+                // Step 2: Retrieve the generated id_pemesanan
+                $generated_id = $this->db->insert_id();
+
+                // Step 3: If tb_pemesanan insertion is successful, then insert check-in and check-out details into tb_checkinout table
+                if ($generated_id) {
+                    $data_checkinout = array(
+                        'id_pemesanan' => $generated_id,
+                        'tgl_checkin' => $tgl_checkin,
+                        'tgl_checkout' => $tgl_checkout
+                    );
+                    $this->db->insert('tb_checkinout', $data_checkinout);
+
+                    // Success: Check-in and check-out details inserted into tb_checkinout
+                    // Perform any further actions or display a success message
+                } else {
+                    // Handle the case where tb_pemesanan insertion fails
+                    // You can raise an error, log a message, or perform any other action as needed.
+                    // For example:
+                    throw new Exception("Failed to insert data into tb_pemesanan");
+                }
+            } catch (Exception $e) {
+                // Handle the error or display an error message
+            }
         }
+        
         
         public function dt_pemesanan_update($id)
         {
@@ -50,6 +85,7 @@
 
     public function dd_kamar()
     {
+        $this->db->where('status_kamar !=', 'Tidak Tersedia');
         $query = $this->db->get('tb_kamar');
         $result = $query->result();
 
