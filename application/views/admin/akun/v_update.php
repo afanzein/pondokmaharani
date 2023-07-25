@@ -42,7 +42,7 @@
                 <div class="form-group row">
                   <label for="password" class="col-sm-2 col-form-label">Password</label>
                   <div class="col-sm-10">
-                    <input type="password" class="form-control" name="password" id="password" value="<?php echo set_value('password',$d['password']); ?>" placeholder="Masukkan Password">
+                    <input type="text" class="form-control" name="password" id="password" value="<?php echo set_value('password',$d['password']); ?>" placeholder="Masukkan Password">
                     <span class="badge badge-warning"><?php echo strip_tags(form_error('password')); ?></span>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
                   <button type="submit" class="btn btn-info">Simpan</button>
                 </div>
               </form>
-    
+
             </div>
           </div>
         </section>

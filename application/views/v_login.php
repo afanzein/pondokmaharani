@@ -1,96 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sign-In Pondok Maharani</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Pendaftaran</title>
+  <!-- Load Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Load custom CSS -->
+<style>
+	/* ... */
+body {
+  background-color: #f8f9fa;
+}
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/dist/css/adminlte.css">
-  <style>
-    .login-page {
-      /* background-image: url("<?php echo base_url(); ?>assets/img/bg_Simawar.jpg"); */
-      background: linear-gradient(#b6d7a8, #343a40);  
-      background-position: center center;
-      background-size: cover;
-      background-attachment: fixed;
-    }
-    .login-logo img {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 150px;
+  height: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  width: 100%;
+}
+
+#loginForm .btn-primary {
+  width: 100%;
+}
+
+.has-error .form-control {
+  border-color: #dc3545;
+}
+
+.error-msg {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+}
+/* ... */
+
+</style>
 </head>
-
-<body class="hold-transition login-page">
-  <div class="login-box">
-    <div class="card">
-      <div class="card-body p-lg-5 p-0">
-        <div class="login-logo">
-          <img src="<?php echo base_url(); ?>assets/img/mainlogo.png">
-          <span class="text-warning"><b></b></a></span>
+<body>
+ <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" alt="Logo Perusahaan" class="logo-img">
+            <h2 class="card-title mb-4">Halaman Login</h2>
+            <form id="loginForm" action="<?php echo base_url("login"); ?>" method="post">
+              <div class="form-group">
+                <label for="username">Username atau Email</label>
+                <input type="text" name="USERNAME" id="username" class="form-control" placeholder="Username or Email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="PASSWORD" id="password" class="form-control" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="mt-3">Belum memiliki akun? <a href="<?php echo base_url("daftar"); ?>">Daftar</a></p>
+          </div>
         </div>
-        <!-- /.login-logo -->
-        <p class="login-box-msg">Silahkan Login Disini</p>
-        <?php if($this->session->flashdata('message')) { ?> 
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              <span class="sr-only">Close</span>
-            </button>
-            <?= $this->session->flashdata('message');?>
-          </div>
-        <?php } ?>
-     
-        <form action="<?php echo base_url("login"); ?>" method="post">
-          <div class="input-group mb-3">
-            <input type="text" name="USERNAME" class="form-control" placeholder="Username or Email">
-            <span class="badge badge-warning"><?php echo strip_tags(form_error('USERNAME')); ?></span>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-user"></span>
-              </div>
-            </div>
-          </div>
-                  
-          <div class="input-group mb-3">
-            <input type="password" name="PASSWORD" class="form-control" placeholder="Password">
-            <span class="badge badge-warning"><?php echo strip_tags(form_error('PASSWORD')); ?></span>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <button type="submit" class="btn btn-primary btn-block">Login</button>
-            </div>
-            <!-- /.col -->
-            <div class="col-6">
-              <a href="<?php echo base_url("signup"); ?>" class="btn btn-secondary btn-block">Sign Up</a>
-            </div>
-          </div>
-        </form>
       </div>
-      <!-- /.login-card-body -->
     </div>
   </div>
-  <!-- /.login-box -->
 
-  <!-- jQuery -->
-  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="<?php echo base_url(); ?>assets/adminlte/dist/js/adminlte.min.js"></script>
+  <!-- Load Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Load custom JavaScript -->
+  <script>
+    $(document).ready(function() {
+  // Validasi form login
+  $("#loginForm").submit(function(event) {
+
+    // Reset pesan error
+    $(".form-group").removeClass("has-error");
+    $(".error-msg").remove();
+
+    // Ambil nilai input
+    var usernameOrEmail = $("#username").val();
+    var password = $("#password").val();
+
+    // Lakukan validasi sederhana
+    if (usernameOrEmail.trim() === "") {
+      showError($("#username"), "Username atau Email tidak boleh kosong.");
+    }
+
+    if (password.trim() === "") {
+      showError($("#password"), "Password tidak boleh kosong.");
+    }
+
+    // Jika tidak ada error, simulasi proses login (pada aplikasi nyata, kirim data ke server)
+    if ($(".error-msg").length === 0) {
+      // Simulasi proses login
+      setTimeout(function() {
+        loginSuccess();
+      }, 3000);
+    }
+  });
+
+  // Fungsi untuk menampilkan pesan error
+  function showError(input, message) {
+    input.closest(".form-group").addClass("has-error");
+    input.after('<div class="error-msg">' + message + '</div>');
+  }
+
+  // Fungsi untuk menampilkan pesan sukses setelah login
+  function loginSuccess() {
+    $("#loginForm").hide();
+    $(".card-body").append('<div class="alert alert-success mt-3">Login berhasil!</div>');
+  }
+});
+
+  </script>
+
 </body>
-
 </html>

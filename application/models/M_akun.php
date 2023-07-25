@@ -22,7 +22,7 @@
         $data = array(
             'email' => $this->input->post('email'),
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'password' => $this->encrypt_password($this->input->post('password')),
             'id_role' => $this->input->post('id_role')
         );
         return $this->db->insert('tb_akun', $data);
@@ -33,11 +33,30 @@
         $data = array(
             'email' => $this->input->post('email'),
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'password' => $this->encrypt_password($this->input->post('password')),
             'id_role' => $this->input->post('id_role')
         );
         $this->db->where('id_akun', $id);
         return $this->db->update('tb_akun', $data);
+    }
+
+    public function daftar_user()
+    {
+        $data = array(
+            'email' => $this->input->post('email'),
+            'username' => $this->input->post('username'),
+            'password' => $this->encrypt_password($this->input->post('password')),
+            'id_role' => 3
+        );
+        return $this->db->insert('tb_akun', $data);
+    }
+
+    public function encrypt_password($password)
+    {
+        // Lakukan enkripsi password di sini (contoh: menggunakan password_hash() untuk hashing)
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+        return $hashed_password;
     }
 
     function hapus_data($tabel, $kolom, $id)  

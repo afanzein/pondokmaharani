@@ -16,24 +16,24 @@ class Login extends CI_Controller {
         $this->form_validation->set_rules('PASSWORD', 'PASSWORD', 'required', array('required'=>'Password tidak boleh kosong!'));
         
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view("v_login", $data);
+            $this->load->view("v_login2", $data);
         } else {
             $user = $this->M_login->cek_login(); // Use M_login model
 
             if ($user) {
                 $role = $user['id_role'];
                 $this->session->set_userdata('role', $role); // Set user role in session
-                
+                $id_akun = $this->session->userdata('id_akun');
+                $username = $this->session->userdata('username');
                 if ($role == 1 || $role == 2) {
                     // Redirect manager or admin to dashboard
                     redirect(base_url("dashboard"));
                 } else if ($role == 3) {
                     // Redirect user to user page
-                    redirect(base_url("user"));
+                    redirect(base_url("landing"));
                 }
             } else {
-                $this->session->set_flashdata('message', 'Username or Email or Password is incorrect');
-                $this->load->view("v_login", $data);
+                $this->load->view("v_login2", $data);
             }
         }       
     }
@@ -47,6 +47,6 @@ class Login extends CI_Controller {
             $_SESSION['PASSWORD']
         );  
         $data['pesan'] = 'Logout Sukses';
-        $this->load->view("v_login", $data);
+        $this->load->view("v_login2", $data);
     }
 }

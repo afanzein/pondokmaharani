@@ -1,0 +1,249 @@
+/* Custom CSS for sticky navbar */
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Add a background color to the navbar when it's sticky */
+  .sticky-top.navbar {
+    background-color: #333; /* Change this to your desired background color */
+  }
+
+    /* Custom CSS for the main content wrapper */
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding-top: 20px; /* Optional padding for top */
+    }
+
+    /* Custom CSS for the main content */
+    main {
+      flex: 1;
+    }
+
+    /* Custom CSS for footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+
+
+  /* Custom CSS for facilities section */
+#facilities .facility-item {
+    margin-bottom: 30px;
+  }
+  
+  #facilities img {
+    max-width: 100%;
+  }
+  
+  /* Custom CSS for product card section */
+  #products .card {
+    height: 100%;
+  }
+  
+  #products .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+/* Custom CSS for the carousel */
+#home {
+    height: 500px; /* Set the desired height for the carousel banner */
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+/*==================================*/
+/* Custom CSS for Reservation Page */
+
+        .slide-container {
+            position: relative;
+            margin: 15px 0 20px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .slide-text {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+		.date-input {
+        justify-content: space-between;
+        }
+        
+        .date-input label {
+            flex: 0 0 30%; /* Adjust the width as needed */
+            text-align: left;
+            margin-right: 10px;
+        }
+
+        .date-input input[type="date"] {
+            flex: 1;
+            padding: 8px;
+            min-width: 150px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .thumbnail {
+            flex: 0 0 19%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0 1%;
+            cursor: pointer;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .detail-text{
+        margin : 15px 0 20px 0;
+        border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+        }
+        
+                .submit-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+                .centered-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+/* CSS for Pembayaran Page */
+.data-pembayaran {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.data-pembayaran h2 {
+    margin-bottom: 15px;
+}
+
+.detail-pembayaran {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.detail-pembayaran .accordion-button {
+    background-color: #f8f9fa;
+    color: #007bff;
+    border: none;
+}
+
+.detail-pembayaran .accordion-button:not(.collapsed) {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.detail-pembayaran .accordion-body {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+}
+
+.detail-pembayaran .accordion-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lanjutkan-button {
+    text-align: center;
+}
+
+/*CSS untuk halaman Bayar*/
+.pembayaran {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.pembayaran h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.pembayaran .detail-pembayaran {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.pembayaran .detail-pembayaran ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.pembayaran .detail-pembayaran .arrow-icon {
+    float: right;
+    font-size: 18px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.pembayaran .detail-pembayaran.show {
+    display: block;
+}
+
+.pembayaran .detail-pembayaran.show .arrow-icon {
+    transform: rotate(90deg);
+}
+
+.lanjutkan-button {
+    text-align: center;
+}
+
+.pembayaran p {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pembayaran .detail-pembayaran li {
+    margin-bottom: 8px;
+}
+
+.pembayaran .label {
+    min-width: 200px;
+}
