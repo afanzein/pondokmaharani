@@ -16,7 +16,7 @@ class Login extends CI_Controller {
         $this->form_validation->set_rules('PASSWORD', 'PASSWORD', 'required', array('required'=>'Password tidak boleh kosong!'));
         
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view("v_login2", $data);
+            $this->load->view("v_login", $data);
         } else {
             $user = $this->M_login->cek_login(); // Use M_login model
 
@@ -33,7 +33,7 @@ class Login extends CI_Controller {
                     redirect(base_url("landing"));
                 }
             } else {
-                $this->load->view("v_login2", $data);
+                $this->load->view("v_login", $data);
             }
         }       
     }
@@ -47,6 +47,6 @@ class Login extends CI_Controller {
             $_SESSION['PASSWORD']
         );  
         $data['pesan'] = 'Logout Sukses';
-        $this->load->view("v_login2", $data);
+        $this->load->view("v_login", $data);
     }
 }

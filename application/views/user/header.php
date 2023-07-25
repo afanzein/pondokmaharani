@@ -35,6 +35,19 @@
             <a class="nav-link" href="#about">About Us</a>
           </li>
           <!-- Add more navigation items as needed -->
+          <!-- Login -->
+          <li class="nav-item" id="login-btn">
+          <a class="nav-link" href="#" onclick="showLoginForm()">Login</a>
+        </li>
+        <li class="nav-item" id="user-dropdown" style="display: none;">
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdownMenu" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Username</a>
+          <div class="dropdown-menu" aria-labelledby="userDropdownMenu">
+            <a class="dropdown-item" href="#">Profil</a>
+            <a class="dropdown-item" href="#">Pemesanan</a>
+            <a class="dropdown-item" href="#">Pembayaran</a>
+          </div>
+        </li>
         </ul>
       </div>
     </nav>

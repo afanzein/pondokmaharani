@@ -34,6 +34,26 @@
   // Add an event listener for scroll
   window.addEventListener('scroll', toggleStickyNavbar);
 
+  //==========================================
+  // Header-Login
+    // Set the JavaScript variables using PHP
+    var isLoggedIn = <?php echo $this->session->userdata('role') ? 'true' : 'false'; ?>;
+    var username = '<?php echo $this->session->userdata('username'); ?>';
+
+    // Your function to show the user dropdown
+    function showUserDropdown() {
+      document.getElementById('userDropdownMenu').innerText = username;
+      document.getElementById('login-btn').style.display = 'none';
+      document.getElementById('user-dropdown').style.display = 'block';
+    }
+
+    // Check if the user is logged in and show the user dropdown if necessary
+    if (isLoggedIn) {
+      showUserDropdown();
+    }
+
+  //==================================================
+  //Halaman User
   //Custom JavaScript for carousel -
   $(document).ready(function () {
     // Initialize the carousel
