@@ -23,8 +23,9 @@ class Login extends CI_Controller {
             if ($user) {
                 $role = $user['id_role'];
                 $this->session->set_userdata('role', $role); // Set user role in session
-                $id_akun = $this->session->userdata('id_akun');
-                $username = $this->session->userdata('username');
+                $id_akun = $this->session->userdata('id_akun',$user['id_akun']);
+                $username = $this->session->userdata('username',$user['username']);
+                $email = $this->session->userdata('email',$user['email']);
                 if ($role == 1 || $role == 2) {
                     // Redirect manager or admin to dashboard
                     redirect(base_url("dashboard"));
@@ -41,7 +42,10 @@ class Login extends CI_Controller {
     public function logout()
     {
         $this->session->unset_userdata('role'); // Remove user role from session
-        
+        $this->session->unset_userdata('id_akun');
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('email');
+
         unset(
             $_SESSION['USERNAME'],
             $_SESSION['PASSWORD']

@@ -16,6 +16,7 @@
 
 <body>
   <!-- Header Section -->
+  
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Pondok Maharani</a>
@@ -25,11 +26,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#Home">Home</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#pricing">Pricing</a>
+            <a class="nav-link" href="#facilities">Fasilitas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Reservation</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About Us</a>
@@ -37,15 +41,15 @@
           <!-- Add more navigation items as needed -->
           <!-- Login -->
           <li class="nav-item" id="login-btn">
-          <a class="nav-link" href="#" onclick="showLoginForm()">Login</a>
+          <a class="nav-link" href="<?php base_url('login') ?>" >Login</a>
         </li>
         <li class="nav-item" id="user-dropdown" style="display: none;">
-          <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdownMenu" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Username</a>
+          <a class="nav-link dropdown-toggle" href="" role="button" id="userDropdownMenu" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('username'); ?></a>
           <div class="dropdown-menu" aria-labelledby="userDropdownMenu">
-            <a class="dropdown-item" href="#">Profil</a>
-            <a class="dropdown-item" href="#">Pemesanan</a>
-            <a class="dropdown-item" href="#">Pembayaran</a>
+            <a class="dropdown-item" href="">Profil</a>
+            <a class="dropdown-item" href="">Pemesanan</a>
+            <a class="dropdown-item" href="">Pembayaran</a>
           </div>
         </li>
         </ul>

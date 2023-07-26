@@ -8,13 +8,27 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="path/to/image1.jpg" class="d-block w-100" alt="Image 1">
+          <img src="<?php echo base_url(); ?>assets/img/carousel-1.jpg" class="d-block w-100" alt="Image 1">
+          <div class="carousel-caption">
+          <h1>Selamat Datang di Pondok Maharani Syariah</h1>
+          <p>Pondok Maharani merupakan layanan penyedia hotel dan kost syariah.
+            Harap bagi pasangan membawa kartu nikah atau keluarga sebagai bukti.
+          </p>
+        </div>
         </div>
         <div class="carousel-item">
-          <img src="path/to/image2.jpg" class="d-block w-100" alt="Image 2">
+          <img src="<?php echo base_url(); ?>assets/img/carousel-2.jpg" class="d-block w-100" alt="Image 2">
+          <div class="carousel-caption">
+          <h1>Welcome to Our Website</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
         </div>
         <div class="carousel-item">
-          <img src="path/to/image3.jpg" class="d-block w-100" alt="Image 3">
+          <img src="<?php echo base_url(); ?>assets/img/carousel-3.jpg" class="d-block w-100" alt="Image 3">
+          <div class="carousel-caption">
+          <h1>Welcome to Our Website</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -28,39 +42,60 @@
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section id="pricing" class="bg-light py-5">
+  <!-- Facilities Section -->
+  <section id="facilities" class="py-5">
+    <div class="container">
+        <h1>Fasilitas Pondok Maharani</h1>
+      <div class="row">
+        <div class="col-md-6 order-md-1 order-2">
+          <!-- Facility Item 1 -->
+          <div class="facility-item">
+            <img src="<?php echo base_url(); ?>assets/img/fasilitas-outdoor.jpg" alt="Facility 1">
+            <h4>Ruang Outdoor</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <!-- Facility Item 2 -->
+          <div class="facility-item">
+            <img src="<?php echo base_url(); ?>assets/img/fasilitas-laundry.jpg" alt="Facility 2">
+            <h4>Layanan Laundry</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="col-md-6 order-md-2 order-1">
+          <!-- Facility Item 3 -->
+          <div class="facility-item">
+            <img src="<?php echo base_url(); ?>assets/img/fasilitas-dapur-umum.jpg" alt="Facility 3">
+            <h4>Dapur Bersama</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <!-- Facility Item 4 -->
+          <div class="facility-item">
+            <img src="<?php echo base_url(); ?>assets/img/fasilitas-mushola.jpg" alt="Facility 4">
+            <h4>Mushola</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Card Section -->
+  <section id="products" class="bg-light py-5">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 mb-4">
-          <div class="card">
-            <img src="path/to/price_img1.jpg" class="card-img-top" alt="Pricing 1">
-            <div class="card-body">
-              <h5 class="card-title">Plan 1</h5>
-              <p class="card-text">Description of Plan 1</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card">
-            <img src="path/to/price_img2.jpg" class="card-img-top" alt="Pricing 2">
-            <div class="card-body">
-              <h5 class="card-title">Plan 2</h5>
-              <p class="card-text">Description of Plan 2</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card">
-            <img src="path/to/price_img3.jpg" class="card-img-top" alt="Pricing 3">
-            <div class="card-body">
-              <h5 class="card-title">Plan 3</h5>
-              <p class="card-text">Description of Plan 3</p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-          </div>
+      <?php foreach ($products as $data): ?>
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="path/to/<?php echo $data['nama_foto']; ?>" class="card-img-top" alt="<?php echo $data['nama_tipe_kamar']; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $data['nama_tipe_kamar']; ?></h5>
+                            <p class="card-text"><?php echo $data['fasilitas']; ?></p>
+                            <!-- Tambahkan link "Buy Now" dengan query parameter id_tipe_kamar -->
+                            <a href="<?php echo site_url('product/buyProduct').'?id_tipe_kamar='.$data['id_tipe_kamar']; ?>" class="btn btn-primary">Pesan Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
       </div>
     </div>
@@ -78,7 +113,7 @@
         </div>
         <div class="col-md-6">
           <!-- Add an image here for About Us section -->
-          <img src="path/to/about_us_img.jpg" class="img-fluid" alt="About Us Image">
+          <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" class="img-fluid" alt="About Us Image">
         </div>
       </div>
     </div>

@@ -20,16 +20,18 @@
   <!-- Bootstrap 4 -->
   <script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Custom JavaScript -->
+<script src="<?php echo base_url(); ?>assets/js/user.js"></script>
 <script>
-  
   // Function to add/remove the "sticky" class to the navbar
   function toggleStickyNavbar() {
     var navbar = document.querySelector('.navbar');
+    if (navbar !== null) {
     if (window.pageYOffset >= navbar.offsetTop) {
       navbar.classList.add('sticky-top');
     } else {
       navbar.classList.remove('sticky-top');
-    }
+     }
+    }   
   }
   // Add an event listener for scroll
   window.addEventListener('scroll', toggleStickyNavbar);
@@ -37,12 +39,11 @@
   //==========================================
   // Header-Login
     // Set the JavaScript variables using PHP
-    var isLoggedIn = <?php echo $this->session->userdata('role') ? 'true' : 'false'; ?>;
+    var isLoggedIn = '<?php echo $this->session->userdata('role') ? 'true' : 'false'; ?>';
     var username = '<?php echo $this->session->userdata('username'); ?>';
-
     // Your function to show the user dropdown
     function showUserDropdown() {
-      document.getElementById('userDropdownMenu').innerText = username;
+      document.getElementById('userDropdownMenu').textContent = username;
       document.getElementById('login-btn').style.display = 'none';
       document.getElementById('user-dropdown').style.display = 'block';
     }
@@ -51,69 +52,6 @@
     if (isLoggedIn) {
       showUserDropdown();
     }
-
-  //==================================================
-  //Halaman User
-  //Custom JavaScript for carousel -
-  $(document).ready(function () {
-    // Initialize the carousel
-    $("#carouselExampleIndicators").carousel();
-
-    // Enable the left and right arrows for sliding the carousel
-    $(".carousel-control-prev").click(function () {
-      $("#carouselExampleIndicators").carousel("prev");
-    });
-
-    $(".carousel-control-next").click(function () {
-      $("#carouselExampleIndicators").carousel("next");
-    });
-  });
-
-  // Adjust carousel height on window resize
-  $(window).resize(function () {
-    var carouselHeight = $("#home").height();
-    $(".carousel-item").height(carouselHeight);
-  });
-
-  //========================================
-  //JS for Reservation Page
-  var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("thumbnail");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].style.borderColor = "#ddd";
-            }
-            x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].style.borderColor = "black";
-        }
-
-        //JS untuk halaman Bayar
-        document.addEventListener("DOMContentLoaded", function() {
-            const toggleDetail = document.querySelector(".toggle-detail");
-            const detailPembayaran = document.querySelector(".detail-pembayaran");
-
-            toggleDetail.addEventListener("click", function() {
-                detailPembayaran.classList.toggle("show");
-            });
-        });
-
 </script>
 
 </html>
