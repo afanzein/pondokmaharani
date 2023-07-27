@@ -21,8 +21,7 @@ class Fotokamar extends CI_Controller {
     $data['title'] = 'Tambah Foto Kamar';
 
     $this->form_validation->set_rules('id_tipe_kamar', 'Tipe Kamar', 'callback_dd_cek');
-    $this->form_validation->set_rules('deskripsi_foto', 'Deskripsi Foto', 'required');
-    $this->form_validation->set_rules('foto[]', 'Foto', 'callback_check_file_upload');
+    // $this->form_validation->set_rules('foto[]', 'Pilih Foto', 'callback_check_file_upload');
 
     $data['ddtipekamar'] = $this->M_fotokamar->dd_tipekamar();
 
@@ -32,16 +31,19 @@ class Fotokamar extends CI_Controller {
         $this->load->view('admin/footer');
     } else {
         $id_tipe_kamar = $this->input->post('id_tipe_kamar');
-        $deskripsi_foto = $this->input->post('deskripsi_foto');
 
         // Upload images
         $image_data = $this->upload_images();
 
         // Insert foto_kamar records
         foreach ($image_data as $image) {
-            $this->M_fotokamar->dt_foto_kamar_insert($id_tipe_kamar, $image['file_name'], $deskripsi_foto);
+            $this->M_fotokamar->dt_foto_kamar_insert($id_tipe_kamar,$image['file_name']);
+            echo '<pre>';
+            print_r($image_data);
+            echo '</pre>';
         }
 
+            // Debugging: Display uploaded files information
         redirect(base_url('fotokamar'));
     }
 }
@@ -52,7 +54,6 @@ class Fotokamar extends CI_Controller {
         $data['title'] = 'Update Foto Kamar';
 
         $this->form_validation->set_rules('id_tipe_kamar', 'Tipe Kamar', 'callback_dd_cek');
-        $this->form_validation->set_rules('deskripsi_foto', 'Deskripsi Foto', 'required');
         
         $data['d'] = $this->M_fotokamar->get('tb_foto_kamar', null, array('id_foto' => $id));
         $data['ddtipekamar'] = $this->M_fotokamar->dd_tipekamar();
@@ -71,11 +72,11 @@ class Fotokamar extends CI_Controller {
                 // New images are uploaded, update all images for the given ID
                 $this->M_fotokamar->delete_images($id);
                 foreach ($image_data as $image) {
-                    $this->M_fotokamar->dt_foto_kamar_insert($id_tipe_kamar, $image['file_name'], $deskripsi_foto);
+                    $this->M_fotokamar->dt_foto_kamar_insert($id_tipe_kamar, $image['file_name']);
                 }
             } else {
                 // No new images are uploaded, update other fields without modifying images
-                $this->M_fotokamar->dt_foto_kamar_update($id_tipe_kamar,$nama_foto, $deskripsi_foto);
+                $this->M_fotokamar->dt_foto_kamar_update($id_tipe_kamar,$image['file_name']);
             }
 
             redirect(base_url('fotokamar'));
@@ -92,7 +93,7 @@ class Fotokamar extends CI_Controller {
         $this->load->library('upload', $config);
 
         $uploaded_images = [];
-        $files = $_FILES['images'];
+        $files = $_FILES['foto'];
 
         // Check if files were uploaded
         if (!empty($files['name'][0])) {
@@ -109,6 +110,9 @@ class Fotokamar extends CI_Controller {
                 // Upload the file
                 if ($this->upload->do_upload('image')) {
                     $uploaded_images[] = $this->upload->data();
+                }else{
+                    // Debugging: Display upload error
+                echo 'Upload Error: ' . $this->upload->display_errors() . '<br>';
                 }
             }
         }
@@ -131,7 +135,11 @@ class Fotokamar extends CI_Controller {
     if (empty($files['name'][0])) {
         $this->form_validation->set_message('check_file_upload', 'Gambar harus diupload minimal 1 file.');
         return FALSE;
+        echo '<pre>';
+        print_r($files);
+        echo '</pre>';
     }
+        // Debugging: Display uploaded files information
     return TRUE;
 }
 

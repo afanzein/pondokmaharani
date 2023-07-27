@@ -3,7 +3,6 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1><?php echo  $title; ?></h1>
           </div>
         </div>
       </div>
@@ -46,7 +45,6 @@
         </div>
 
         <div class="card-body">
-          <h2>Info</h2>
           <p>Selamat datang di halaman admin khusus web hotel kami! Halaman ini dirancang khusus 
             untuk para admin dengan tujuan memberikan akses dan kontrol penuh dalam mengelola berbagai 
             aspek operasional hotel. Anda dapat dengan mudah mengatur reservasi, ketersediaan kamar, 

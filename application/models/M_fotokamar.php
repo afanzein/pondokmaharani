@@ -9,28 +9,26 @@
 
             public function dt_foto_kamar()
     {
-        $this->db->select('fk.id_foto, tk.nama_tipe_kamar, fk.nama_foto, fk.deskripsi_foto');
+        $this->db->select('fk.id_foto,fk.id_tipe_kamar, tk.nama_tipe_kamar, fk.deskripsi_foto');
         $this->db->from('tb_foto_kamar fk');
         $this->db->join('tb_tipe_kamar tk', 'fk.id_tipe_kamar = tk.id_tipe_kamar');
         $query = $this->db->get();
         return $query->result_array();
     }
 
-    public function dt_foto_kamar_insert($id_tipe_kamar, $nama_foto, $deskripsi_foto)
+    public function dt_foto_kamar_insert($id_tipe_kamar,$deskripsi_foto)
     {
         $data = array(
             'id_tipe_kamar' => $id_tipe_kamar,
-            'nama_foto' => $nama_foto,
             'deskripsi_foto' => $deskripsi_foto
         );
         return $this->db->insert('tb_foto_kamar', $data);
     }
 
-    public function dt_foto_kamar_update($id, $id_tipe_kamar, $nama_foto, $deskripsi_foto)
+    public function dt_foto_kamar_update($id, $id_tipe_kamar, $deskripsi_foto)
     {
         $data = array(
             'id_tipe_kamar' => $id_tipe_kamar,
-            'nama_foto' => $nama_foto,
             'deskripsi_foto' => $deskripsi_foto
         );
         $this->db->where('id_foto', $id);

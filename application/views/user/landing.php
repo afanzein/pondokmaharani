@@ -10,7 +10,7 @@
         <div class="carousel-item active">
           <img src="<?php echo base_url(); ?>assets/img/carousel-1.jpg" class="d-block w-100" alt="Image 1">
           <div class="carousel-caption">
-          <h1>Selamat Datang di Pondok Maharani Syariah</h1>
+          <h1>Selamat Datang di <br>Pondok Maharani Syariah</h1>
           <p>Pondok Maharani merupakan layanan penyedia hotel dan kost syariah.
             Harap bagi pasangan membawa kartu nikah atau keluarga sebagai bukti.
           </p>
@@ -79,27 +79,44 @@
     </div>
   </section>
 
-  <!-- Product Card Section -->
-  <section id="products" class="bg-light py-5">
+<!-- Product Card Section -->
+<section id="products" class="bg-light py-5">
     <div class="container">
-      <div class="row">
-      <?php foreach ($products as $data): ?>
+        <div class="row">
+        <?php 
+                $processed_ids = array(); // Array sementara untuk menyimpan id_tipe_kamar yang sudah diproses
+                foreach ($products as $product):
+            ?>
+                <?php 
+                    // Cek apakah id_tipe_kamar sudah diproses atau belum
+                    if (!in_array($product['id_tipe_kamar'], $processed_ids)):
+                        $processed_ids[] = $product['id_tipe_kamar']; // Tandai id_tipe_kamar sebagai sudah diproses
+                ?>
                 <div class="col-lg-4 mb-4">
                     <div class="card">
-                        <img src="path/to/<?php echo $data['nama_foto']; ?>" class="card-img-top" alt="<?php echo $data['nama_tipe_kamar']; ?>">
+                        <div class="card-img-slider slider-products" data-id="<?php echo $product['id_tipe_kamar']; ?>">
+                            <?php foreach ($product['images'] as $image): ?>
+                                <div>
+                                    <img src="uploads/foto_kamar/<?php echo $image['deskripsi_foto']; ?>" alt="<?php echo $product['nama_tipe_kamar']; ?>">
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $data['nama_tipe_kamar']; ?></h5>
-                            <p class="card-text"><?php echo $data['fasilitas']; ?></p>
+                            <h5 class="card-title"><?php echo $product['nama_tipe_kamar']; ?></h5>
+                            <p class="card-text"><?php echo $product['fasilitas']; ?></p>
                             <!-- Tambahkan link "Buy Now" dengan query parameter id_tipe_kamar -->
-                            <a href="<?php echo site_url('product/buyProduct').'?id_tipe_kamar='.$data['id_tipe_kamar']; ?>" class="btn btn-primary">Pesan Sekarang</a>
+                            <a href="<?php echo site_url('Reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-primary">Pesan Sekarang</a>
                         </div>
                     </div>
-                </div>
+                </div> 
+                <?php endif; ?> 
             <?php endforeach; ?>
         </div>
-      </div>
     </div>
-  </section>
+</section>
+
+
+
 
   <!-- About Us Section -->
   <section id="about" class="py-5">

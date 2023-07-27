@@ -8,5 +8,9 @@ class Reservation extends CI_Controller
         $this->load->view('user/reservation');
         $this->load->view('user/footer');
     }
+
+    public function pesan(){
+
+    }
 }
 ?>

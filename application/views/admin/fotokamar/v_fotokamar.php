@@ -20,7 +20,7 @@
                         <tr>
                             <th>ID Foto</th>
                             <th>ID Tipe Kamar</th>
-                            <th>Nama Foto</th>
+                            <th>Nama Tipe Kamar</th>
                             <th>Deskripsi Foto</th>
                             <th>Aksi</th>
                         </tr>
@@ -30,7 +30,7 @@
                             <tr>
                                 <td><?php echo $data['id_foto']; ?></td>
                                 <td><?php echo $data['id_tipe_kamar']; ?></td>
-                                <td><?php echo $data['nama_foto']; ?></td>
+                                <td><?php echo $data['nama_tipe_kamar']; ?></td>
                                 <td><?php echo $data['deskripsi_foto']; ?></td>
                                 <td>
                                     <a href="<?php echo base_url('fotokamar/update/') . $data['id_foto']; ?>">

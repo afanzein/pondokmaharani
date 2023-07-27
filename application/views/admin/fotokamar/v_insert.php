@@ -30,15 +30,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="deskripsi_foto" class="col-sm-2 col-form-label">Deskripsi Foto</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="deskripsi_foto" id="deskripsi_foto" placeholder="Masukkan Deskripsi Foto">
-                                <span class="badge badge-warning"><?php echo strip_tags(form_error('deskripsi_foto')); ?></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="foto[]" class="col-sm-2 col-form-label">Foto</label>
+                            <label for="foto[]" class="col-sm-2 col-form-label">Pilih Foto</label>
                             <div class="col-sm-10">
                                 <input type="file" class="form-control" name="foto[]" id="foto" multiple>
                                 <span class="badge badge-warning"><?php echo strip_tags(form_error('foto[]')); ?></span>

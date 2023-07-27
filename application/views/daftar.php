@@ -49,25 +49,28 @@
           <div class="card-body">
             <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" alt="Logo Perusahaan" class="logo-img">
             <h2 class="card-title mb-4">Pendaftaran Akun</h2>
-            <form id="registrationForm" action="<?php echo base_url("daftar"); ?>" method="post">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Masukkan Username" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Masukkan Password" required>
-              </div>
-              <div class="form-group">
-                <label for="retypePassword">Re-type Password</label>
-                <input type="password" class="form-control" id="retypePassword" placeholder="Ketik Ulang Password" required>
-              </div>
+            <form id="registrationForm" method="post" action="<?php echo base_url("daftar/daftar"); ?>">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="retypePassword">Re-type Password</label>
+                    <input type="password" class="form-control" id="retypePassword" name="retypePassword" placeholder="Ketik Ulang Password" required>
+                </div>
               <button type="submit" class="btn btn-primary">Daftar</button>
             </form>
+            <?php if (isset($error_message)) : ?>
+    <div class="alert alert-danger mt-3"><?php echo $error_message; ?></div>
+<?php endif; ?>
             <p class="mt-3">Sudah memiliki akun? <a href="<?php echo base_url("login"); ?>">Login</a></p>
           </div>
         </div>
@@ -75,35 +78,38 @@
     </div>
   </div>
 
-  <!-- Load Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Load custom JavaScript -->
+<!-- Load full version of jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!-- Load Bootstrap JS and Popper.js separately (if needed) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script>
-  $(document).ready(function() {
+$(document).ready(function() {
   // Validasi form pendaftaran
   $("#registrationForm").submit(function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
     // Reset pesan error
     $(".form-group").removeClass("has-error");
     $(".error-msg").remove();
 
     // Ambil nilai input
-    var username = $("#username").val();
     var email = $("#email").val();
+    var username = $("#username").val();
     var password = $("#password").val();
     var retypePassword = $("#retypePassword").val();
 
     // Lakukan validasi sederhana
-    if (username.trim() === "") {
-      showError($("#username"), "Username tidak boleh kosong.");
-    }
-
     if (email.trim() === "") {
       showError($("#email"), "Email tidak boleh kosong.");
     } else if (!isValidEmail(email)) {
       showError($("#email"), "Email tidak valid.");
+    }
+
+    if (username.trim() === "") {
+      showError($("#username"), "Username tidak boleh kosong.");
     }
 
     if (password.trim() === "") {
@@ -116,11 +122,17 @@
       showError($("#retypePassword"), "Password tidak cocok.");
     }
 
-    // Jika tidak ada error, lanjutkan proses pendaftaran (pada aplikasi nyata, kirim data ke server)
-    if ($(".error-msg").length === 0) {
-      alert("Pendaftaran berhasil!");
-      $("#registrationForm")[0].reset(); // Reset form setelah pendaftaran berhasil
-    }
+    // Jika tidak ada error, kirim data ke server melalui AJAX
+      // Jika tidak ada error, form akan melakukan submit secara langsung tanpa menggunakan AJAX
+      if ($(".error-msg").length === 0) {
+        // Form submission will happen naturally
+        // The form will be submitted to the URL specified in the 'action' attribute
+        // with the form fields and values.
+      } else {
+        // Prevent the default form submission if there are validation errors
+        event.preventDefault();
+      }
+    });
   });
 
   // Fungsi untuk menampilkan pesan error
@@ -135,7 +147,7 @@
     return emailPattern.test(email);
   }
 });
+</script>
 
-  </script>
 </body>
 </html>

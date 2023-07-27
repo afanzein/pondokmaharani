@@ -4,7 +4,11 @@ class Daftar extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('M_daftar'); // Load the M_daftar model
+        $this->load->model('M_akun'); // Load the M_daftar model
+    }
+
+    public function index(){
+        $this->load->view('daftar');
     }
 
     public function daftar()
@@ -13,13 +17,13 @@ class Daftar extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
+        $this->form_validation->set_rules('retypePassword', 'Re-type Password', 'trim|required|matches[password]');
         
         if ($this->form_validation->run() === false) {
-            // Form validation failed, show the registration form again with validation errors
-            $this->load->view('daftar');
+            // Form validation failed, reload the registration view with validation errors
+            $data['error_message'] = validation_errors(); // Get the validation errors
+            $this->load->view('daftar', $data);
         } else {
-
-            
             // Call the M_daftar model to insert data into the database
             if ($this->M_akun->daftar_user()) {
                 // Registration successful, redirect to a success page or login page
@@ -31,5 +35,8 @@ class Daftar extends CI_Controller
             }
         }
     }
+    
+    
+    
 }
 ?>

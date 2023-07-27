@@ -11,16 +11,16 @@
   </footer>
 </div>
 </body>
+<!-- jQuery -->
+<script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="<?php echo base_url(); ?>assets/js/user.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <!-- jQuery -->
-  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Custom JavaScript -->
-<script src="<?php echo base_url(); ?>assets/js/user.js"></script>
 <script>
   // Function to add/remove the "sticky" class to the navbar
   function toggleStickyNavbar() {
@@ -52,6 +52,41 @@
     if (isLoggedIn) {
       showUserDropdown();
     }
+
+    // Set JS for Product Card
+  $(document).ready(function() {
+    // Inisialisasi Slick Carousel untuk setiap slider dengan class unik berdasarkan data-id
+    $('[data-id]').each(function() {
+      var id = $(this).data('id');
+      var slideCount = $('.slider-products[data-id="' + id + '"] > div').length;
+
+      // Mengatur slidesToShow sesuai dengan jumlah gambar yang ada
+      var slidesToShow = slideCount >= 2 ? 2 : slideCount; // Tampilkan 3 slide jika ada 3 atau lebih gambar, jika tidak tampilkan jumlah gambar yang ada
+      $('.slider-products[data-id="' + id + '"]').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+        dots: false,
+        infinite: true,
+        slidesToShow: slidesToShow,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1, // Ketika lebar layar <= 768px, tampilkan 2 slide
+            }
+          },
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1, // Ketika lebar layar <= 576px, tampilkan 1 slide
+            }
+          }
+        ]
+      });
+    });
+  });
 </script>
 
 </html>

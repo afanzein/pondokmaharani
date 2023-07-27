@@ -48,8 +48,17 @@
             'password' => $this->encrypt_password($this->input->post('password')),
             'id_role' => 3
         );
-        return $this->db->insert('tb_akun', $data);
+    
+        if ($this->db->insert('tb_akun', $data)) {
+            // Registration successful
+            return true;
+        } else {
+            // Registration failed, return the database error message
+            return $this->db->error()['message']; // Return the specific error message
+        }
     }
+    
+    
 
     public function encrypt_password($password)
     {
