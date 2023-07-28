@@ -1,3 +1,12 @@
+<?php
+if ($this->session->userdata('role')) {
+  $id_akun_session = $this->session->userdata('id_akun');
+  $username_session = $this->session->userdata('username');
+  $email_session = $this->session->userdata('email');
+  
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -87,6 +87,43 @@
       });
     });
   });
+
+
+    // Set JS for Reservation Image Slider
+    $(document).ready(function() {
+        // Inisialisasi Slick Carousel untuk setiap slider dengan class .slide-pemesanan
+        $('.mySlides').each(function() {
+            var id = $(this).data('id');
+            var slideCount = $('.slider-pemesanan[data-id="' + id + '"] > div').length;
+
+            // Mengatur slidesToShow sesuai dengan jumlah gambar yang ada
+            var slidesToShow = slideCount >= 2 ? 2 : slideCount; // Tampilkan 3 slide jika ada 3 atau lebih gambar, jika tidak tampilkan jumlah gambar yang ada
+            $(this).slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                dots: false,
+                infinite: true,
+                slidesToShow: slidesToShow,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1, // Ketika lebar layar <= 768px, tampilkan 2 slide
+                        }
+                    },
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1, // Ketika lebar layar <= 576px, tampilkan 1 slide
+                        }
+                    }
+                ]
+            });
+        });
+    });
+
 </script>
 
 </html>

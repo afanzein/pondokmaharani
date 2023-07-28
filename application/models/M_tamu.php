@@ -16,6 +16,22 @@
         return $query->result_array();        
     }
 
+    public function getUserNameByIdAkun($id_akun)
+    {
+        $this->db->select('nama_tamu');
+        $this->db->from('tb_tamu');
+        $this->db->join('tb_akun', 'tb_tamu.id_akun = tb_akun.id_akun');
+        $this->db->where('tb_tamu.id_akun', $id_akun);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            $result = $query->row();
+            return $result->nama_tamu;
+        } else {
+            return false;
+        }
+    }
+
 
     public function dt_tamu_insert()
     {

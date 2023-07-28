@@ -23,9 +23,13 @@ class Login extends CI_Controller {
             if ($user) {
                 $role = $user['id_role'];
                 $this->session->set_userdata('role', $role); // Set user role in session
-                $id_akun = $this->session->userdata('id_akun',$user['id_akun']);
-                $username = $this->session->userdata('username',$user['username']);
-                $email = $this->session->userdata('email',$user['email']);
+                $id_akun = $user['id_akun'];
+                $this->session->set_userdata('id_akun', $id_akun);
+                $username = $user['username'];
+                $this->session->set_userdata('username', $username);
+                $email = $user['email'];
+                $this->session->set_userdata('email', $email);
+    
                 if ($role == 1 || $role == 2) {
                     // Redirect manager or admin to dashboard
                     redirect(base_url("dashboard"));

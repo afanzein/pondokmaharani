@@ -105,7 +105,8 @@
                             <h5 class="card-title"><?php echo $product['nama_tipe_kamar']; ?></h5>
                             <p class="card-text"><?php echo $product['fasilitas']; ?></p>
                             <!-- Tambahkan link "Buy Now" dengan query parameter id_tipe_kamar -->
-                            <a href="<?php echo site_url('Reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-primary">Pesan Sekarang</a>
+                            <a href="<?php echo base_url('reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-primary">Pesan Sekarang</a>
+
                         </div>
                     </div>
                 </div> 
