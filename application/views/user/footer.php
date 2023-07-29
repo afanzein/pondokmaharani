@@ -92,7 +92,7 @@
     // Set JS for Reservation Image Slider
     $(document).ready(function() {
         // Inisialisasi Slick Carousel untuk setiap slider dengan class .slide-pemesanan
-        $('.mySlides').each(function() {
+        $('.myPemesanan').each(function() {
             var id = $(this).data('id');
             var slideCount = $('.slider-pemesanan[data-id="' + id + '"] > div').length;
 

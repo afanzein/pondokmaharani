@@ -21,6 +21,7 @@ if ($this->session->userdata('role')) {
   <!-- Custom CSS -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a135730095.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -52,9 +53,10 @@ if ($this->session->userdata('role')) {
           <li class="nav-item" id="login-btn">
           <a class="nav-link" href="<?php base_url('login') ?>" >Login</a>
         </li>
-        <li class="nav-item" id="user-dropdown" style="display: none;">
-          <a class="nav-link dropdown-toggle" href="" role="button" id="userDropdownMenu" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('username'); ?></a>
+        <li class="nav-item dropdwown dropend" id="user-dropdown" style="display: none;">
+          <a class="nav-link" href="" role="button" id="userDropdownMenu" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle nav-icon" aria-hidden="true">
+            </i><?php echo $this->session->userdata('username'); ?></a>
           <div class="dropdown-menu" aria-labelledby="userDropdownMenu">
             <a class="dropdown-item" href="">Profil</a>
             <a class="dropdown-item" href="">Pemesanan</a>

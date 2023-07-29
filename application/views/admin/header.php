@@ -41,7 +41,7 @@ if ($this->session->userdata('role') == 3) {
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/dist/css/adminlte.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style_umum.css">
-
+  <script src="https://kit.fontawesome.com/a135730095.js" crossorigin="anonymous"></script>
     <!-- Load File jquery.min.js yang ada difolder js -->
   <script src="<?php echo base_url('js/jquery.min.js'); ?>"></script>
   

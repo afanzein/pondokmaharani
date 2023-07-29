@@ -1,14 +1,13 @@
-<div class="slide-container">
+<div class="slider-pemesanan">
     <?php foreach ($photos as $index => $photo): ?>
-        <div class="mySlides">
-            <img src="uploads/foto_kamar/<?php echo $photo['deskripsi_foto']; ?>" style="width:100%;margin-bottom:-6px">
-            <div class="slide-text bg-dark text-white"><?php echo $room_name; ?></div>
+        <div class="myPemesanan">
+            <img src="uploads/foto_kamar/<?php echo $photo['deskripsi_foto']; ?>" >
         </div>
     <?php endforeach; ?>
 </div>
 <div class="thumbnail-container">
     <?php foreach ($photos as $index => $photo): ?>
-        <div class="thumbnail" onclick="currentDiv(<?php echo $index + 1; ?>)">
+        <div class="thumbnailPemesanan" onclick="currentDiv(<?php echo $index + 1; ?>)">
             <img src="uploads/foto_kamar/<?php echo $photo['deskripsi_foto']; ?>" alt="Room Thumbnail">
         </div>
     <?php endforeach; ?>
