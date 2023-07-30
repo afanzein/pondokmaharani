@@ -42,42 +42,59 @@
     </div>
   </section>
 
-  <!-- Facilities Section -->
   <section id="facilities" class="py-5">
-    <div class="container">
-        <h1>Fasilitas Pondok Maharani</h1>
-      <div class="row">
-        <div class="col-md-6 order-md-1 order-2">
-          <!-- Facility Item 1 -->
-          <div class="facility-item">
-            <img src="<?php echo base_url(); ?>assets/img/fasilitas-outdoor.jpg" alt="Facility 1">
-            <h4>Ruang Outdoor</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <!-- Facility Item 2 -->
-          <div class="facility-item">
-            <img src="<?php echo base_url(); ?>assets/img/fasilitas-laundry.jpg" alt="Facility 2">
-            <h4>Layanan Laundry</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
-        <div class="col-md-6 order-md-2 order-1">
-          <!-- Facility Item 3 -->
-          <div class="facility-item">
-            <img src="<?php echo base_url(); ?>assets/img/fasilitas-dapur-umum.jpg" alt="Facility 3">
-            <h4>Dapur Bersama</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <!-- Facility Item 4 -->
-          <div class="facility-item">
-            <img src="<?php echo base_url(); ?>assets/img/fasilitas-mushola.jpg" alt="Facility 4">
-            <h4>Mushola</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
+  <div class="container">
+    <h1 class="display-4 text-center">Fasilitas Kami</h1>
+    <hr>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="service-item">
+          <i class="fa fa-sun-o"></i>
+          <h4>Ruang Outdoor</h4>
+          <p>Nikmati momen santai di Ruang Outdoor kami, kami
+            menyediakan isi ulang air, kursi yang panjang dan juga TV .</p>
         </div>
       </div>
+      <div class="col-lg-6">
+          <div class="service-item">
+            <i class="fas fa-tshirt"></i>
+            <h4>Layanan Laundry</h4>
+            <p>Kotoran pada pakaian tak lagi jadi masalah, rasakan kenyamanan tanpa repot dengan 
+              Layanan Laundry berkualitas kami, pakaian Anda akan kembali segar dan bersih.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="service-item">
+            <i class="fas fa-fire"></i>
+            <h4>Dapur Bersama</h4>
+            <p>Tidak perlu repot, Anda dapat menggunakan Dapur Bersama kami, difasilitasi dengan alat
+              dapur yang lengkap, Anda juga dapat menggunakan kulkas yang disediakan.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="service-item">
+            <i class="fas fa-users"></i>
+            <h4>Mushola</h4>
+            <p>Kami menyediakan Mushola yang tenang dan nyaman, tempat sempurna untuk beribadah dan merenungkan kehidupan.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="service-item">
+            <i class="fas fa-wifi"></i>
+            <h4>Wi-fi</h4>
+            <p>Selalu terhubung dengan dunia di Wi-fi kami yang super cepat, nikmati koneksi lancar di seluruh area akomodasi kami.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="service-item">
+            <i class="fas fa-car"></i>
+            <h4>Area Parkir</h4>
+            <p>Kami memahami kebutuhan Anda akan kenyamanan, jadi nikmati kenyamanan parkir yang aman dan luas di Area Parkir kami.</p>
+          </div>
+        </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- Product Card Section -->
 <section id="products" class="bg-light py-5">
@@ -99,13 +116,16 @@
                                 <div>
                                     <img src="uploads/foto_kamar/<?php echo $image['deskripsi_foto']; ?>" alt="<?php echo $product['nama_tipe_kamar']; ?>">
                                 </div>
-                            <?php endforeach; ?>
+                            <?php break; endforeach; ?>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $product['nama_tipe_kamar']; ?></h5>
+                            <h4 class="card-title display-5 text-center"><?php echo $product['nama_tipe_kamar']; ?></h4>
+                            <hr>
                             <p class="card-text"><?php echo $product['fasilitas']; ?></p>
+                            <hr>
+                            <p class="card-text">Harga : Rp.<?php echo $product['harga_permalam']; ?> /malam</p>
                             <!-- Tambahkan link "Buy Now" dengan query parameter id_tipe_kamar -->
-                            <a href="<?php echo base_url('reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-primary">Pesan Sekarang</a>
+                            <a href="<?php echo base_url('reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-primary col-sm-12">Pesan Sekarang</a>
 
                         </div>
                     </div>

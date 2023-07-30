@@ -19,11 +19,11 @@ if ($this->session->userdata('role')) {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
   <!-- Custom CSS -->
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
   <script src="https://kit.fontawesome.com/a135730095.js" crossorigin="anonymous"></script>
 </head>
 
@@ -59,11 +59,11 @@ if ($this->session->userdata('role')) {
         <li class="nav-item" id="login-btn">
           <a class="nav-link btn btn-info" href="<?php echo base_url('login') ?>">Login</a>
         </li>
-        <li class="nav-item dropdown" id="user-dropdown" style="display: none;">
+        <li class="nav-item dropdown" id="user-dropdown" >
+          <i class="fa fa-user-circle-o nav-icon" style="float:left; padding: 14px 5px 0 0;"></i>
           <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdownMenu" 
-          data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-user-circle nav-icon" aria-hidden="true"></i>
-            <?php echo $this->session->userdata('username'); ?>
+          data-bs-toggle="dropdown" data-display="static" data-boundary="scrollParent">
+          <span><?php echo $this->session->userdata('username'); ?></span>
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Profil</a></li>
@@ -73,9 +73,8 @@ if ($this->session->userdata('role')) {
         </li>
       </ul>
     </div>
-  </div>
+  </div>  
 </nav>
-  </header>
-
-  <div class="main-wrapper">
-   <main>
+</header>
+<div class="main-wrapper">
+ <main>

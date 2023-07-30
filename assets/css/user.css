@@ -12,13 +12,18 @@
 /* Customize the dropdown menu appearance */
 .dropdown-menu {
   /* Add any custom styles for the dropdown menu here */
-  z-index: 4000;
+  position: fixed;
+  z-index: 9999;
 }
 
 .dropdown-menu a {
   font-size: 16px; /* Adjust the font size as needed */
   padding: 8px 10px; /* Adjust the padding as needed */
   
+}
+.dropdown{
+  /* Add any custom styles for the dropdown menu here */
+ 
 }
 
 /* Show the dropdown menu on hover */
@@ -69,7 +74,7 @@
 .carousel-caption {
     position: absolute;
     top: 30%;
-    left: 29%;
+    left: 35%;
     min-height: fit-content;
     transform: translate(-50%, -50%);
     text-align: left;
@@ -86,26 +91,50 @@
     font-size: 24px;
   }
 
-
-
+.carousel-control-prev .carousel-control-next{
+ width: 5%;
+}
   /* Custom CSS for facilities section */
-#facilities .facility-item {
+  #facilities {
+    margin-top: 90px;
+  }
+  
+  /* Apply styles to the service items */
+  #facilities .service-item {
+    border-radius: 5px;
+    padding: 40px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  
+  /* Apply styles to the icon on hover */
+  #facilities .service-item:hover i {
+    margin-top: 15px;
+  }
+  
+  /* Apply styles to the service item heading */
+  #facilities .service-item h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Apply styles to the icon */
+  #facilities .service-item i {
+    transition: all .5s;
+    float: left;
+    font-size: 64px;
+    color: #43ba7f;
     margin-bottom: 30px;
+    margin-right: 30px;
   }
-  
- #facilities h1 {
-    text-align: center;
-    margin-bottom: 35px;
- }
 
-
-  #facilities img {
-    max-width: 100%;
-    height: 250px; /* Set the desired height for the images */
-    border-radius: 10px; /* Add a rounded border to the images */
-    padding: 5px; /* Add some padding around the images */
+  #facilities .service-item p{
+    font-size: 15px;
+  line-height: 15px;
+  color: #212741;
+  text-align: justify;
   }
-  
   /* Custom CSS untuk section product */
   #products {
     background-color: #f2f2f2; /* Warna latar belakang yang agak gelap */
@@ -114,17 +143,19 @@
 
   #products .card {
     height: 100%;
+    border-radius: 20px; /* Reducing the border radius for a more compact look */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adding a subtle box shadow for depth */
   }
-
-  #products .card-img-top {
-    width: 100%; /* Perkecil ukuran gambar menjadi 100% lebar card */
-    max-height: 200px; /* Atur tinggi maksimum gambar agar tidak terlalu besar */
-    object-fit: cover; /* Atur bagaimana gambar menyesuaikan diri dengan elemen img */
-    border-radius: 4px;
+  
+  #products .card-img-slider img{
+    
+    object-fit: cover;
+    height: 300px;
+    border-radius: 20px 20px 2px 2px; /* Matching the border radius of the card */
   }
-
+  
   #products .card-text {
-    font-size: 14px; /* Atur ukuran font deskripsi sesuai kebutuhan Anda */
+    font-size: 12px; /* Reducing the font size for the description */
   }
   
   /* Custom CSS untuk tombol "Pesan Sekarang" di card produk */
