@@ -74,7 +74,7 @@ if ($this->session->userdata('role') == 3) {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="<?php echo base_url(); ?>dashboard" class="brand-link">
-        <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 1">
         <span class="brand-text font-weight-light">Pondok Maharani</span>
       </a>
 

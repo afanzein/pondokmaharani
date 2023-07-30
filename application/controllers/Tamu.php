@@ -21,7 +21,7 @@ public function index()
 		$data['title'] = 'Tambah Data Tamu';
 
 		$this->form_validation->set_rules('nik_tamu','NIK',
-		'required|min_length[16]|max_length[45]',array('required' => '%s NIK harus diisi.'));
+		'required|min_length[16]|max_length[16]',array('required' => '%s NIK harus diisi.'));
         $this->form_validation->set_rules('nama_tamu','Nama',
 		'required|min_length[3]|max_length[45]',array('required' => '%s harus diisi.'));
         $this->form_validation->set_rules('jenis_kelamin','Gender',
@@ -42,6 +42,21 @@ public function index()
 			redirect(base_url('tamu'));
 		}
 	}
+
+	public function profil_insert(){
+
+			$data = array(
+				'nik_tamu' => $this->input->post('nik_tamu'),
+				'nama_tamu' => $this->input->post('nama_tamu'),
+				'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+				'tgl_lahir' => $this->input->post('tgl_lahir'),
+				'no_telp' => $this->input->post('no_telp'),
+				'alamat' => $this->input->post('alamat'),
+				'id_akun' => $this->session->userdata('id_akun') // Set id_akun from session
+			);
+			return $this->db->insert('tb_tamu', $data);
+	}
+
 	public function tamu_update($id = FALSE)
 	{
 		$data['title'] = 'Update Data Tamu';

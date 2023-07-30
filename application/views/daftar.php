@@ -39,16 +39,24 @@
   font-size: 14px;
   margin-top: 5px;
 }
+
+.card{
+  margin:40px 50px;
+  border : 1px solid #000;
+  border-radius: 15px;
+}
+
+
   </style>
 </head>
 <body>
-<div class="container mt-5">
+<div class="container-fluid mt-12">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card">
           <div class="card-body">
-            <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" alt="Logo Perusahaan" class="logo-img">
-            <h2 class="card-title mb-4">Pendaftaran Akun</h2>
+            <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" alt="Logo Perusahaan" class="img-fluid mx-auto d-block">
+            <h2 class="card-title mb-4 ">Pendaftaran Akun</h2>
             <form id="registrationForm" method="post" action="<?php echo base_url("daftar/daftar"); ?>">
                 <div class="form-group">
                     <label for="email">Email</label>

@@ -16,8 +16,6 @@
             </div>
             <div class="card-body">
     
-              <?php echo validation_errors(); ?>
-    
               <form method="POST" action="<?php echo base_url('tamu/tamu_update/' . $d['nik_tamu']); ?>" class="form-horizontal">
     
                 <div class="card-body">

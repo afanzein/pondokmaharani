@@ -22,22 +22,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
-  // Function to add/remove the "sticky" class to the navbar
-  function toggleStickyNavbar() {
-    var navbar = document.querySelector('.navbar');
-    if (navbar !== null) {
-    if (window.pageYOffset >= navbar.offsetTop) {
-      navbar.classList.add('sticky-top');
-    } else {
-      navbar.classList.remove('sticky-top');
-     }
-    }   
-  }
-  // Add an event listener for scroll
-  window.addEventListener('scroll', toggleStickyNavbar);
+
 
   //==========================================
   // Header-Login
+  $(document).ready(function() {
     // Set the JavaScript variables using PHP
     var isLoggedIn = '<?php echo $this->session->userdata('role') ? 'true' : 'false'; ?>';
     var username = '<?php echo $this->session->userdata('username'); ?>';
@@ -45,13 +34,18 @@
     function showUserDropdown() {
       document.getElementById('userDropdownMenu').textContent = username;
       document.getElementById('login-btn').style.display = 'none';
-      document.getElementById('user-dropdown').style.display = 'block';
+      document.getElementById('user-dropdown').style.display = 'inline';
     }
 
-    // Check if the user is logged in and show the user dropdown if necessary
-    if (isLoggedIn) {
-      showUserDropdown();
-    }
+  // Check if the user is logged in and show the user dropdown if necessary
+  if (isLoggedIn === 'true') {
+    showUserDropdown();
+  } else {
+    document.getElementById('user-dropdown').style.display = 'none';
+    document.getElementById('login-btn').style.display = 'inline';
+  }
+
+ });
 
     // Set JS for Product Card
   $(document).ready(function() {

@@ -32,6 +32,34 @@
         }
     }
 
+    public function getTamuByIdAkun($id_akun) {
+        $this->db->where('id_akun', $id_akun);
+        $query = $this->db->get('tb_tamu');
+        return $query->row_array();
+    }
+
+    public function updateProfil($id_akun) {
+        // Check if data for the user already exists
+        $existing_data = $this->getTamuByIdAkun($id_akun);
+        $data = array(
+            'nik_tamu' => $this->input->post('nik_tamu'),
+            'nama_tamu' => $this->input->post('nama_tamu'),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+            'tgl_lahir' => $this->input->post('tgl_lahir'),
+            'no_telp' => $this->input->post('no_telp'),
+            'alamat' => $this->input->post('alamat'),
+            'id_akun' => $id_akun // Set the id_akun based on the logged-in user
+        );
+        
+        if ($existing_data) {
+            // Data already exists, perform an update
+            $this->db->where('id_akun', $id_akun);
+            $this->db->update('tb_tamu', $data);
+        } else {
+            // Data doesn't exist, perform an insert
+            $this->db->insert('tb_tamu', $data);
+        }
+    }
 
     public function dt_tamu_insert()
     {

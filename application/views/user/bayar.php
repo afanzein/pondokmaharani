@@ -1,6 +1,4 @@
-<div class="main-wrapper">
-    <main>
-   <div class="container mt-4">
+<div class="container mt-4">
         <h1>Halaman Pembayaran</h1>
         <div class="pembayaran">
             <h2>Data Pembayaran</h2>
@@ -26,6 +24,3 @@
         <div class="lanjutkan-button">
             <button class="btn btn-primary" id="lanjutkanButton">Lanjutkan Pembayaran</button>
         </div>
-    </div>
-
-</main>

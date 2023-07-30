@@ -17,14 +17,14 @@
         </div>
         </div>
         <div class="carousel-item">
-          <img src="<?php echo base_url(); ?>assets/img/carousel-2.jpg" class="d-block w-100" alt="Image 2">
+          <img src="<?php echo base_url(); ?>assets/img/carousel-4.jpg" class="d-block w-100" alt="Image 2">
           <div class="carousel-caption">
           <h1>Welcome to Our Website</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         </div>
         <div class="carousel-item">
-          <img src="<?php echo base_url(); ?>assets/img/carousel-3.jpg" class="d-block w-100" alt="Image 3">
+          <img src="<?php echo base_url(); ?>assets/img/carousel-6.jpg" class="d-block w-100" alt="Image 3">
           <div class="carousel-caption">
           <h1>Welcome to Our Website</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

@@ -3,33 +3,33 @@
   background-color: #333;
 }
 
-#navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-  }
+/* Customize the size of the anchor elements to match the menu items */
+.navbar-nav .nav-link {
+  font-size: 16px; /* Adjust the font size as needed */
+  padding: 8px 16px; /* Adjust the padding as needed */
+}
 
-/* Custom CSS for sticky navbar */
-.sticky-top {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
+/* Customize the dropdown menu appearance */
+.dropdown-menu {
+  /* Add any custom styles for the dropdown menu here */
+  z-index: 4000;
+}
+
+.dropdown-menu a {
+  font-size: 16px; /* Adjust the font size as needed */
+  padding: 8px 10px; /* Adjust the padding as needed */
   
-  /* Add a background color to the navbar when it's sticky */
-  .sticky-top.navbar{
-    background-color: #333; /* Change this to your desired background color */
-  }
+}
 
-  .sticky + .main-wrapper {
-    padding-top: 60px;
-  }
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 
     /* Custom CSS for the main content wrapper */
     .main-wrapper {
+      position: relative;
       display: flex;
       flex-direction: column;
       min-height: 100vh;

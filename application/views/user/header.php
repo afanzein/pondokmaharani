@@ -13,59 +13,68 @@ if ($this->session->userdata('role')) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page Template</title>
+  <link rel="icon" href="<?php echo base_url(); ?>assets/img/mainlogo.png">
+  <title>Pondok Maharani</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/user.css">
   <script src="https://kit.fontawesome.com/a135730095.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
   <!-- Header Section -->
   
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Pondok Maharani</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#facilities">Fasilitas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#products">Reservation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About Us</a>
-          </li>
-          <!-- Add more navigation items as needed -->
-          <!-- Login -->
-          <li class="nav-item" id="login-btn">
-          <a class="nav-link" href="<?php base_url('login') ?>" >Login</a>
+  <header >
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<?php base_url('landing') ?>">
+      <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" alt="Pondok Maharani Logo" style="width:40px;" class="rounded-pill">
+      <span class="brand-text font-weight-light">Pondok Maharani</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url('landing') ?>">Home</a>
         </li>
-        <li class="nav-item dropdwown dropend" id="user-dropdown" style="display: none;">
-          <a class="nav-link" href="" role="button" id="userDropdownMenu" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle nav-icon" aria-hidden="true">
-            </i><?php echo $this->session->userdata('username'); ?></a>
-          <div class="dropdown-menu" aria-labelledby="userDropdownMenu">
-            <a class="dropdown-item" href="">Profil</a>
-            <a class="dropdown-item" href="">Pemesanan</a>
-            <a class="dropdown-item" href="">Pembayaran</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="#facilities">Fasilitas</a>
         </li>
-        </ul>
-      </div>
-    </nav>
+        <li class="nav-item">
+          <a class="nav-link" href="#products">Reservation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item" id="login-btn">
+          <a class="nav-link btn btn-info" href="<?php echo base_url('login') ?>">Login</a>
+        </li>
+        <li class="nav-item dropdown" id="user-dropdown" style="display: none;">
+        <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdownMenu" 
+        data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-user-circle nav-icon" aria-hidden="true"></i>
+            <span id="username"><?php echo $this->session->userdata('username'); ?></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profil</a></li>
+            <li><a class="dropdown-item" href="#">Pemesanan</a></li>
+            <li><a class="dropdown-item" href="#">Pembayaran</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
   </header>
 
   <div class="main-wrapper">
