@@ -12,7 +12,6 @@
     <section class="content">
         <div class="card">
             <div class="card-body">
-                <a href="<?php echo base_url('detailpembayaran/detailpembayaran_insert'); ?>" class="btn btn-primary" style="margin-bottom:15px">Tambah Detail Pembayaran</a>
                 <table id="datatable_03" class="table table-bordered">
                     <thead>
                         <tr>

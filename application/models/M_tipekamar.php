@@ -17,7 +17,7 @@
 
      public function getProducts() {
             // Query untuk mengambil data produk dari tabel tb_tipe_kamar
-            $this->db->select('tb_tipe_kamar.id_tipe_kamar, tb_tipe_kamar.nama_tipe_kamar, tb_tipe_kamar.fasilitas, tb_tipe_kamar.harga_permalam,tb_foto_kamar.id_foto, tb_foto_kamar.deskripsi_foto');
+            $this->db->select('tb_tipe_kamar.id_tipe_kamar, tb_tipe_kamar.nama_tipe_kamar, tb_tipe_kamar.fasilitas, tb_tipe_kamar.harga_permalam,tb_tipe_kamar.harga_perminggu,tb_tipe_kamar.harga_perbulan,tb_foto_kamar.id_foto, tb_foto_kamar.deskripsi_foto');
             $this->db->from('tb_tipe_kamar');
             $this->db->join('tb_foto_kamar', 'tb_foto_kamar.id_tipe_kamar = tb_tipe_kamar.id_tipe_kamar', 'left');
             $query = $this->db->get();

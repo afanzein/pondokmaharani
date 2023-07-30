@@ -84,40 +84,73 @@
   });
 
 
-    // Set JS for Reservation Image Slider
-    $(document).ready(function() {
-        // Inisialisasi Slick Carousel untuk setiap slider dengan class .slide-pemesanan
-        $('.myPemesanan').each(function() {
-            var id = $(this).data('id');
-            var slideCount = $('.slider-pemesanan[data-id="' + id + '"] > div').length;
+  $(document).ready(function() {
+  let slideIndex = 1;
+  let maxSlides = document.querySelectorAll(".mySlides").length;
+  showSlides(slideIndex);
 
-            // Mengatur slidesToShow sesuai dengan jumlah gambar yang ada
-            var slidesToShow = slideCount >= 2 ? 2 : slideCount; // Tampilkan 3 slide jika ada 3 atau lebih gambar, jika tidak tampilkan jumlah gambar yang ada
-            $(this).slick({
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true,
-                dots: false,
-                infinite: true,
-                slidesToShow: slidesToShow,
-                slidesToScroll: 1,
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1, // Ketika lebar layar <= 768px, tampilkan 2 slide
-                        }
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            slidesToShow: 1, // Ketika lebar layar <= 576px, tampilkan 1 slide
-                        }
-                    }
-                ]
-            });
-        });
-    });
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex + n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(n);
+  }
+
+  function showSlides(n) {
+    slideIndex = n;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > maxSlides) { slideIndex = 1; }
+    if (n < 1) { slideIndex = maxSlides; }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+
+  // Attach click event handlers to arrow buttons
+  $(".prev").on("click", function() {
+    plusSlides(-1);
+  });
+
+  $(".next").on("click", function() {
+    plusSlides(1);
+  });
+
+  // Attach click event handlers to thumbnail images
+  $(".demo").on("click", function() {
+    currentSlide($(this).index() + 1);
+  });
+
+  // Trigger the click on the first thumbnail to initialize the slideshow
+  $(".demo").first().click();
+});
+
+
+function togglePaymentDetails() {
+    var paymentDetails = document.getElementById("paymentDetails");
+    var arrowIcon = document.querySelector(".arrow-icon");
+
+    if (paymentDetails.style.display === "none") {
+        paymentDetails.style.display = "block";
+        arrowIcon.classList.remove("fa-chevron-right");
+        arrowIcon.classList.add("fa-chevron-down");
+    } else {
+        paymentDetails.style.display = "none";
+        arrowIcon.classList.remove("fa-chevron-down");
+        arrowIcon.classList.add("fa-chevron-right");
+    }
+}
 
 </script>
 

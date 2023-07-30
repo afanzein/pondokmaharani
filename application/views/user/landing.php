@@ -122,8 +122,10 @@
                             <h4 class="card-title display-5 text-center"><?php echo $product['nama_tipe_kamar']; ?></h4>
                             <hr>
                             <p class="card-text"><?php echo $product['fasilitas']; ?></p>
-                            <hr>
-                            <p class="card-text">Harga : Rp.<?php echo $product['harga_permalam']; ?> /malam</p>
+                            <hr size="10px">
+                            <p class="card-text">Harga Harian   &nbsp: Rp.<?php echo $product['harga_permalam']; ?> /malam</p>
+                            <p class="card-text">Harga Mingguan &nbsp: Rp.<?php echo $product['harga_perminggu']; ?> /minggu</p>
+                            <p class="card-text">Harga Bulanan &nbsp: Rp.<?php echo $product['harga_perbulan']; ?> /bulan</p>
                             <!-- Tambahkan link "Buy Now" dengan query parameter id_tipe_kamar -->
                             <a href="<?php echo base_url('reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-primary col-sm-12">Pesan Sekarang</a>
 

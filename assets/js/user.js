@@ -24,40 +24,50 @@
   });
 
   //========================================
-  //JS for Reservation Page
+  // JS for Reservation Page
+$(document).ready(function() {
+  // Set initial slide index
   var slideIndex = 1;
-        showDivs(slideIndex);
+  // Show the initial slide
+  showSlides(slideIndex);
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
+  function plusSlides(n) {
+      showSlides(slideIndex += n);
+  }
 
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
+  function currentSlide(n, id_tipe_kamar) {
+      showSlides(slideIndex = n, id_tipe_kamar);
+  }
 
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("thumbnail");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].style.borderColor = "#ddd";
-            }
-            x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].style.borderColor = "black";
-        }
+  function showSlides(n, id_tipe_kamar) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      var captionText = document.getElementById("caption");
 
-        //JS untuk halaman Bayar
-        document.addEventListener("DOMContentLoaded", function() {
-            const toggleDetail = document.querySelector(".toggle-detail");
-            const detailPembayaran = document.querySelector(".detail-pembayaran");
+      // Filter the slides based on the selected id_tipe_kamar
+      var filteredSlides = [];
+      for (i = 0; i < slides.length; i++) {
+          var slideId = slides[i].getAttribute("data-id");
+          if (parseInt(slideId) === parseInt(id_tipe_kamar)) {
+              filteredSlides.push(slides[i]);
+          }
+      }
 
-            toggleDetail.addEventListener("click", function() {
-                detailPembayaran.classList.toggle("show");
-            });
-        });
+      if (n > filteredSlides.length) {
+          slideIndex = 1;
+      }
+      if (n < 1) {
+          slideIndex = filteredSlides.length;
+      }
+      for (i = 0; i < filteredSlides.length; i++) {
+          filteredSlides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      filteredSlides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+  }
+});
