@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Profil Pengguna</h1>
+    <h1 class="text-center display-3" style="margin:20px 0 10px 0 ">Halaman Profil</h1>
     <hr>
         <div class="form-group row">
             <label for="username" class="col-sm-2 col-form-label">Username</label>
@@ -21,8 +21,8 @@
         </div>
     <?php endif; ?>
     <hr>
-        <h4> Mohon isi data diri dibawah jika belum ada ! </h4>
-        <p> Data diri anda akan digunakan untuk proses pemesanan </p>
+        <h3 class="display-5"> Mohon isi data diri dibawah jika belum ada ! </h3>
+        <p class="lead"> Data diri anda akan digunakan untuk proses pemesanan </p>
         <hr size="5px">
     <form method="POST" action="<?php echo base_url('profil/update_profil'); ?>" class="form-horizontal">
 
@@ -75,8 +75,8 @@
         </div>
 
         <div class="form-group row">
-            <div class="col-sm-12 text-center">
-                <button type="submit" class="btn btn-primary">Simpan</button>
+            <div class="col-sm-12 text-center" style="margin:15px 0 10px 0 ">
+                <button type="submit" class="btn btn-primary" >Simpan</button>
             </div>
         </div>
     </form>

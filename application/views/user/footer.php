@@ -1,10 +1,10 @@
  </main>
   <!-- Footer Section -->
-  <footer class="bg-dark text-light py-3">
+  <footer class="bg-dark text-light py-2">
     <div class="container">
       <div class="row">
         <div class="col text-center">
-          <p>&copy; 2023 Your Company. All rights reserved.</p>
+          <p>&copy; 2023 Pondok Maharani. All rights reserved.</p>
         </div>
       </div>
     </div>

@@ -14,14 +14,13 @@
           <div class="col-lg-6 col-12">
             <div class="small-box bg-primary">
               <div class="inner">
-                <h3><?php  ?></h3>
-
+                <h3><?php  echo $total; ?></h3>
                 <p>Jumlah Pemesanan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-cube"></i>
               </div>
-              <a href="<?php echo base_url('admin/pemesanan/pemesanan') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('pemesanan') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -48,11 +47,9 @@
           <p>Selamat datang di halaman admin khusus web hotel kami! Halaman ini dirancang khusus 
             untuk para admin dengan tujuan memberikan akses dan kontrol penuh dalam mengelola berbagai 
             aspek operasional hotel. Anda dapat dengan mudah mengatur reservasi, ketersediaan kamar, 
-            informasi tamu, harga, promosi, laporan keuangan, dan statistik penting lainnya. 
+            informasi tamu, harga, laporan keuangan, dan lainnya. 
             <br>
-            Terima kasih telah menjadi bagian dari tim admin hotel kami, dan selamat bekerja!</p>
-          <p></p>
-
+            Terima kasih telah menjadi bagian dari tim admin hotel kami, dan selamat berkerja!</p>
         </div>
         <div class="card-footer">
           Created @2023

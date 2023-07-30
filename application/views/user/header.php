@@ -60,10 +60,10 @@ if ($this->session->userdata('role')) {
           <a class="nav-link btn btn-info" href="<?php echo base_url('login') ?>">Login</a>
         </li>
         <li class="nav-item dropdown" id="user-dropdown" style="display: none;">
-        <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdownMenu" 
-        data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-user-circle nav-icon" aria-hidden="true"></i>
-            <span id="username"><?php echo $this->session->userdata('username'); ?></span>
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdownMenu" 
+          data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user-circle nav-icon" aria-hidden="true"></i>
+            <?php echo $this->session->userdata('username'); ?>
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Profil</a></li>
