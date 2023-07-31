@@ -32,10 +32,9 @@
           <img src="<?php echo base_url(); ?>assets/img/carousel-6.jpg" class="d-block w-100" alt="Image 3">
           <div class="carousel-caption">
           <h1>Pondok Maharani Syariah <br> <strong> Stay Halal ! </strong></h1>
-          <p>Kami mengutamakan prinsip syariah dan memastikan pengalaman menginap yang nyaman dan
-             harmonis untuk semua tamu kami. Oleh karena itu, kami mohon kepada pasangan untuk menyertakan bukti nikah 
-             berupa surat nikah atau kartu keluarga saat melakukan proses check-in. Hal ini merupakan bagian dari 
-             komitmen kami untuk menjaga suasana yang sesuai dengan aturan syariah. Terima kasih atas kerjasama dan 
+          <p>Kami berkomitmen mengutamakan prinsip syariah dan memastikan pengalaman menginap yang nyaman dan
+             harmonis untuk semua tamu kami.Oleh karenanya kami mohon kepada pasangan untuk menyertakan bukti nikah 
+             berupa buku nikah atau kartu keluarga saat melakukan proses check-in di lobi kami.Terima kasih atas kerjasama dan 
              pengertian Anda. Selamat menikmati momen berharga bersama kami di Pondok Maharani Syariah.</p>
         </div>
         </div>
