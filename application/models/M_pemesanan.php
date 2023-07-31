@@ -61,7 +61,57 @@
                 // Handle the error or display an error message
             }
         }
-        
+
+        public function user_pemesanan($id_tipe_kamar){
+        // Assuming you have received the form data and stored it in variables
+        $tgl_pemesanan = date('Y-m-d');
+        $tgl_checkin = $this->input->post('tgl_checkin');
+        $tgl_checkout = $this->input->post('tgl_checkout');
+
+        // Retrieve nik_tamu from tb_tamu based on id_akun from session
+        $id_akun_session = $this->session->userdata('id_akun');
+        $this->load->model('M_tamu');
+        $nik_tamu = $this->M_tamu->getNikTamuByIdAkun($id_akun_session);
+
+        // Retrieve the available id_kamar based on the selected id_tipe_kamar and status_kamar
+        $this->load->model('M_kamar');
+        $id_kamar = $this->M_kamar->getAvailableKamarId($id_tipe_kamar);
+
+            try {
+                // Step 1: Insert reservation details into tb_pemesanan table
+                $data_pemesanan = array(
+                    'tgl_pemesanan' => $tgl_pemesanan,
+                    'nik_tamu' => $nik_tamu,
+                    'id_kamar' => $id_kamar // Use the retrieved id_kamar
+                );
+                $this->db->insert('tb_pemesanan', $data_pemesanan);
+
+                // Success: Reservation details inserted into tb_pemesanan
+
+                // Step 2: Retrieve the generated id_pemesanan
+                $generated_id = $this->db->insert_id();
+
+                // Step 3: If tb_pemesanan insertion is successful, then insert check-in and check-out details into tb_checkinout table
+                if ($generated_id) {
+                    $data_checkinout = array(
+                        'id_pemesanan' => $generated_id,
+                        'tgl_checkin' => $tgl_checkin,
+                        'tgl_checkout' => $tgl_checkout
+                    );
+                    $this->db->insert('tb_checkinout', $data_checkinout);
+
+                    // Success: Check-in and check-out details inserted into tb_checkinout
+                    // Perform any further actions or display a success message
+                } else {
+                    // Handle the case where tb_pemesanan insertion fails
+                    // You can raise an error, log a message, or perform any other action as needed.
+                    // For example:
+                    throw new Exception("Failed to insert data into tb_pemesanan");
+                }
+            } catch (Exception $e) {
+                alert("Pemesanan gagal dilakukan");
+            }
+        }
         
         public function dt_pemesanan_update($id)
         {

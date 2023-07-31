@@ -32,6 +32,20 @@
         }
     }
 
+    public function getNikTamuByIdAkun($id_akun)
+    {
+        // Assuming the table name is 'tb_tamu'
+        $this->db->where('id_akun', $id_akun);
+        $query = $this->db->get('tb_tamu');
+
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            return $row->nik_tamu;
+        }
+
+        return null;
+    }
+
     public function getTamuByIdAkun($id_akun) {
         $this->db->where('id_akun', $id_akun);
         $query = $this->db->get('tb_tamu');

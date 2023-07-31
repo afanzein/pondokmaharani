@@ -63,6 +63,43 @@ class Reservation extends CI_Controller
             // You can redirect to an error page or perform any other action as needed.
         }
     }    
+
+    public function pesan_submit()
+    {
+
+        // Assuming you have received the id_tipe_kamar from the URL parameter
+        $id_tipe_kamar = $this->input->get('id_tipe_kamar');
+        $this->form_validation->set_rules('tgl_checkin', 'Tanggal Check-In', 'required|callback_check_date_after_today', array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-In tidak boleh sebelum tanggal sekarang.'));
+        $this->form_validation->set_rules('tgl_checkout', 'Tanggal Check-Out', 'required|callback_check_date_after_today', array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-Out tidak boleh sebelum tanggal sekarang.'));
     
+        if ($this->form_validation->run() === FALSE) {
+            // Validation failed, load the view with the validation errors
+            $this->load->view('user/header', $data);
+            $this->load->view('user/reservation', $data);
+            $this->load->view('user/footer');
+        } else {
+            // Validation passed, proceed with data insertion
+            $id_tipe_kamar = $this->input->get('id_tipe_kamar');
+        $this->M_pemesanan->user_pemesanan($id_tipe_kamar);
+
+        // Retrieve the generated id_pemesanan
+        $generated_id = $this->db->insert_id();
+
+        // Redirect to the next page and include the id_pemesanan as a query parameter
+        redirect('bayartamu?id_pemesanan=' . $generated_id);
+
+        }
+    }
+
+            // Add the callback function for date validation
+        public function check_date_after_today($date)
+        {
+            if ($selected_date < $current_date) {
+                return false;
+            }
+    
+            return true;
+        }
+
 }
 ?>

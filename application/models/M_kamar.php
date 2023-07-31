@@ -16,6 +16,23 @@
         return $query->result_array();
     }
 
+    public function getAvailableKamarId($id_tipe_kamar)
+    {
+        // Assuming the table name is 'tb_kamar'
+        $this->db->where('id_tipe_kamar', $id_tipe_kamar);
+        $this->db->where('status_kamar', 'Tersedia');
+        $this->db->order_by('id_kamar', 'RANDOM'); // Get a random available kamar ID
+        $this->db->limit(1);
+        $query = $this->db->get('tb_kamar');
+
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            return $row->id_kamar;
+        }
+
+        return null;
+    }
+
     public function dt_kamar_insert()
     {
         $data = array(

@@ -145,7 +145,7 @@
                           </table>
                           <hr>
                             <!-- Tambahkan link "Buy Now" dengan query parameter id_tipe_kamar -->
-                            <a href="<?php echo base_url('reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-light col-sm-12">Pesan Sekarang</a>
+                            <a href="<?php echo base_url('reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-dark col-sm-12">Pesan Sekarang</a>
 
                         </div>
                     </div>
