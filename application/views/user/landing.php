@@ -73,7 +73,7 @@
         </div>
         <div class="col-lg-6">
           <div class="service-item">
-            <i class="fas fa-users"></i>
+            <i class="fa-solid fa-mosque"></i>
             <h4>Mushola</h4>
             <p>Kami menyediakan Mushola yang tenang dan nyaman, tempat sempurna untuk beribadah dan merenungkan kehidupan.</p>
           </div>
