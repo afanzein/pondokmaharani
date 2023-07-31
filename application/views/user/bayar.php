@@ -2,6 +2,7 @@
 <div class="container mt-6">
     <h1 class="text-center">Halaman Pembayaran</h1>
     <?php foreach ($pembayaran as $p) : ?>
+        <div class="row">
         <div class="pembayaran">
         <hr>
             <h2>Data Pembayaran</h2>
@@ -35,6 +36,7 @@
                     </tr>
                 </tbody>
                 <hr>
+            </div>    
             <div class="container">
                 <h4 class="toggle-detail" onclick="togglePaymentDetails()">Detail Pembayaran <i class="arrow-icon fas fa-chevron-right"></i></h4>
                 <div class="detail-pembayaran" id="paymentDetails">
