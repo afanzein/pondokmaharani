@@ -38,6 +38,7 @@ class Reservation extends CI_Controller
             $data['harga_permalam'] = $selected_room['harga_permalam'];
             $data['harga_perminggu'] = $selected_room['harga_perminggu'];
             $data['harga_perbulan'] = $selected_room['harga_perbulan'];
+            $data['id_tipe_kamar']=$selected_room['id_tipe_kamar'];
     
             // Ambil data session dari variabel yang telah diatur di header.php
             $id_akun_session = $this->session->userdata('id_akun');
