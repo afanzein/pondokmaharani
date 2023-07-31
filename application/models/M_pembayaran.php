@@ -20,7 +20,7 @@
             $this->db->select('p.*, pem.tgl_pemesanan, s.status');
             $this->db->from('tb_pembayaran p');
             $this->db->join('tb_pemesanan pem', 'p.id_pemesanan = pem.id_pemesanan');
-            $this->db->join('tb_status_pemesanan s', 'pem.id_status_pemesanan = s.id_status_pemesanan');
+            $this->db->join('tb_status_pemesanan s', 'pem.id_pemesanan = s.id_pemesanan');
             $this->db->where('p.id_pemesanan', $id_pemesanan);
             $this->db->order_by('p.tanggal_pembayaran', 'desc');
             return $this->db->get()->result_array();
