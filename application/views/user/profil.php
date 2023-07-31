@@ -1,3 +1,14 @@
+<section id="profil py-2">
+<?php
+if (!$this->session->userdata('role')) {
+       // Show an alert using JavaScript
+       echo '<script>alert("Lakukan proses login terlebih dahulu");</script>';
+       // Redirect user to the login page or show an access denied message
+       redirect(base_url('login'));
+
+    exit();
+}
+?>
 <div class="container">
     <h1 class="text-center display-3" style="margin:20px 0 10px 0 ">Halaman Profil</h1>
     <hr>
@@ -81,3 +92,4 @@
         </div>
     </form>
 </div>
+</section>
