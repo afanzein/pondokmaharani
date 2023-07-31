@@ -67,8 +67,7 @@ class Reservation extends CI_Controller
 
     public function pesan_submit()
     {
-        $id_tipe_kamar = $this->input->post('id_tipe_kamar');
-        echo $id_tipe_kamar;
+       
         $this->form_validation->set_rules('tgl_checkin', 'Tanggal Check-In', 'required|callback_check_date_after_today', array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-In tidak boleh sebelum tanggal sekarang.'));
         $this->form_validation->set_rules('tgl_checkout', 'Tanggal Check-Out', 'required|callback_check_date_after_today', array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-Out tidak boleh sebelum tanggal sekarang.'));
     
@@ -78,6 +77,7 @@ class Reservation extends CI_Controller
             $this->load->view('user/reservation', $data);
             $this->load->view('user/footer');
         } else {
+            $id_tipe_kamar = $this->input->post('id_tipe_kamar');
             // Validation passed, proceed with data insertion
             $this->load->model('M_pemesanan');
             $id_tipe_kamar = $this->input->get('id_tipe_kamar');
