@@ -17,13 +17,13 @@
                             <?php
                            foreach ($detail_pembayaran as $detail) : ?>
                                 <tr>
-                                    <td><span class="label">Item yang Dibayar</span></td>
+                                    <td><span class="label">Item yang dibayar</span></td>
                                     <td>:</td>
-                                    <td><?php echo $detail['item']; ?></td>
+                                    <td><?php echo $detail['item_pembayaran']; ?></td>
                                 </tr>
-                                    <td><span class="label">Total Hari</span> </td>
+                                    <td><span class="label"></span>Total Hari</td>
                                     <td>:</td>
-                                    <td><?php echo $detail['total_hari']; ?> hari</td>
+                                    <td><?php echo $detail['jumlah_pembayaran']; ?> hari</td>
                                 </tr>
                                 <tr>
                                     <td><span class="label">Subtotal</span></td>  
