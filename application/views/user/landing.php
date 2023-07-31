@@ -10,25 +10,28 @@
         <div class="carousel-item active">
           <img src="<?php echo base_url(); ?>assets/img/carousel-1.jpg" class="d-block w-100" alt="Image 1">
           <div class="carousel-caption">
-          <h1>Selamat Datang di <br><strong>Pondok Maharani Syariah<strong></h1>
+          <h1>Selamat Datang di <br><strong>Pondok Maharani Syariah</strong></h1>
           <hr>
           <p>Selamat datang di Pondok Maharani Syariah, destinasi akomodasi yang memberikan ketenangan dan kenyamanan 
-            bagi Anda. Nikmati suasana yang hangat dan layanan yang ramah sambil menikmati fasilitas unggulan kami!
+            bagi Anda. Kami akan menyambut Anda dengan senyuman dan penuh keceriaan. Rasakan kenyamanan 
+            suasana yang hangat dan layanan yang ramah sambil menikmati fasilitas unggulan kami!
           </p>
         </div>
         </div>
         <div class="carousel-item">
           <img src="<?php echo base_url(); ?>assets/img/carousel-4.jpg" class="d-block w-100" alt="Image 2">
           <div class="carousel-caption">
-          <h1>Moto Pondok Maharani Syariah</h1>
-          <p>Kami akan menyambut Anda dengan senyuman dan penuh keceriaan. Rasakan kenyamanan seperti di rumah sendiri 
-            dan nikmati kemudahan fasilitas kami</p>
+          <h1>Mengapa harus <strong>Pondok Maharani Syariah</strong>?</h1>
+          <p>Nikmati fleksibilitas harga istimewa di Pondok Maharani Syariah! rasakan 
+            kemudahan menginap dengan penawaran yang menguntungkan. Harga fleksibel untuk Anda, 
+            pesan sekarang dan nikmati pengalaman menginap yang tak terlupakan!
+          </p>
         </div>
         </div>
         <div class="carousel-item">
           <img src="<?php echo base_url(); ?>assets/img/carousel-6.jpg" class="d-block w-100" alt="Image 3">
           <div class="carousel-caption">
-          <h1>Pondok Maharani Syariah <br> Stay Halal !</h1>
+          <h1>Pondok Maharani Syariah <br> <strong> Stay Halal ! </strong></h1>
           <p>Kami mengutamakan prinsip syariah dan memastikan pengalaman menginap yang nyaman dan
              harmonis untuk semua tamu kami. Oleh karena itu, kami mohon kepada pasangan untuk menyertakan bukti nikah 
              berupa surat nikah atau kartu keluarga saat melakukan proses check-in. Hal ini merupakan bagian dari 
