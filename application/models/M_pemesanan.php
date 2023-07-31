@@ -62,7 +62,7 @@
             }
         }
 
-        public function user_pemesanan($id_tipe_kamar){
+        public function user_pemesanan(){
         // Assuming you have received the form data and stored it in variables
         $tgl_pemesanan = date('Y-m-d');
         $tgl_checkin = $this->input->post('tgl_checkin');
