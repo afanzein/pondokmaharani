@@ -15,7 +15,7 @@ $id_pemesanan = $this->input->get('id_pemesanan');
 $data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_akun, $id_pemesanan);
 
 // Retrieve data for tb_detail_pembayaran
-$data['detail_pembayaran'] = $this->M_detail_pembayaran->get_detail_pembayaran_data($id_pemesanan);
+$data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran_data($id_pemesanan);
 
 
         // Use the id_pemesanan as needed, for example, pass it to the view
