@@ -1,5 +1,5 @@
-.navbar{
-    overflow: hidden;
+header .navbar{
+  overflow: hidden;
   background-color: #333;
   z-index: 99999;
 }
@@ -14,7 +14,6 @@
 .dropdown-menu {
   /* Add any custom styles for the dropdown menu here */
   position: fixed;
-  z-index: 9999;
 }
 
 .dropdown-menu a {
@@ -207,6 +206,10 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+
+  #about p{
+    text-align: justify;
   }
 
 /*==================================*/
