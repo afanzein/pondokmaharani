@@ -1,10 +1,16 @@
 <?php
 class Bayartamu extends CI_Controller{
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('M_pembayaran');
+        $this->load->model('M_detailpembayaran');
+    }
+
     public function tampil(){
 // Load the required models
-$this->load->model('M_pembayaran');
-$this->load->model('M_detailpembayaran');
+
 
 // Get the user's id_akun from the session
 $id_akun = $this->session->userdata('id_akun');
