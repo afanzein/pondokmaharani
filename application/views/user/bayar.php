@@ -4,11 +4,11 @@
     <?php foreach ($pembayaran as $p) : ?>
         <div class="pembayaran">
             <h2>Data Pembayaran</h2>
-            <p><span class="label">Tanggal Pembayaran:</span> <?php echo $p['tanggal_pembayaran']; ?></p>
+            <p><span class="label">Tanggal Pembayaran:</span> <?php echo $p['tgl_pembayaran']; ?></p>
             <p><span class="label">Nama Pemesan:</span> <?php echo $nama_tamu; ?></p>
             <p><span class="label">NIK Pemesan:</span> <?php echo $nik_tamu; ?></p>
-            <p><span class="label">Tanggal Pemesanan:</span> <?php echo $p['tanggal_pemesanan']; ?></p>
-            <p><span class="label">Tanggal Pemesanan:</span> <?php echo $p['status_pemesanan']; ?></p>
+            <p><span class="label">Tanggal Pemesanan:</span> <?php echo $p['tgl_pemesanan']; ?></p>
+            <p><span class="label">Tanggal Pemesanan:</span> <?php echo $p['status']; ?></p>
             <div class="container">
                 <h4 class="toggle-detail" onclick="togglePaymentDetails()">Detail Pembayaran <i class="arrow-icon fas fa-chevron-right"></i></h4>
                 <div class="detail-pembayaran" id="paymentDetails">
