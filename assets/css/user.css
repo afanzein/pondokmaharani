@@ -1,6 +1,7 @@
 .navbar{
     overflow: hidden;
   background-color: #333;
+  z-index: 99999;
 }
 
 /* Customize the size of the anchor elements to match the menu items */

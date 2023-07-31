@@ -8,7 +8,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="<?php echo base_url(); ?>assets/img/carousel-1.jpg" class="d-block w-100" alt="Image 1" style="opacity:0.4">
+          <img src="<?php echo base_url(); ?>assets/img/carousel-1.jpg" class="d-block w-100" alt="Image 1" style="opacity:2.4">
           <div class="carousel-caption">
           <h1>Selamat Datang di <br><strong>Pondok Maharani Syariah</strong></h1>
           <hr>
