@@ -4,8 +4,6 @@
     <?php foreach ($pembayaran as $p) : ?>
         <div class="pembayaran">
             <h2>Data Pembayaran</h2>
-            <<hr>
-            <h2>Data Pembayaran</h2>
             <hr>
             <div class="table-responsive">
                 <table class="table table-borderless">
