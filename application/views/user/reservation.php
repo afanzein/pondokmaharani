@@ -1,4 +1,29 @@
 <section class="pesan py-2">
+<?php
+if (!$this->session->userdata('role')) {
+    // Redirect user to the login page or show an access denied message
+    redirect(base_url('login'));
+    // or
+    echo "Access Denied";
+    exit();
+}
+if ($this->session->userdata('id_akun')) {
+    $id_akun = $this->session->userdata('id_akun');
+
+    // Assuming you have a model for the tb_akun table (e.g., Akun_model)
+    $this->load->model('M_tamu');
+    $nik_tamu = $this->M_tamu->getNikTamuByIdAkun($id_akun);
+
+    if (!$nik_tamu) {
+        // Redirect user or show an access denied message
+        redirect(base_url('profil')); // Replace 'other_page' with the URL of the page you want to redirect to.
+        // or
+        alert("Lakukan pengisian daa profil terlebih dahulu");
+    // or\
+  }
+}
+
+?>
 <div class="container">
     <hr>
     <h1 class="text-center display-5">Pesan Kamar</h1>
