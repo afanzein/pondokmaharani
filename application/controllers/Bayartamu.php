@@ -24,7 +24,7 @@ $data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_pemesanan);
 $data['nama_tamu'] = $this->M_tamu->getuserNameByIdAkun($id_akun);
 $data['nik_tamu'] = $this->M_tamu->getNikTamuByIdAkun($id_akun);
 // Retrieve data for tb_detail_pembayaran
-$data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran_data($id_pemesanan);
+$data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran($id_pemesanan);
 
 
         // Use the id_pemesanan as needed, for example, pass it to the view
