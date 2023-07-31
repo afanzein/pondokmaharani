@@ -82,6 +82,7 @@
                             </tr>
                         </table>
                         <hr>
+                        <input type="hidden" name="id_tipe_kamar" value="<?php echo $id_tipe_kamar; ?>">
                         <div class="date-input">
                             <label for="checkInDate"><b>Check-In    : </b></label>
                             <input type="date" name="tgl_checkin" id="checkInDate" class="form-control">

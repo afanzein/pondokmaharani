@@ -66,9 +66,7 @@ class Reservation extends CI_Controller
 
     public function pesan_submit()
     {
-
-        // Assuming you have received the id_tipe_kamar from the URL parameter
-        $id_tipe_kamar = $this->input->get('id_tipe_kamar');
+        $id_tipe_kamar = $this->input->post('id_tipe_kamar');
         $this->form_validation->set_rules('tgl_checkin', 'Tanggal Check-In', 'required|callback_check_date_after_today', array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-In tidak boleh sebelum tanggal sekarang.'));
         $this->form_validation->set_rules('tgl_checkout', 'Tanggal Check-Out', 'required|callback_check_date_after_today', array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-Out tidak boleh sebelum tanggal sekarang.'));
     
