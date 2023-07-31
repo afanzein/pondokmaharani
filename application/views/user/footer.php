@@ -22,10 +22,21 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.all.min.js"></script>
 <script>
 
 
+//costum alert
+function showCustomAlert() {
+    Swal.fire({
+      title: 'Pesan Kustom!',
+      text: 'Ini adalah pesan kustom menggunakan SweetAlert!',
+      icon: 'success',
+      confirmButtonText: 'Tutup'
+    });
+  }
   //==========================================
+
   // Header-Login
   $(document).ready(function() {
     // Set the JavaScript variables using PHP
@@ -84,7 +95,23 @@
   });
 
 
-  $(document).ready(function() {
+function togglePaymentDetails() {
+    var paymentDetails = document.getElementById("paymentDetails");
+    var arrowIcon = document.querySelector(".arrow-icon");
+
+    if (paymentDetails.style.display === "none") {
+        paymentDetails.style.display = "block";
+        arrowIcon.classList.remove("fa-chevron-right");
+        arrowIcon.classList.add("fa-chevron-down");
+    } else {
+        paymentDetails.style.display = "none";
+        arrowIcon.classList.remove("fa-chevron-down");
+        arrowIcon.classList.add("fa-chevron-right");
+    }
+}
+
+//slideshow
+$(document).ready(function() {
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
   showSlides(slideIndex);
@@ -135,22 +162,6 @@
   // Trigger the click on the first thumbnail to initialize the slideshow
   $(".demo").first().click();
 });
-
-
-function togglePaymentDetails() {
-    var paymentDetails = document.getElementById("paymentDetails");
-    var arrowIcon = document.querySelector(".arrow-icon");
-
-    if (paymentDetails.style.display === "none") {
-        paymentDetails.style.display = "block";
-        arrowIcon.classList.remove("fa-chevron-right");
-        arrowIcon.classList.add("fa-chevron-down");
-    } else {
-        paymentDetails.style.display = "none";
-        arrowIcon.classList.remove("fa-chevron-down");
-        arrowIcon.classList.add("fa-chevron-right");
-    }
-}
 
 </script>
 
