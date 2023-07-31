@@ -87,7 +87,7 @@ class Reservation extends CI_Controller
         $generated_id = $this->db->insert_id();
 
         // Redirect to the next page and include the id_pemesanan as a query parameter
-        redirect('bayartamu/index?id_pemesanan=' . $generated_id);
+        redirect('bayartamu/tampil?id_pemesanan=' . $generated_id);
 
         }
     }
