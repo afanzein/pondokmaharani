@@ -16,6 +16,11 @@
             return $query->result_array();
         }
     
+        public function get_detail_pembayaran($id_pembayaran){
+            $this->db->where('id_pembayaran', $id_pembayaran);
+            return $this->db->get('tb_detail_pembayaran')->result_array();
+        }
+
         public function dt_detail_pembayaran_insert()
         {
             $data = array(
