@@ -18,7 +18,6 @@
                     <li>
                         <span class="label">Subtotal:</span> Rp 160.0000,-
                     </li>
-                    <!-- Add other items as needed -->
                 </ul>
             </div>
         </div>
