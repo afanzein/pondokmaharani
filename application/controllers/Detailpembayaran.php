@@ -16,6 +16,11 @@ class Detailpembayaran extends CI_Controller
         $this->load->view('admin/footer');
     }
 
+        public function get_detail_pembayaran($id_pembayaran){
+        $this->db->where('id_pembayaran', $id_pembayaran);
+        return $this->db->get('tb_detail_pembayaran')->result_array();
+    }
+
     public function detailpembayaran_insert()
     {
         $data['title'] = 'Tambah Detail Pembayaran';

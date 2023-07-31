@@ -85,11 +85,9 @@ class Reservation extends CI_Controller
 
         // Retrieve the generated id_pemesanan
         $generated_id = $this->db->insert_id();
-        // Generate the URL using site_url()
-        $url = site_url('bayartamu/tampil?id_pemesanan=' . $generated_id);
 
         // Redirect to the next page and include the id_pemesanan as a query parameter
-        redirect($url);
+        redirect('bayartamu/tampil?id_pemesanan=' . $generated_id);
 
         }
     }
