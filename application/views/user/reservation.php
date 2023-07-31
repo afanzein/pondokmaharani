@@ -47,7 +47,7 @@
                 </div>
             <div class="col-md-6"> 
                 <div class="container-pesan">
-                <form method="post" action="<?php echo base_url('reservation/user_submit'); ?> ?>">
+                <form method="post" action="<?php echo base_url('reservation/pesan_submit'); ?> ?>">
                     <div class="detail-text">
                             <table class="room-info">
                             <tr>
