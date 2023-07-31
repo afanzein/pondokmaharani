@@ -1,7 +1,7 @@
 <?php
 class Bayartamu extends CI_Controller{
 
-    public function index($id_pemesanan){
+    public function index(){
 // Load the required models
 $this->load->model('M_pembayaran');
 $this->load->model('M_detail_pembayaran');
