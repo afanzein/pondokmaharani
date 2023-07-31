@@ -1,4 +1,5 @@
 <!-- v_pembayaran.php -->
+<section class="bayar py-2">
 <div class="container mt-6">
     <h1 class="text-center">Halaman Pembayaran</h1>
     <?php foreach ($pembayaran as $p) : ?>
@@ -66,3 +67,4 @@
         </div>
     <?php endforeach; ?>
 </div>
+</section>
