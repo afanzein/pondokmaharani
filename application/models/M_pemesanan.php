@@ -67,7 +67,7 @@
         $tgl_pemesanan = date('Y-m-d');
         $tgl_checkin = $this->input->post('tgl_checkin');
         $tgl_checkout = $this->input->post('tgl_checkout');
-
+        $id_tipe_kamar = $this->input->post('id_tipe_kamar');
         // Retrieve nik_tamu from tb_tamu based on id_akun from session
         $id_akun_session = $this->session->userdata('id_akun');
         $this->load->model('M_tamu');
