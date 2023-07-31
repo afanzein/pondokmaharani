@@ -6,6 +6,8 @@ class Bayartamu extends CI_Controller{
         parent::__construct();
         $this->load->model('M_pembayaran');
         $this->load->model('M_detailpembayaran');
+        $this->load->model('M_tamu');
+           
     }
 
     public function tampil(){
@@ -18,8 +20,9 @@ $id_akun = $this->session->userdata('id_akun');
 // Retrieve the id_pemesanan from the URL query parameter
 $id_pemesanan = $this->input->get('id_pemesanan');
 // Retrieve data for tb_pembayaran
-$data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_akun, $id_pemesanan);
-
+$data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_pemesanan);
+$data['nama_tamu'] = $this->M_tamu->getuserNameByIdAkun($id_akun);
+$data['nik_tamu'] = $this->M_tamu->getNikTamuByIdAkun($id_akun);
 // Retrieve data for tb_detail_pembayaran
 $data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran_data($id_pemesanan);
 

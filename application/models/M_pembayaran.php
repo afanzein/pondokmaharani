@@ -16,15 +16,17 @@
             return $query->result_array();
         }
 
-        public function get_pembayaran_data($id_akun, $id_pemesanan){
-            $this->db->select('p.*, t.nama_tamu, t.nik_tamu');
+        public function get_pembayaran_data($id_pemesanan) {
+            $this->db->select('p.*, pem.tgl_pemesanan, status.status_pemesanan');
             $this->db->from('tb_pembayaran p');
-            $this->db->join('tb_tamu t', 'p.id_akun = t.id_akun');
-            $this->db->where('p.id_akun', $id_akun);
-            $this->db->where('p.id_pemesanan', $id_pemesanan); // Add this line to match id_pemesanan
+            $this->db->join('tb_pemesanan pem', 'p.id_pemesanan = pem.id_pemesanan');
+            $this->db->join('tb_status_pemesanan status', 'pem.id_status_pemesanan = status.id_status_pemesanan');
+            $this->db->where('p.id_pemesanan', $id_pemesanan);
             $this->db->order_by('p.tanggal_pembayaran', 'desc');
             return $this->db->get()->result_array();
         }
+            
+        
 
         public function dt_pembayaran_insert()
         {
