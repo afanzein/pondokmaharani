@@ -16,10 +16,14 @@
             return $query->result_array();
         }
     
-        public function get_detail_pembayaran($id_pembayaran){
-            $this->db->where('id_pembayaran', $id_pembayaran);
-            return $this->db->get('tb_detail_pembayaran')->result_array();
+        public function get_detail_pembayaran($id_pemesanan){
+            $this->db->select('*');
+            $this->db->from('tb_detail_pembayaran');
+            $this->db->join('tb_pembayaran', 'tb_detail_pembayaran.id_pembayaran = tb_pembayaran.id_pembayaran');
+            $this->db->where('tb_pembayaran.id_pemesanan', $id_pemesanan);
+            return $this->db->get()->result_array();
         }
+        
 
         public function dt_detail_pembayaran_insert()
         {
