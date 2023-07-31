@@ -15,8 +15,8 @@
                     <table class="table table-borderless">
                         <tbody>
                             <?php
-                            $detail_pembayaran = $this->M_pembayaran->get_detail_pembayaran($p['id_pembayaran']);
-                            foreach ($detail_pembayaran as $detail) : ?>
+                           $detail_pembayaran = $data['detail_pembayaran'][$p['id_pembayaran']]; // Access the correct detail_pembayaran using id_pembayaran
+                           foreach ($detail_pembayaran as $detail) : ?>
                                 <tr>
                                     <td><span class="label">Item yang Dibayar</span></td>
                                     <td>:</td>
