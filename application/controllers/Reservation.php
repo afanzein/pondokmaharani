@@ -79,6 +79,7 @@ class Reservation extends CI_Controller
             $this->load->view('user/footer');
         } else {
             // Validation passed, proceed with data insertion
+            $this->load->model($M_pemesanan);
             $id_tipe_kamar = $this->input->get('id_tipe_kamar');
         $this->M_pemesanan->user_pemesanan($id_tipe_kamar);
 
@@ -94,6 +95,9 @@ class Reservation extends CI_Controller
             // Add the callback function for date validation
         public function check_date_after_today($date)
         {
+            $selected_date = strtotime(date($date));
+            $current_date = strtotime(date('Y-m-d'));
+    
             if ($selected_date < $current_date) {
                 return false;
             }
