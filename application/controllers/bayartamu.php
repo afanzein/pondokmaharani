@@ -18,6 +18,9 @@ $data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_akun, $id_pem
 // Retrieve data for tb_detail_pembayaran
 $data['detail_pembayaran'] = $this->M_detail_pembayaran->get_detail_pembayaran_data($id_pemesanan);
 
+echo '<pre>';
+echo prin_r($data);
+echo '</pre>';
         // Use the id_pemesanan as needed, for example, pass it to the view
         $data['id_pemesanan'] = $id_pemesanan;
         $data['title'] = 'Halaman Pembayaran';
