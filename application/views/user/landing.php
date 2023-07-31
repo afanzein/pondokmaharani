@@ -127,19 +127,23 @@
                             <tr>
                               <td class="card-text">Harga Harian</td>
                                 <td>:</td>
-                                <td>Rp.<?php echo $product['harga_permalam']; ?> /malam</td>
+                                <td>Rp.<?php echo $product['harga_permalam']; ?></td>
+                                <td> /malam</td>
                             </tr>
                             <tr>
                               <td class="card-text">Harga Mingguan</td>
                               <td>:</td> 
-                              <td>Rp.<?php echo $product['harga_perminggu']; ?> /minggu</td>
+                              <td>Rp.<?php echo $product['harga_perminggu']; ?></td> 
+                              <td>/minggu</td>
                             </tr>
                             <tr>
                               <td class="card-text">Harga Bulanan</td>
                               <td>:</td> 
-                              <td>Rp.<?php echo $product['harga_perbulan']; ?> /bulan</td>
+                              <td>Rp.<?php echo $product['harga_perbulan']; ?></td>
+                            <td>/bulan</td>
                             </tr>
                           </table>
+                          <hr>
                             <!-- Tambahkan link "Buy Now" dengan query parameter id_tipe_kamar -->
                             <a href="<?php echo base_url('reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-primary col-sm-12">Pesan Sekarang</a>
 
