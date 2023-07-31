@@ -50,7 +50,7 @@
     </div>
   </section>
 
-  <section id="facilities" class="py-5">
+  <section id="facilities" class="py-2">
   <div class="container">
     <h1 class="display-4 text-center">Fasilitas Kami</h1>
     <hr>
@@ -107,6 +107,7 @@
 <!-- Product Card Section -->
 <section id="products" class="bg-light py-5">
     <div class="container">
+      <h1>Pesan Kamar</h1>
         <div class="row">
         <?php 
                 $processed_ids = array(); // Array sementara untuk menyimpan id_tipe_kamar yang sudah diproses

@@ -50,7 +50,7 @@ if ($this->session->userdata('role')) {
           <a class="nav-link" href="#facilities">Fasilitas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#products">Reservation</a>
+          <a class="nav-link" href="#products">Pesan Kamar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#about">About Us</a>
