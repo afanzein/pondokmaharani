@@ -76,7 +76,8 @@
         // Retrieve the available id_kamar based on the selected id_tipe_kamar and status_kamar
         $this->load->model('M_kamar');
         $id_kamar = $this->M_kamar->getAvailableKamarId($id_tipe_kamar);
-        echo $id_kamar;
+        echo $id_tipe_kamar;
+
 
             try {
                 // Step 1: Insert reservation details into tb_pemesanan table
