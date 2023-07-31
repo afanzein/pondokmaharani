@@ -10,24 +10,30 @@
         <div class="carousel-item active">
           <img src="<?php echo base_url(); ?>assets/img/carousel-1.jpg" class="d-block w-100" alt="Image 1">
           <div class="carousel-caption">
-          <h1>Selamat Datang di <br>Pondok Maharani Syariah</h1>
-          <p>Pondok Maharani merupakan layanan penyedia hotel dan kost syariah.
-            Harap bagi pasangan membawa kartu nikah atau keluarga sebagai bukti.
+          <h1>Selamat Datang di <br><strong>Pondok Maharani Syariah<strong></h1>
+          <hr>
+          <p>Selamat datang di Pondok Maharani Syariah, destinasi akomodasi yang memberikan ketenangan dan kenyamanan 
+            bagi Anda. Nikmati suasana yang hangat dan layanan yang ramah sambil menikmati fasilitas unggulan kami!
           </p>
         </div>
         </div>
         <div class="carousel-item">
           <img src="<?php echo base_url(); ?>assets/img/carousel-4.jpg" class="d-block w-100" alt="Image 2">
           <div class="carousel-caption">
-          <h1>Welcome to Our Website</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h1>Moto Pondok Maharani Syariah</h1>
+          <p>Kami akan menyambut Anda dengan senyuman dan penuh keceriaan. Rasakan kenyamanan seperti di rumah sendiri 
+            dan nikmati kemudahan fasilitas kami</p>
         </div>
         </div>
         <div class="carousel-item">
           <img src="<?php echo base_url(); ?>assets/img/carousel-6.jpg" class="d-block w-100" alt="Image 3">
           <div class="carousel-caption">
-          <h1>Welcome to Our Website</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h1>Pondok Maharani Syariah <br> Stay Halal !</h1>
+          <p>Kami mengutamakan prinsip syariah dan memastikan pengalaman menginap yang nyaman dan
+             harmonis untuk semua tamu kami. Oleh karena itu, kami mohon kepada pasangan untuk menyertakan bukti nikah 
+             berupa surat nikah atau kartu keluarga saat melakukan proses check-in. Hal ini merupakan bagian dari 
+             komitmen kami untuk menjaga suasana yang sesuai dengan aturan syariah. Terima kasih atas kerjasama dan 
+             pengertian Anda. Selamat menikmati momen berharga bersama kami di Pondok Maharani Syariah.</p>
         </div>
         </div>
       </div>
@@ -165,9 +171,11 @@
       <div class="row">
         <div class="col-md-6">
           <h2>About Us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget libero a arcu tincidunt blandit.
-            Suspendisse potenti. Sed non varius nisi. Ut hendrerit, elit at euismod tempus, dui tellus laoreet
-            turpis, sit amet bibendum ligula felis at tellus.</p>
+          <p>Selamat datang di Pondok Maharani! Didirikan sejak tahun 2000, kami adalah akomodasi
+             hangat dan ramah, awalnya Pondok Maharani hanya menyediakan layanan Rumah Kost. Kini, kami telah berkembang 
+             menjadi destinasi lengkap dengan beragam fasilitas dan harga unggulan, termasuk Ruang Outdoor dan 
+             Layanan Laundry.Kami selalu berusaha menciptakan suasana seperti di rumah sendiri bagi setiap tamu dengan layanan 
+             pelayanan yang ramah dan profesional. Selamat menikmati pengalaman tak terlupakan bersama kami!</p>
         </div>
         <div class="col-md-6">
           <!-- Add an image here for About Us section -->
