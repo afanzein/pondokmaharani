@@ -79,7 +79,7 @@ class Reservation extends CI_Controller
             $this->load->view('user/footer');
         } else {
             // Validation passed, proceed with data insertion
-            $this->load->model($M_pemesanan);
+            $this->load->model('M_pemesanan');
             $id_tipe_kamar = $this->input->get('id_tipe_kamar');
         $this->M_pemesanan->user_pemesanan($id_tipe_kamar);
 
