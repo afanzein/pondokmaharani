@@ -6,35 +6,36 @@
             <hr>
             <h2>Data Pembayaran</h2>
             <hr>
-            <table class="table table-bordered">
-            <tbody>
-                <tr>
-                    <td><span class="label">Tanggal Pembayaran:</span></td>
-                    <td>:</td>
-                    <td><?php echo $p['tgl_pembayaran']; ?></td>
-                </tr>
-                <tr>
-                    <td><span class="label">Nama Pemesan:</span></td>
-                    <td>:</td>
-                    <td><?php echo $nama_tamu; ?></td>
-                </tr>
-                <tr>
-                    <td><span class="label">NIK Pemesan:</span></td>
-                    <td>:</td>
-                    <td><?php echo $nik_tamu; ?></td>
-                </tr>
-                <tr>
-                    <td><span class="label">Tanggal Pemesanan:</span></td>
-                    <td>:</td>
-                    <td><?php echo $p['tgl_pemesanan']; ?></td>
-                </tr>
-                <tr>
-                    <td><span class="label">Status Pemesanan:</span></td>
-                    <td>:</td>
-                    <td><?php echo $p['status']; ?></td>
-                </tr>
-            </tbody>
-            <hr>
+                <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <td><span class="label">Tanggal Pembayaran:</span></td>
+                        <td>:</td>
+                        <td><?php echo $p['tgl_pembayaran']; ?></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label">Nama Pemesan:</span></td>
+                        <td>:</td>
+                        <td><?php echo $nama_tamu; ?></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label">NIK Pemesan:</span></td>
+                        <td>:</td>
+                        <td><?php echo $nik_tamu; ?></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label">Tanggal Pemesanan:</span></td>
+                        <td>:</td>
+                        <td><?php echo $p['tgl_pemesanan']; ?></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label">Status Pemesanan:</span></td>
+                        <td>:</td>
+                        <td><?php echo $p['status']; ?></td>
+                    </tr>
+                </tbody>
+                <hr>
+        </div>
             <div class="container">
                 <h4 class="toggle-detail" onclick="togglePaymentDetails()">Detail Pembayaran <i class="arrow-icon fas fa-chevron-right"></i></h4>
                 <div class="detail-pembayaran" id="paymentDetails">
