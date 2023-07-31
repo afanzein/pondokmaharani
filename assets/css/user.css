@@ -152,6 +152,15 @@
   
   #products .card-text {
     font-size: 12px; /* Reducing the font size for the description */
+    padding: 5px;
+  }
+
+  #products .price-table {
+    border-collapse: collapse;
+  }
+
+  #products .price-table td {
+    padding: 5px;
   }
   
   /* Custom CSS untuk tombol "Pesan Sekarang" di card produk */

@@ -49,7 +49,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="service-item">
-          <i class="fa fa-sun-o"></i>
+          <i class="fa-solid fa-couch"></i>
           <h4>Ruang Outdoor</h4>
           <p>Nikmati momen santai di Ruang Outdoor kami, kami
             menyediakan isi ulang air, kursi yang panjang dan juga TV .</p>
@@ -65,7 +65,7 @@
         </div>
         <div class="col-lg-6">
           <div class="service-item">
-            <i class="fas fa-fire"></i>
+            <i class="fa-solid fa-fire-burner"></i>
             <h4>Dapur Bersama</h4>
             <p>Tidak perlu repot, Anda dapat menggunakan Dapur Bersama kami, difasilitasi dengan alat
               dapur yang lengkap, Anda juga dapat menggunakan kulkas yang disediakan.</p>
@@ -87,7 +87,7 @@
         </div>
         <div class="col-lg-6">
           <div class="service-item">
-            <i class="fas fa-car"></i>
+            <i class="fa-solid fa-square-parking"></i>
             <h4>Area Parkir</h4>
             <p>Kami memahami kebutuhan Anda akan kenyamanan, jadi nikmati kenyamanan parkir yang aman dan luas di Area Parkir kami.</p>
           </div>
@@ -123,9 +123,23 @@
                             <hr>
                             <p class="card-text"><?php echo $product['fasilitas']; ?></p>
                             <hr size="10px">
-                            <p class="card-text">Harga Harian   &nbsp: Rp.<?php echo $product['harga_permalam']; ?> /malam</p>
-                            <p class="card-text">Harga Mingguan &nbsp: Rp.<?php echo $product['harga_perminggu']; ?> /minggu</p>
-                            <p class="card-text">Harga Bulanan &nbsp: Rp.<?php echo $product['harga_perbulan']; ?> /bulan</p>
+                            <table class="price-table">
+                            <tr>
+                              <td class="card-text">Harga Harian</td>
+                                <td>:</td>
+                                <td>Rp.<?php echo $product['harga_permalam']; ?> /malam</td>
+                            </tr>
+                            <tr>
+                              <td class="card-text">Harga Mingguan</td>
+                              <td>:</td> 
+                              <td>Rp.<?php echo $product['harga_perminggu']; ?> /minggu</td>
+                            </tr>
+                            <tr>
+                              <td class="card-text">Harga Bulanan</td>
+                              <td>:</td> 
+                              <td>Rp.<?php echo $product['harga_perbulan']; ?> /bulan</td>
+                            </tr>
+                          </table>
                             <!-- Tambahkan link "Buy Now" dengan query parameter id_tipe_kamar -->
                             <a href="<?php echo base_url('reservation/pesan').'?id_tipe_kamar='.$product['id_tipe_kamar']; ?>" class="btn btn-primary col-sm-12">Pesan Sekarang</a>
 
