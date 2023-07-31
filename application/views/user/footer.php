@@ -16,13 +16,13 @@
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Custom JavaScript -->
-<script src="<?php echo base_url(); ?>assets/js/user.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/adminlte/plugins/popper.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/adminlte/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.all.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/user.js"></script>
+
+
 <script>
 
 
