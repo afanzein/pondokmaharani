@@ -21,10 +21,6 @@
   padding: 8px 10px; /* Adjust the padding as needed */
   
 }
-.dropdown{
-  /* Add any custom styles for the dropdown menu here */
- 
-}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-menu {
