@@ -1,11 +1,11 @@
 <section class="pesan py-2">
 <?php
 if (!$this->session->userdata('role')) {
-    alert("Lakukan proses login terlebih dahulu");
-    // Redirect user to the login page or show an access denied message
-    redirect(base_url('login'));
-    // or
-    echo "Access Denied";
+       // Show an alert using JavaScript
+       echo '<script>alert("Lakukan proses login terlebih dahulu");</script>';
+       // Redirect user to the login page or show an access denied message
+       redirect(base_url('login'));
+
     exit();
 }
 if ($this->session->userdata('id_akun')) {
@@ -17,7 +17,7 @@ if ($this->session->userdata('id_akun')) {
 
     if (!$nik_tamu) {
         // Redirect user or show an access denied message
-        alert("Lakukan pengisian data profil terlebih dahulu");
+        echo '<script>alert("Lakukan pengisian data profil terlebih dahulu");</script>';
         redirect(base_url('profil')); // Replace 'other_page' with the URL of the page you want to redirect to.
         // or
     // or\
