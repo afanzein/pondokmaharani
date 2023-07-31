@@ -2,7 +2,7 @@
 <?php
 if (!$this->session->userdata('role')) {
        // Show an alert using JavaScript
-       $this->session->set_flashdata('error', 'Lakukan proses login terlebih dahulu');
+       echo '<script>alert("Lakukan proses login terlebih dahulu");</script>';
        // Redirect user to the login page or show an access denied message
        redirect(base_url('login'));
 
@@ -17,7 +17,8 @@ if ($this->session->userdata('id_akun')) {
 
     if (!$nik_tamu) {
         // Redirect user or show an access denied message
-        $this->session->set_flashdata('error', 'Lakukan pengisian data profil terlebih dahulu');
+        echo '<script>alert("Lakukan pengisian data profil terlebih dahulu");</script>';
+        echo '<script>setTimeout(function(){ window.location.href = "profil"; }, 1000);</script>';
         redirect(base_url('profil')); // Replace 'other_page' with the URL of the page you want to redirect to.
         // or
     // or\
