@@ -107,7 +107,8 @@
 <!-- Product Card Section -->
 <section id="products" class="bg-light py-5">
     <div class="container">
-      <h1>Pesan Kamar</h1>
+      <h1 class="text-center display-4">Pesan Kamar</h1>
+      <hr>
         <div class="row">
         <?php 
                 $processed_ids = array(); // Array sementara untuk menyimpan id_tipe_kamar yang sudah diproses
