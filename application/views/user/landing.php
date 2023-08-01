@@ -60,7 +60,7 @@
           <i class="fa-solid fa-couch"></i>
           <h4>Ruang Outdoor</h4>
           <p>Nikmati momen santai di Ruang Outdoor kami, kami
-            menyediakan isi ulang air, kursi yang panjang dan juga TV .</p>
+             menyediakan isi ulang air, kursi yang panjang dan juga TV .</p>
         </div>
       </div>
       <div class="col-lg-6">
@@ -68,7 +68,7 @@
             <i class="fas fa-tshirt"></i>
             <h4>Layanan Laundry</h4>
             <p>Kotoran pada pakaian tak lagi jadi masalah, rasakan kenyamanan tanpa repot dengan 
-              Layanan Laundry berkualitas kami, pakaian Anda akan kembali segar dan bersih.</p>
+               Layanan Laundry berkualitas kami, pakaian Anda akan kembali segar dan bersih.</p>
           </div>
         </div>
         <div class="col-lg-6">
@@ -76,7 +76,7 @@
             <i class="fa-solid fa-fire-burner"></i>
             <h4>Dapur Bersama</h4>
             <p>Tidak perlu repot, Anda dapat menggunakan Dapur Bersama kami, difasilitasi dengan alat
-              dapur yang lengkap, Anda juga dapat menggunakan kulkas yang disediakan.</p>
+               dapur yang lengkap, Anda juga dapat menggunakan kulkas yang disediakan.</p>
           </div>
         </div>
         <div class="col-lg-6">
@@ -175,11 +175,11 @@
       <div class="row">
         <div class="col-md-6">
           <h2>About Us</h2>
-          <p>Selamat datang di Pondok Maharani! Didirikan sejak tahun 2000, kami adalah akomodasi
-             hangat dan ramah, awalnya Pondok Maharani hanya menyediakan layanan Rumah Kost. Kini, kami telah berkembang 
-             menjadi destinasi lengkap dengan beragam fasilitas dan harga unggulan, termasuk Ruang Outdoor dan 
-             Layanan Laundry.Kami selalu berusaha menciptakan suasana seperti di rumah sendiri bagi setiap tamu dengan layanan 
-             pelayanan yang ramah dan profesional. Selamat menikmati pengalaman tak terlupakan bersama kami!</p>
+          <p>Selamat datang di Pondok Maharani! Didirikan sejak tahun 2000, kami adalah akomodasi penginapan dan rumah kost, 
+            awalnya Pondok Maharani hanya menyediakan layanan Rumah Kost. Kini, kami telah berkembang menjadi destinasi lengkap
+             dengan beragam fasilitas dan harga unggulan, termasuk Ruang Outdoor dan Layanan Laundry.Kami selalu berusaha 
+             menciptakan suasana seperti di rumah sendiri bagi setiap tamu dengan layanan pelayanan yang ramah dan profesional. 
+             Selamat menikmati pengalaman tak terlupakan bersama kami!</p>
         </div>
         <div class="col-md-6">
           <!-- Add an image here for About Us section -->
