@@ -26,7 +26,13 @@
             return $this->db->get()->result_array();
         }
             
-        
+   
+        public function dt_update_status($id_pembayaran, $status_pembayaran)
+        {
+           // Update the 'status_pembayaran' column for the specified 'id_pembayaran'
+        $this->db->where('id_pembayaran', $id_pembayaran);
+        $this->db->update('tb_pembayaran', array('status_pembayaran' => $status_pembayaran));
+        }     
 
         public function dt_pembayaran_insert()
         {

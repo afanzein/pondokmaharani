@@ -24,6 +24,7 @@
                                 <th>Nomor Kamar</th>
                                 <th>Tipe Kamar</th>
                                 <th>Status Kamar</th>
+                                <th>Update Status Kamar</th>
                                 <?php if ($this->session->userdata('role') == 1): ?>
                                 <th>Aksi</th>
                                 <?php endif; ?>
@@ -39,6 +40,10 @@
                                     <td><?php echo $data['nomor_kamar']; ?></td>
                                     <td><?php echo $data['nama_tipe_kamar']; ?></td>
                                     <td><?php echo $data['status_kamar']; ?></td>
+                                    <td>
+                                    <a href="<?php echo base_url('kamar/update_status?id=' . $data['id_kamar'] . '&status=Tersedia'); ?>" class="btn btn-sm btn-success">Tersedia</a>
+                                <a href="<?php echo base_url('kamar/update_status?id=' . $data['id_kamar'] . '&status=Tidak Tersedia'); ?>" class="btn btn-sm btn-danger">Tidak Tersedia</a>
+                                    </td>
                                     <?php if ($this->session->userdata('role') == 1): ?>
                                     <td>
                                         <a href="<?php echo base_url('kamar/kamar_update/' . $data['id_kamar']); ?>" class="btn btn-warning btn-sm">Edit</a>

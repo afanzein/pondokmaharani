@@ -11,6 +11,7 @@ public function index()
 {
     $data['title'] = 'List Kamar';
     $data['kamar'] = $this->M_kamar->dt_kamar();
+    $this->M_kamar->dt_update_status($id_kamar, $status_kamar);
     $this->load->view('admin/header', $data);
     $this->load->view('admin/kamar/v_kamar');
     $this->load->view('admin/footer');

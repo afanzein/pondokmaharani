@@ -20,6 +20,7 @@
               <th>ID Pemesanan</th>
               <th>Tanggal Pembayaran</th>
               <th>Status Pembayaran</th>
+              <th>Update Status Pembayaran</th>
             </tr>
           </thead>
           <tbody>
@@ -29,6 +30,11 @@
                 <td><?php echo $data['id_pemesanan']; ?></td>
                 <td><?php echo $data['tgl_pembayaran']; ?></td>
                 <td><?php echo $data['status_pembayaran']; ?></td>
+                <td>
+                <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Menunggu Pembayaran'); ?>" class="btn btn-sm btn-primary">Menunggu Pembayaran</a>
+                <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Sudah dibayar'); ?>" class="btn btn-sm btn-warning">Sudah dibayar</a>
+                <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Pemesanan Dibatalkan'); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah yakin ingin membatalkan Pemesanan?')">Batalkan Pemesanan</a>
+                </td>
               </tr>
             <?php } ?>
           </tbody>

@@ -11,7 +11,7 @@ class Pembayaran extends CI_Controller
     {
         $data['title'] = 'Pembayaran';
         $data['pembayaran'] = $this->M_pembayaran->dt_pembayaran();
-
+        $this->M_pembayaran->dt_update_status($id_pembayaran, $status_pembayaran);
         $this->load->view('admin/header', $data);
         $this->load->view('admin/pembayaran/v_pembayaran', $data);
         $this->load->view('admin/footer');

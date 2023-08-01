@@ -16,6 +16,14 @@
         return $query->result_array();
     }
 
+    
+    public function dt_update_status($id_kamar, $status_kamar)
+    {
+       // Update the 'status' column for the specified 'id_kamar'
+    $this->db->where('id_kamar', $id_kamar);
+    $this->db->update('tb_kamar', array('status_kamar' => $status_kamar));
+    }
+
     public function getAvailableKamarId($id_tipe_kamar)
     {
         // Assuming the table name is 'tb_kamar'
