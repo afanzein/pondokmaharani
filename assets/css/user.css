@@ -14,7 +14,6 @@
 .dropdown-menu {
   /* Add any custom styles for the dropdown menu here */
   position: fixed;
-  overflow: visible !important;
 }
 
 .dropdown-menu a {
@@ -23,10 +22,13 @@
   
 }
 
+.nav-item .user-dropdown{
+  overflow:auto !important;
+}
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-menu {
   display: block;
-  overflow: visible !important;
 }
 
 
@@ -202,7 +204,6 @@
 /* Custom CSS for the carousel */
 #home {
     height: 500px; /* Set the desired height for the carousel banner */
-    overflow: hidden;
   }
   
   .carousel-item img {

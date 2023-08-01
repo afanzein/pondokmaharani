@@ -55,15 +55,15 @@
     <h1 class="display-4 text-center">Fasilitas Kami</h1>
     <hr>
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-6">
         <div class="service-item">
-          <i class="fa-solid fa-couch row-cols-lg-1"></i>
+          <i class="fa-solid fa-couch"></i>
           <h4>Ruang Outdoor</h4>
           <p>Nikmati momen santai di Ruang Outdoor kami, kami
             menyediakan isi ulang air, kursi yang panjang dan juga TV .</p>
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-6">
           <div class="service-item">
             <i class="fas fa-tshirt"></i>
             <h4>Layanan Laundry</h4>
@@ -71,7 +71,7 @@
               Layanan Laundry berkualitas kami, pakaian Anda akan kembali segar dan bersih.</p>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <div class="service-item">
             <i class="fa-solid fa-fire-burner"></i>
             <h4>Dapur Bersama</h4>
@@ -79,21 +79,21 @@
               dapur yang lengkap, Anda juga dapat menggunakan kulkas yang disediakan.</p>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <div class="service-item">
-            <i class="fa-solid fa-mosque "></i>
+            <i class="fa-solid fa-mosque"></i>
             <h4>Mushola</h4>
             <p>Kami menyediakan Mushola yang tenang dan nyaman, tempat sempurna untuk beribadah dan merenungkan kehidupan.</p>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <div class="service-item">
             <i class="fas fa-wifi"></i>
             <h4>Wi-fi</h4>
             <p>Selalu terhubung dengan dunia di Wi-fi kami yang super cepat, nikmati koneksi lancar di seluruh area akomodasi kami.</p>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <div class="service-item">
             <i class="fa-solid fa-square-parking"></i>
             <h4>Area Parkir</h4>
