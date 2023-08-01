@@ -46,7 +46,7 @@ function showCustomAlert() {
     function showUserDropdown() {
       document.getElementById('userDropdownMenu').textContent = username;
       document.getElementById('login-btn').style.display = 'none';
-      document.getElementById('user-dropdown').style.display = 'inline';
+      document.getElementById('user-dropdown').style.display = 'block';
     }
 
   // Check if the user is logged in and show the user dropdown if necessary
@@ -54,7 +54,7 @@ function showCustomAlert() {
     showUserDropdown();
   } else {
     document.getElementById('user-dropdown').style.display = 'none';
-    document.getElementById('login-btn').style.display = 'inline';
+    document.getElementById('login-btn').style.display = 'block';
   }
 
  });
