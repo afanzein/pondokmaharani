@@ -57,7 +57,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="service-item">
-          <i class="fa-solid fa-couch"></i>
+          <i class="fa-solid fa-couch row-cols-lg-1"></i>
           <h4>Ruang Outdoor</h4>
           <p>Nikmati momen santai di Ruang Outdoor kami, kami
             menyediakan isi ulang air, kursi yang panjang dan juga TV .</p>
@@ -81,7 +81,7 @@
         </div>
         <div class="col-lg-4">
           <div class="service-item">
-            <i class="fa-solid fa-mosque"></i>
+            <i class="fa-solid fa-mosque "></i>
             <h4>Mushola</h4>
             <p>Kami menyediakan Mushola yang tenang dan nyaman, tempat sempurna untuk beribadah dan merenungkan kehidupan.</p>
           </div>
