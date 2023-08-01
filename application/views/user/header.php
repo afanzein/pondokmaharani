@@ -58,7 +58,7 @@ if ($this->session->userdata('role')) {
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item" id="login-btn">
-          <a class="nav-link btn-small btn-success" style="border-radius:10px;" href="<?php echo base_url('login') ?>">Login</a>
+          <a class="nav-link btn-small btn-success" style="border-radius:20px;" href="<?php echo base_url('login') ?>">Login</a>
         </li>
         <li class="nav-item dropdown user-dropdown" id="user-dropdown" >
           <i class="fa fa-user-circle-o nav-icon" style="float:left; padding: 14px 5px 0 0;"></i>
