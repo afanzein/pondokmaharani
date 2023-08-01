@@ -119,7 +119,7 @@
                     if (!in_array($product['id_tipe_kamar'], $processed_ids)):
                         $processed_ids[] = $product['id_tipe_kamar']; // Tandai id_tipe_kamar sebagai sudah diproses
                 ?>
-                <div class="col-lg-2 mb-4">
+                <div class="col-lg-4 mb-4">
                     <div class="card">
                         <div class="card-img-slider slider-products" data-id="<?php echo $product['id_tipe_kamar']; ?>">
                             <?php foreach ($product['images'] as $image): ?>
