@@ -14,6 +14,7 @@
 .dropdown-menu {
   /* Add any custom styles for the dropdown menu here */
   position: fixed;
+  overflow: visible !important;
 }
 
 .dropdown-menu a {
@@ -22,13 +23,11 @@
   
 }
 
-.nav-item .user-dropdown{
-  overflow:auto !important;
-}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-menu {
   display: block;
+  overflow: visible !important;
 }
 
 
@@ -39,6 +38,7 @@
       flex-direction: column;
       min-height: 100vh;
       padding-top:58px; /* Optional padding for top */
+      overflow: visible;
     }
 
     /* Custom CSS for the main content */
@@ -58,7 +58,6 @@
         object-fit: cover;
         height: 100%;
         width: 100%;
-        
     }
     
     .carousel-item::before{
