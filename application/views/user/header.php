@@ -67,9 +67,9 @@ if ($this->session->userdata('role')) {
           <span><?php echo $this->session->userdata('username'); ?></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Profil</a></li>
-            <li><a class="dropdown-item" href="#">Pemesanan</a></li>
-            <li><a class="dropdown-item" href="#">Pembayaran</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('profil') ?>">Profil</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('#') ?>">Pemesanan</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url('login/logout') ?>">Logout</a></li>
           </ul>
         </li>
       </ul>
