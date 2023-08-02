@@ -17,9 +17,9 @@
 
      public function getProducts() {
             // Query to get data for available id_tipe_kamar with status 'Tersedia'
-            $this->db->select('tb_tipe_kamar.id_tipe_kamar, tb_tipe_kamar.nama_tipe_kamar, tb_tipe_kamar.fasilitas, tb_tipe_kamar.harga_permalam, tb_tipe_kamar.harga_perminggu, tb_tipe_kamar.harga_perbulan, tb_foto_kamar.id_foto, tb_foto_kamar.deskripsi_foto');
+            $this->db->select('tb_tipe_kamar.id_tipe_kamar, tb_tipe_kamar.nama_tipe_kamar, tb_tipe_kamar.fasilitas, tb_tipe_kamar.harga_permalam, 
+            tb_tipe_kamar.harga_perminggu, tb_tipe_kamar.harga_perbulan');
             $this->db->from('tb_tipe_kamar');
-            $this->db->join('tb_foto_kamar', 'tb_foto_kamar.id_tipe_kamar = tb_tipe_kamar.id_tipe_kamar', 'left');
             $this->db->join('tb_kamar', 'tb_kamar.id_tipe_kamar = tb_tipe_kamar.id_tipe_kamar', 'inner'); // Use INNER JOIN
             $this->db->where('tb_kamar.status_kamar', 'Tersedia');
         

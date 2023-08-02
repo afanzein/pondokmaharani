@@ -52,9 +52,6 @@ class Reservation extends CI_Controller
                 $data['nama_pengguna'] = "Guest";
             }
     
-            // Fetch room photos for the selected room
-            $data['photos'] = $this->M_tipekamar->getPhotosByTipeKamar($selected_room['id_tipe_kamar']);
-    
             $data['title'] = 'Pondok Maharani';
             $this->load->view('user/header', $data);
             $this->load->view('user/reservation', $data); // Load the reservation.php view
