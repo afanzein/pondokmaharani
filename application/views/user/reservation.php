@@ -120,7 +120,7 @@ if ($this->session->userdata('id_akun')) {
                         <h4 class="text-center">Biaya</h4>
                         <div class="row">
                         <label class="col-sm"><b>Total Hari   : </b></label><input class="col-sm" type="text" id="totalDays" readonly> 
-                        <label class="col-sm"><b>Total Biaya    : </b></labe><input class="col-sm" type="text" id="totalPayment" readonly>
+                        <label class="col-sm"><b>Total Biaya    : </b></label><input class="col-sm" type="text" id="totalPayment" readonly>
                         </div>
                     </div>
             <button type="submit" class="btn btn-primary col-sm-12" style="margin-top:30px">Pesan</button>
