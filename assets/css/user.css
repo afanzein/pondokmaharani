@@ -13,7 +13,7 @@
 .dropdown i{
   float:left; 
   padding: 14px 5px 0 0;
-  color: #fff;
+  color: #8f8d83;
 }
 
 /* Customize the dropdown menu appearance */
@@ -26,7 +26,11 @@
 .dropdown-menu a {
   font-size: 16px; /* Adjust the font size as needed */
   padding: 8px 10px; /* Adjust the padding as needed */
-  color: #ffffffed;
+  color: #8f8d83;
+}
+
+.dropdown-menu a:hover{
+ color: #fffeff;
 }
 
 .dropdown-menu li {
