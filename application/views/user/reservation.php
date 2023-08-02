@@ -76,6 +76,7 @@ if ($this->session->userdata('id_akun')) {
                 <div class="container-pesan">
                 <form method="post" action="<?php echo base_url('reservation/pesan_submit'); ?> ">
                     <div class="detail-text">
+                    <h4 class="text-center">Keterangan Reservasi</h4>
                             <table class="room-info">
                             <tr>
                                 <td><b>Nama Pengguna </b></td>
@@ -110,11 +111,15 @@ if ($this->session->userdata('id_akun')) {
                         </table>
                         <hr>
                         <input type="hidden" name="id_tipe_kamar" value="<?php echo $id_tipe_kamar; ?>">
-                        <div class="date-input">
-                            <label for="checkInDate"><b>Check-In    : </b></label>
-                            <input type="date" name="tgl_checkin" id="checkInDate" class="form-control">
-                            <label for="checkOutDate"><b>Check-Out  : </b></label>
-                            <input type="date" name="tgl_checkout" id="checkOutDate" class="form-control">
+                        <div class="date-input row">
+                            <div class="col-sm">
+                                <label for="checkInDate"><b>Check-In    : </b></label>
+                                <input type="date" name="tgl_checkin" id="checkInDate" class="form-control">
+                            </div>
+                            <div class="col-sm">
+                                <label for="checkOutDate"><b>Check-Out  : </b></label>
+                                <input type="date" name="tgl_checkout" id="checkOutDate" class="form-control">
+                            </div>
                         </div>
                         <hr>
                         <h4 class="text-center">Biaya</h4>
@@ -123,7 +128,7 @@ if ($this->session->userdata('id_akun')) {
                             <label><b>Total Hari   : </b> <input type="text" id="totalDays" readonly></label>
                           </div>
                           <div class="col-sm">
-                          <label><b>Total Biaya    : </b> <input type="text" id="totalPayment" readonly></label>
+                            <label><b>Total Biaya    : </b> <input type="text" id="totalPayment" readonly></label>
                           </div>
                         </div>
                     </div>
