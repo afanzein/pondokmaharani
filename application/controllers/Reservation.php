@@ -18,9 +18,9 @@ class Reservation extends CI_Controller
         $data['products'] = $this->M_tipekamar->getProducts();
     
         // Populate the 'images' index for each product
-        foreach ($data['products'] as &$product) {
-            $product['images'] = $this->M_tipekamar->getPhotosByTipeKamar($product['id_tipe_kamar']);
-        }
+       
+        $data['images'] = $this->M_tipekamar->getPhotosByTipeKamar($id_tipe_kamar);
+        
     
         // Find the selected room based on the provided id_tipe_kamar
         $selected_room = null;
