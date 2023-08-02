@@ -21,8 +21,8 @@ if ($this->session->userdata('id_akun')) {
         echo '<script>setTimeout(function(){ window.location.href = "profil"; }, 1000);</script>';
         redirect(base_url('profil')); // Replace 'other_page' with the URL of the page you want to redirect to.
         // or
-    // or\
-  }
+        // or\
+    }
 }
 
 ?>
@@ -48,7 +48,7 @@ if ($this->session->userdata('id_akun')) {
                 <?php endforeach;?>
                 <?php endif; ?>
             <?php endforeach; ?>
-        </div>
+            </div>
         
 
             <!-- Next and previous buttons -->
@@ -57,21 +57,22 @@ if ($this->session->userdata('id_akun')) {
 
             <!-- Thumbnail images -->
             <div class="row">
-            <?php foreach ($products as $product): ?>
-                <?php if ($product['id_tipe_kamar'] == $selected_room['id_tipe_kamar']): ?>
-                <?php foreach ($product['images'] as $index => $image): ?>
-                    <div class="column">
-                    <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $image['deskripsi_foto']); ?>" 
-                    onclick="currentSlide(<?php echo ($index + 1); ?>)">
-                    </div>
-                    <!-- Add a dot for each image (used to switch between slides) -->
-                    <span class="dot" onclick="currentSlide(<?php echo ($index + 1); ?>)"></span>
-                <?php endforeach; ?>
-                <?php endif; ?>
-            <?php break; endforeach; ?>
+                    <?php foreach ($products as $product): ?>
+                        <?php if ($product['id_tipe_kamar'] == $selected_room['id_tipe_kamar']): ?>
+                        <?php foreach ($product['images'] as $index => $image): ?>
+                            <div class="column">
+                            <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $image['deskripsi_foto']); ?>" 
+                            onclick="currentSlide(<?php echo ($index + 1); ?>)">
+                            </div>
+                            <!-- Add a dot for each image (used to switch between slides) -->
+                            <span class="dot" onclick="currentSlide(<?php echo ($index + 1); ?>)"></span>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
+                    <?php break; endforeach; ?>
             </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+
             <div class="col-md-6"> 
                 <div class="container-pesan">
                 <form method="post" action="<?php echo base_url('reservation/pesan_submit'); ?> ">

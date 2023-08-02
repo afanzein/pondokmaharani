@@ -46,8 +46,10 @@
                                     </td>
                                     <?php if ($this->session->userdata('role') == 1): ?>
                                     <td>
+                                    <div class="btn-group-vertical">
                                         <a href="<?php echo base_url('kamar/kamar_update/' . $data['id_kamar']); ?>" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="<?php echo base_url('kamar/kamar_delete/' . $data['id_kamar']); ?>" class="btn btn-danger btn-sm">Delete</a>
+                                    </div>
                                     </td>
                                     <?php endif; ?>
                                 </tr>
