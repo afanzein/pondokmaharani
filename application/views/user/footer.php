@@ -16,7 +16,7 @@
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Custom JavaScript -->
-<script src="<?php echo base_url(); ?>assets/adminlte/plugins/popper.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/adminlte/plugins/popper/popper.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/adminlte/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
