@@ -62,7 +62,7 @@ if ($this->session->userdata('role')) {
           <a class="nav-link btn-small btn-success" style="border-radius:20px;" href="<?php echo base_url('login') ?>">Login</a>
         </li>
         <li class="nav-item dropdown user-dropdown" id="user-dropdown" >
-          <i class="fa fa-user-circle-o nav-icon" style="float:left; padding: 14px 5px 0 0;"></i>
+          <i class="fa fa-user-circle-o nav-icon" ></i>
           <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdownMenu" 
           data-bs-toggle="dropdown" data-display="static" data-boundary="scrollParent">
           <span><?php echo $this->session->userdata('username'); ?></span>

@@ -38,6 +38,10 @@ border: 1px rgba(0, 0, 0, 0.5);
 background-color: #333;
 }
 
+.dropdown-menu li:hover{
+  background-color: #3f3f3f;
+}
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-menu {
   display: block;
