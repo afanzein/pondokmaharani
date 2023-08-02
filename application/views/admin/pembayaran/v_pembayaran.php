@@ -31,12 +31,12 @@
                 <td><?php echo $data['tgl_pembayaran']; ?></td>
                 <td><?php echo $data['status_pembayaran']; ?></td>
                 <td>
+                  <div class="btn-group-vertical">
                 <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Menunggu Pembayaran'); ?>" class="btn btn-sm btn-primary">Menunggu Pembayaran</a>
-                <hr>
                 <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Sudah dibayar'); ?>" class="btn btn-sm btn-warning">Sudah dibayar</a>
-                <hr>
                 <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Pemesanan Dibatalkan'); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pemesanan</a>
-                </td>
+                </div>  
+              </td>
               </tr>
             <?php } ?>
           </tbody>
