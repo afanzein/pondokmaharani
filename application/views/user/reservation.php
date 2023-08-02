@@ -117,9 +117,9 @@ if ($this->session->userdata('id_akun')) {
                             <input type="date" name="tgl_checkout" id="checkOutDate" class="form-control">
                         </div>
                         <hr>
-                        <h5>Biaya</h5>
-                        <label><b>Total Hari   : </b> <input type="text" id="totalDays" readonly></b></label>
-                        <label><b>Total Biaya    : </b> <input type="text" id="totalPayment" readonly></b></label>
+                        <h4 class="text-center">Biaya</h4>
+                        <label class="col-sm-6"><b>Total Hari   : </b> <input type="text" id="totalDays" readonly></b></label>
+                        <label class="col-sm-6"><b>Total Biaya    : </b> <input type="text" id="totalPayment" readonly></b></label>
                     </div>
             <button type="submit" class="btn btn-primary col-sm-12" style="margin-top:30px">Pesan</button>
             </div>
