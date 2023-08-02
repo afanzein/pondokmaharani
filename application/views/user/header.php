@@ -16,7 +16,7 @@ if ($this->session->userdata('role')) {
   <link rel="icon" href="<?php echo base_url(); ?>assets/img/mainlogo.png">
   <title>Pondok Maharani</title>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/sweetalert2/sweetalert2.min.css">
