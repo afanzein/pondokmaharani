@@ -39,7 +39,7 @@ if ($this->session->userdata('id_akun')) {
             <div class="slideshow-container">
             <?php foreach ($images as $index => $product): ?>
                     <div class="mySlides">
-                    <div class="numbertext"><?php echo ($index + 1) . ' / ' . count($product['images']); ?></div>
+                    <div class="numbertext"><?php echo ($index + 1) . ' / ' . count($product); ?></div>
                     <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $product['deskripsi_foto']); ?>" 
                      onclick="currentSlide(<?php echo ($index + 1); ?>,<?php echo $selected_room['id_tipe_kamar']; ?>)">
                     </div>
@@ -55,7 +55,7 @@ if ($this->session->userdata('id_akun')) {
             <div class="row">
                     <?php foreach ($images as $index => $product): ?>
                             <div class="column">
-                            <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $image['deskripsi_foto']); ?>" 
+                            <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $product['deskripsi_foto']); ?>" 
                             onclick="currentSlide(<?php echo ($index + 1); ?>)">
                             </div>
                             <!-- Add a dot for each image (used to switch between slides) -->
