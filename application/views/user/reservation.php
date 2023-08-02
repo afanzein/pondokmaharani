@@ -77,6 +77,7 @@ if ($this->session->userdata('id_akun')) {
                 <form method="post" action="<?php echo base_url('reservation/pesan_submit'); ?> ">
                     <div class="detail-text">
                     <h4 class="text-center">Keterangan Reservasi</h4>
+                    <hr>
                             <table class="room-info">
                             <tr>
                                 <td><b>Nama Pengguna </b></td>
@@ -111,6 +112,7 @@ if ($this->session->userdata('id_akun')) {
                         </table>
                         <hr>
                         <input type="hidden" name="id_tipe_kamar" value="<?php echo $id_tipe_kamar; ?>">
+                        <h4 class="text-center py-5">Pilih tanggal</h4>
                         <div class="date-input row">
                             <div class="col-sm">
                                 <label for="checkInDate"><b>Check-In    : </b></label>
@@ -122,7 +124,7 @@ if ($this->session->userdata('id_akun')) {
                             </div>
                         </div>
                         <hr>
-                        <h4 class="text-center">Biaya</h4>
+                        <h4 class="text-center py-5">Biaya</h4>
                         <div class="row">
                           <div class="col-sm">  
                             <label><b>Total Hari   : </b> <input type="text" id="totalDays" readonly></label>
