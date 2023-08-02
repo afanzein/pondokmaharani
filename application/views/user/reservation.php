@@ -68,7 +68,7 @@ if ($this->session->userdata('id_akun')) {
                             <span class="dot" onclick="currentSlide(<?php echo ($index + 1); ?>)"></span>
                         <?php endforeach; ?>
                         <?php endif; ?>
-                    <?php break; endforeach; ?>
+                    <?php endforeach; ?>
             </div>
           </div>
         </div>
