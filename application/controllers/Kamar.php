@@ -11,7 +11,6 @@ public function index()
 {
     $data['title'] = 'List Kamar';
     $data['kamar'] = $this->M_kamar->dt_kamar();
-    $this->M_kamar->dt_update_status($id_kamar, $status_kamar);
     $this->load->view('admin/header', $data);
     $this->load->view('admin/kamar/v_kamar');
     $this->load->view('admin/footer');
@@ -34,6 +33,17 @@ public function kamar_insert()
         $this->M_kamar->dt_kamar_insert();
         redirect(base_url('kamar'));
     }
+}
+
+public function update_status()
+{
+    $id_kamar = $this->input->get('id');
+    $status = $this->input->get('status');
+    // Update the status in the model
+    $this->M_kamar->dt_update_status($id_kamar, $status);
+
+    // Redirect to the page where the table is displayed
+    redirect(base_url('kamar'));
 }
 
 public function kamar_update($id = FALSE)

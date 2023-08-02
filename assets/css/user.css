@@ -13,13 +13,17 @@
 /* Customize the dropdown menu appearance */
 .dropdown-menu {
   /* Add any custom styles for the dropdown menu here */
+  background-color: #333;
   position: fixed;
 }
 
 .dropdown-menu a {
   font-size: 16px; /* Adjust the font size as needed */
   padding: 8px 10px; /* Adjust the padding as needed */
-  
+}
+
+.dropdown-menu li {
+border: 1px rgba(0, 0, 0, 0.5);
 }
 
 /* Show the dropdown menu on hover */

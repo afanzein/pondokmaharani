@@ -42,7 +42,7 @@
                                     <td><?php echo $data['status_kamar']; ?></td>
                                     <td>
                                     <a href="<?php echo base_url('kamar/update_status?id=' . $data['id_kamar'] . '&status=Tersedia'); ?>" class="btn btn-sm btn-success">Tersedia</a>
-                                <a href="<?php echo base_url('kamar/update_status?id=' . $data['id_kamar'] . '&status=Tidak Tersedia'); ?>" class="btn btn-sm btn-danger">Tidak Tersedia</a>
+                                    <a href="<?php echo base_url('kamar/update_status?id=' . $data['id_kamar'] . '&status=Tidak Tersedia'); ?>" class="btn btn-sm btn-danger">Tidak Tersedia</a>
                                     </td>
                                     <?php if ($this->session->userdata('role') == 1): ?>
                                     <td>

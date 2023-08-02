@@ -11,10 +11,19 @@ class Pembayaran extends CI_Controller
     {
         $data['title'] = 'Pembayaran';
         $data['pembayaran'] = $this->M_pembayaran->dt_pembayaran();
-        $this->M_pembayaran->dt_update_status($id_pembayaran, $status_pembayaran);
         $this->load->view('admin/header', $data);
         $this->load->view('admin/pembayaran/v_pembayaran', $data);
         $this->load->view('admin/footer');
+    }
+
+        public function update_status()
+    {
+        $id_pembayaran = $this->input->get('id');
+        $status = $this->input->get('status');
+        // Update the status in the model
+        $this->M_pembayaran->dt_update_status($id_pembayaran, $status);
+        // Redirect to the page where the table is displayed
+        redirect(base_url('pembayaran'));
     }
 
     public function get_pembayaran_data($id_akun, $id_pemesanan){

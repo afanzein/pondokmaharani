@@ -95,24 +95,24 @@ if ($this->session->userdata('id_akun')) {
                                 <td><?php echo $fasilitas; ?></td>
                             </tr>
                             <tr>
-                                <td><b>Harga </b></td>
+                                <td><b>Harga Perhari </b></td>
                                 <td>:</td>
                                 <td>Rp <?php echo number_format($harga_permalam, 0, ',', '.'); ?>,-</td>
                             </tr>
                             <tr>
-                                <td><b>Harga </b></td>
+                                <td><b>Harga Perminggu</b></td>
                                 <td>:</td>
                                 <td>Rp <?php echo number_format($harga_perminggu, 0, ',', '.'); ?>,-</td>
                             </tr>
                             <tr>
-                                <td><b>Harga </b></td>
+                                <td><b>Harga Perbulan</b></td>
                                 <td>:</td>
                                 <td>Rp <?php echo number_format($harga_perbulan, 0, ',', '.'); ?>,-</td>
                             </tr>
                         </table>
                         <hr>
                         <input type="hidden" name="id_tipe_kamar" value="<?php echo $id_tipe_kamar; ?>">
-                        <h4 class="text-center py-5">Pilih tanggal</h4>
+                        <h4 class="text-center py">Pilih tanggal</h4>
                         <div class="date-input row">
                             <div class="col-sm">
                                 <label for="checkInDate"><b>Check-In    : </b></label>
@@ -124,7 +124,7 @@ if ($this->session->userdata('id_akun')) {
                             </div>
                         </div>
                         <hr>
-                        <h4 class="text-center py-5">Biaya</h4>
+                        <h4 class="text-center py">Biaya</h4>
                         <div class="row">
                           <div class="col-sm">  
                             <label><b>Total Hari   : </b> <input type="text" id="totalDays" readonly></label>
