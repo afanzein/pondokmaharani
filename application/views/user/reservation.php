@@ -136,7 +136,7 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
 //slideshow
-$(document).ready(function() {
+document.ready(function() {
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
   showSlides(slideIndex);
