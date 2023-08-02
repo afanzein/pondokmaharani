@@ -29,17 +29,14 @@
   color: #8f8d83;
 }
 
-.dropdown-menu a:hover{
+.dropdown-menu a:hover li:hover{
  color: #fffeff;
+ background-color: #3f3f3f;
 }
 
 .dropdown-menu li {
 border: 1px rgba(0, 0, 0, 0.5);
 background-color: #333;
-}
-
-.dropdown-menu li:hover{
-  background-color: #3f3f3f;
 }
 
 /* Show the dropdown menu on hover */
