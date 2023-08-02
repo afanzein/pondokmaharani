@@ -136,7 +136,6 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
 //slideshow
-document.ready(function() {
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
   showSlides(slideIndex);
@@ -186,7 +185,6 @@ document.ready(function() {
 
   // Trigger the click on the first thumbnail to initialize the slideshow
   $(".demo").first().click();
-});
 
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
