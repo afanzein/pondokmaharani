@@ -119,8 +119,12 @@ if ($this->session->userdata('id_akun')) {
                         <hr>
                         <h4 class="text-center">Biaya</h4>
                         <div class="row">
-                        <label class="col-sm"><b>Total Hari   : </b><input class="col-sm" type="text" id="totalDays" readonly></label>
-                        <label class="col-sm"><b>Total Biaya    : </b></label><input class="col-sm" type="text" id="totalPayment" readonly></label>
+                          <div class="col-sm">  
+                            <label><b>Total Hari   : </b> <input type="text" id="totalDays" readonly></label>
+                          </div>
+                          <div class="col-sm">
+                          <label><b>Total Biaya    : </b> <input type="text" id="totalPayment" readonly></label>
+                          </div>
                         </div>
                     </div>
             <button type="submit" class="btn btn-primary col-sm-12" style="margin-top:30px">Pesan</button>
