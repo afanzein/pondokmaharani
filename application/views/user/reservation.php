@@ -37,7 +37,7 @@ if ($this->session->userdata('id_akun')) {
         <!-- Container for the image gallery --
             <!-- Slideshow container -->
             <div class="slideshow-container">
-            <?php foreach ($images as $product): ?>
+            <?php foreach ($images as $index => $product): ?>
                     <div class="mySlides">
                     <div class="numbertext"><?php echo ($index + 1) . ' / ' . count($product['images']); ?></div>
                     <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $product['deskripsi_foto']); ?>" 
@@ -53,7 +53,7 @@ if ($this->session->userdata('id_akun')) {
 
             <!-- Thumbnail images -->
             <div class="row">
-                    <?php foreach ($images as $product): ?>
+                    <?php foreach ($images as $index => $product): ?>
                             <div class="column">
                             <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $image['deskripsi_foto']); ?>" 
                             onclick="currentSlide(<?php echo ($index + 1); ?>)">
