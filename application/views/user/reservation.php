@@ -26,61 +26,6 @@ if ($this->session->userdata('id_akun')) {
 }
 ?>
 
-<script>
-//slideshow
-$(document).ready(function() {
-  let slideIndex = 1;
-  let maxSlides = document.querySelectorAll(".mySlides").length;
-  showSlides(slideIndex);
-
-  // Next/previous controls
-  function plusSlides(n) {
-    showSlides(slideIndex + n);
-  }
-
-  // Thumbnail image controls
-  function currentSlide(n) {
-    showSlides(n);
-  }
-
-  function showSlides(n) {
-    slideIndex = n;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-
-    if (n > maxSlides) { slideIndex = 1; }
-    if (n < 1) { slideIndex = maxSlides; }
-
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-  }
-
-  // Attach click event handlers to arrow buttons
-  $(".prev").on("click", function() {
-    plusSlides(-1);
-  });
-
-  $(".next").on("click", function() {
-    plusSlides(1);
-  });
-
-  // Attach click event handlers to thumbnail images
-  $(".demo").on("click", function() {
-    currentSlide($(this).index() + 1);
-  });
-
-  // Trigger the click on the first thumbnail to initialize the slideshow
-  $(".demo").first().click();
-});
-</script>
-
 <div class="container">
     <hr>
     <h1 class="text-center display-5">Pesan Kamar</h1>
@@ -190,7 +135,58 @@ $(document).ready(function() {
 
 <script>
 
+//slideshow
+$(document).ready(function() {
+  let slideIndex = 1;
+  let maxSlides = document.querySelectorAll(".mySlides").length;
+  showSlides(slideIndex);
 
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex + n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(n);
+  }
+
+  function showSlides(n) {
+    slideIndex = n;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > maxSlides) { slideIndex = 1; }
+    if (n < 1) { slideIndex = maxSlides; }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+
+  // Attach click event handlers to arrow buttons
+  $(".prev").on("click", function() {
+    plusSlides(-1);
+  });
+
+  $(".next").on("click", function() {
+    plusSlides(1);
+  });
+
+  // Attach click event handlers to thumbnail images
+  $(".demo").on("click", function() {
+    currentSlide($(this).index() + 1);
+  });
+
+  // Trigger the click on the first thumbnail to initialize the slideshow
+  $(".demo").first().click();
+});
 
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
