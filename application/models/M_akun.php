@@ -42,9 +42,19 @@
 
     public function daftar_user()
     {
+        $email = $this->input->post('email');
+        $username = $this->input->post('username');
+    
+        // Check if email already exists in the database
+        $existing_email = $this->db->get_where('tb_akun', array('email' => $email))->row();
+        if ($existing_email) {
+            // Email already exists, return an error message or handle it as you prefer
+            return "<script>alert('Email sudah terdaftar')</script>";
+        }
+    
         $data = array(
-            'email' => $this->input->post('email'),
-            'username' => $this->input->post('username'),
+            'email' => $email,
+            'username' => $username,
             'password' => $this->encrypt_password($this->input->post('password')),
             'id_role' => 3
         );
@@ -57,6 +67,7 @@
             return $this->db->error()['message']; // Return the specific error message
         }
     }
+    
     
     
 
