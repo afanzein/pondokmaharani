@@ -136,11 +136,12 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
   //slideshow
-  let slideIndex = 1;
-  let maxSlides = document.querySelectorAll(".mySlides").length;
-
-
+  
+  
   function showSlides(n) {
+    let slideIndex = 1;
+    let maxSlides = document.querySelectorAll(".mySlides").length;
+    showSlides(slideIndex);
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
@@ -159,7 +160,6 @@ if ($this->session->userdata('id_akun')) {
     dots[slideIndex - 1].className += " active";
   }
   
-  showSlides(slideIndex);
   $(document).ready(function() {
   // Next/previous controls
   function plusSlides(n) {
@@ -168,7 +168,7 @@ if ($this->session->userdata('id_akun')) {
 
   // Thumbnail image controls
   function currentSlide(n) {
-    showSlides(slideIndex=n);
+    showSlides(n);
   }
   // Attach click event handlers to arrow buttons
   $(".prev").on("click", function() {
