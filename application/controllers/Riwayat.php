@@ -13,17 +13,18 @@
     {
         $data['title']='Riwayat Pemesanan ';
 
-        $data['reservasi']=$this->M_pemesanan->dt_reservasi_user();
-        $data['laundry']=$this->M_laundry->dt_laundry_user();
-
+        
         // Ambil data session dari variabel yang telah diatur di header.php
         $email_session = $this->session->userdata('email');
         $username_session = $this->session->userdata('username');
         
         $data['username'] = $username_session;
         $data['email'] = $email_session;
-
+        
         $id_akun_session = $this->session->userdata('id_akun');
+        
+        $data['reservasi']=$this->M_pemesanan->dt_reservasi_user($id_akun_session);
+        $data['laundry']=$this->M_laundry->dt_laundry_user($id_akun_session);
 
         $data['email'] = $email_session;
         $data['username'] = $username_session;
