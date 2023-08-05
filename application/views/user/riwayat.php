@@ -27,7 +27,7 @@
 
 
   <div class="container">
-    <h5 class="text-center display-4">Pilih Riwayat Pemesanan</h5>
+    <h2 class="text-center font-weight-light">Pilih riwayat yang ingin Anda tampilkan</h2>
       <ul class="nav nav-tabs nav-justified">
         <li class="nav-item"><a  class="nav-link active" data-toggle="tab" href="#reservasi">Reservasi</a></li>
         <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="#laundry">Laundry</a></li>
