@@ -56,7 +56,6 @@ $('.nav-tabs li:eq(3) a').tab('show')
                 <table class="table">
                 <thead>
                     <tr>
-                    <th>No</th>
                     <th>ID Pemesanan</th>
                     <th>Tanggal Pemesanan</th>
                     <th>No Kamar</th>
@@ -68,9 +67,8 @@ $('.nav-tabs li:eq(3) a').tab('show')
                 </thead>
                 <tbody>
                     <!-- Fetch and display data from the database (tb_pemesanan, tb_kamar, tb_tipe_kamar, tb_checkinout, tb_status_pemesanan) -->
-                    <?php foreach ($riwayat as $r) { ?>
+                    <?php foreach ($reservasi as $r) { ?>
                     <tr>
-                        <td><?php echo $r->no; ?></td>
                         <td><?php echo $r->id_pemesanan; ?></td>
                         <td><?php echo $r->tgl_pemesanan; ?></td>
                         <td><?php echo $r->no_kamar; ?></td>
@@ -95,7 +93,6 @@ $('.nav-tabs li:eq(3) a').tab('show')
                     <table class="table">
                     <thead>
                         <tr>
-                        <th>No</th>
                         <th>ID Laundry</th>
                         <th>ID Pemesanan</th>
                         <th>Harga Satuan</th>
@@ -107,7 +104,6 @@ $('.nav-tabs li:eq(3) a').tab('show')
                         <!-- Fetch and display data from the database (tb_laundry) -->
                         <?php foreach ($laundry as $l) { ?>
                         <tr>
-                            <td><?php echo $l->no; ?></td>
                             <td><?php echo $l->id_laundry; ?></td>
                             <td><?php echo $l->id_pemesanan; ?></td>
                             <td><?php echo $l->harga_satuan; ?></td>
