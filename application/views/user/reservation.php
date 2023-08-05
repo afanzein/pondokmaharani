@@ -135,47 +135,45 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
   //slideshow
-  // Global scope for the slide index
-  let slideIndex = 1;
-  let maxSlides = 0;
+  $(document).ready(function() {
+    let slideIndex = 1;
+    let maxSlides = 0;
 
-  // Show slides function
-  function showSlides(n) {
-    slideIndex = n;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
+    // Show slides function
+    function showSlides(n) {
+      slideIndex = n;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
 
-    if (n > maxSlides) {
-      slideIndex = 1;
+      if (n > maxSlides) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = maxSlides;
+      }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
     }
-    if (n < 1) {
-      slideIndex = maxSlides;
+
+    // Plus slides function
+    function plusSlides(n) {
+      showSlides(slideIndex + n);
     }
 
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    // Current slide function
+    function currentSlide(n) {
+      slideIndex = n;
+      showSlides(slideIndex);
     }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
 
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-  }
-
-  // Plus slides function
-  function plusSlides(n) {
-    showSlides(slideIndex + n);
-  }
-
-  // Current slide function
-  function currentSlide(n) {
-    // Update the slide index for both the main slideshow and the thumbnail images
-    slideIndex = n;
-    showSlides(slideIndex);
-  }
-
-  $(window).on("load", function() {
     maxSlides = document.querySelectorAll(".mySlides").length;
 
     // Attach click event handlers to arrow buttons
