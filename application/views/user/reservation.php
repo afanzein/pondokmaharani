@@ -141,10 +141,9 @@ if ($this->session->userdata('id_akun')) {
     let slideIndex = 1;
     let maxSlides = document.querySelectorAll(".mySlides").length;
 
-    $(document).ready(function() {
-      showSlides(slideIndex);
-  function showSlides(n) {
-    slideIndex = n;
+    showSlides(slideIndex);
+    function showSlides(n) {
+      slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
 
@@ -163,16 +162,17 @@ if ($this->session->userdata('id_akun')) {
   }
   
   
+  $(document).ready(function() {
   // Next/previous controls
   function plusSlides(n) {
     showSlides(slideIndex + n);
   }
-
+  
   // Thumbnail image controls
   function currentSlide(n) {
     showSlides(n);
   }
-});
+  
   // Attach click event handlers to arrow buttons
   $(".prev").on("click", function() {
     plusSlides(-1);
@@ -189,7 +189,7 @@ if ($this->session->userdata('id_akun')) {
   
     // Trigger the click on the first thumbnail to initialize the slideshow
     $(".demo").first().click();
-
+  });
 
   
 //Hitung bayar
