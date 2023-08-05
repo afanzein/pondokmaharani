@@ -1,3 +1,22 @@
+<script>
+// Select all tabs
+$('.nav-tabs a').click(function(){
+  $(this).tab('show');
+})
+
+// Select tab by name
+$('.nav-tabs a[href="#home"]').tab('show')
+
+// Select first tab
+$('.nav-tabs a:first').tab('show')
+
+// Select last tab
+$('.nav-tabs a:last').tab('show')
+
+// Select fourth tab (zero-based)
+$('.nav-tabs li:eq(3) a').tab('show')
+</script>
+    <!-- Script -->
 <!-- Riwayat Pemesanan Section -->
 <section id="riwayat py-2">
   <!-- Simulate user login -->
@@ -6,10 +25,10 @@
         <h1 class="text-center display-4" style="margin: 20px 0 10px 0">Riwayat Pemesanan</h1>
         <hr>
         <div class="form-group row">
-        <label for="username" class="col-sm-2 col-form-label">Username</label>
-        <div class="col-sm-10">
-            <p class="form-control-plaintext"><?php echo $username; ?></p>
-        </div>
+          <label for="username" class="col-sm-2 col-form-label">Username</label>
+          <div class="col-sm-10">
+              <p class="form-control-plaintext"><?php echo $username; ?></p>
+          </div>
         </div>
 
         <div class="form-group row">
@@ -25,15 +44,15 @@
 
 
   <div class="container">
-      <ul class="nav nav-tabs nav-pills">
+      <ul class="nav nav-tabs nav-pills nav-justified">
         <li class="active"><a data-toggle="tab" href="#reservasi">Reservasi</a></li>
         <li><a data-toggle="tab" href="#laundry">Laundry</a></li>
       </ul>
 
       <div class="tab-content">
+        
         <div id="reservasi" class="tab-pane fade in active">
-
-          <!-- History Pemesanan Table -->
+            <!-- History Pemesanan Table -->
           <h2 class="text-center display-4" style="margin-top: 50px;">Riwayat Pemesanan</h2>
             <div class="table-responsive">
                 <table class="table">
@@ -65,7 +84,8 @@
                 </table>
             </div>
           </div>
-        <div id="laundry" class="tab-pane fade">
+          
+          <div id="laundry" class="tab-pane fade">
 
             <!-- Laundry Items Table -->
             <h2 class="text-center display-4" style="margin-top: 50px;">Layanan Laundry</h2>
@@ -94,29 +114,9 @@
                     </tbody>
                     </table>
                 </div>
-          <!-- End of Laundry Items Table -->
-        </div>
-      </div>
+              <!-- End of Laundry Items Table -->
+          </div>
+       </div>
   </div>
- </div>
 </section>
 
-<script>
-// Select all tabs
-$('.nav-tabs a').click(function(){
-  $(this).tab('show');
-})
-
-// Select tab by name
-$('.nav-tabs a[href="#home"]').tab('show')
-
-// Select first tab
-$('.nav-tabs a:first').tab('show')
-
-// Select last tab
-$('.nav-tabs a:last').tab('show')
-
-// Select fourth tab (zero-based)
-$('.nav-tabs li:eq(3) a').tab('show')
-</script>
-    <!-- Script -->
