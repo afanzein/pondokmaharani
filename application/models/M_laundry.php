@@ -18,7 +18,7 @@
 
         public function dt_laundry_user($id_akun) 
         {
-            $this->db->select('l.no, l.id_laundry, l.id_pemesanan, l.harga_satuan, l.jumlah_laundry, l.harga_satuan, l.jumlah_laundry, l.subtotal');
+            $this->db->select('l.id_laundry, l.id_pemesanan, l.harga_satuan, l.jumlah_laundry, l.harga_satuan, l.jumlah_laundry, l.subtotal');
             $this->db->from('tb_laundry l');
 
             $this->db->join('tb_pemesanan p', 'p.id_pemesanan = l.id_pemesanan');
