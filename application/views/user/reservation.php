@@ -137,7 +137,7 @@ if ($this->session->userdata('id_akun')) {
 
 <script>
 
-
+$(document).ready(function() {
 //slideshow
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
@@ -189,7 +189,7 @@ if ($this->session->userdata('id_akun')) {
 
   // Trigger the click on the first thumbnail to initialize the slideshow
   $(".demo").first().click();
-
+});
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
     // Assuming you have already fetched the prices from the database and stored them in these variables

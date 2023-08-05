@@ -12,8 +12,7 @@
 </div>
 </body>
 
-<!-- Bootstrap 4 JS-->
-<script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <!-- Custom JavaScript -->
 <script src="<?php echo base_url(); ?>assets/adminlte/plugins/popper/popper.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/adminlte/plugins/sweetalert2/sweetalert2.all.min.js"></script>
