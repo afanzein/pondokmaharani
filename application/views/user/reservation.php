@@ -140,7 +140,9 @@ if ($this->session->userdata('id_akun')) {
 
     let slideIndex = 1;
     let maxSlides = document.querySelectorAll(".mySlides").length;
+
     showSlides(slideIndex);
+    $(document).ready(function() {
   function showSlides(n) {
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
@@ -170,6 +172,7 @@ if ($this->session->userdata('id_akun')) {
   function currentSlide(n) {
     showSlides(n);
   }
+});
   // Attach click event handlers to arrow buttons
   $(".prev").on("click", function() {
     plusSlides(-1);
