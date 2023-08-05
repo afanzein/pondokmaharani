@@ -132,48 +132,48 @@ if ($this->session->userdata('id_akun')) {
       </div>
 
 
-<script>
+<script defer>
 
-  //slideshow
-  $(document).ready(function() {
-    let slideIndex = 1;
-    let maxSlides = 0;
+let slideIndex = 1;
+  let maxSlides = 0;
+  showSlides(slideIndex);
+  // Show slides function
+  function showSlides(n) {
+    slideIndex = n;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
 
-    // Show slides function
-    function showSlides(n) {
-      slideIndex = n;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-
-      if (n > maxSlides) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = maxSlides;
-      }
-
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
+    if (n > maxSlides) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = maxSlides;
     }
 
-    // Plus slides function
-    function plusSlides(n) {
-      showSlides(slideIndex + n);
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
     }
 
-    // Current slide function
-    function currentSlide(n) {
-      slideIndex = n;
-      showSlides(slideIndex);
-    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
 
+  // Plus slides function
+  function plusSlides(n) {
+    showSlides(slideIndex + n);
+  }
+
+  // Current slide function
+  function currentSlide(n) {
+    slideIndex = n;
+    showSlides(slideIndex);
+  }
+
+  // Function to initialize the slideshow
+  function initializeSlideshow() {
     maxSlides = document.querySelectorAll(".mySlides").length;
 
     // Attach click event handlers to arrow buttons
@@ -192,8 +192,10 @@ if ($this->session->userdata('id_akun')) {
 
     // Trigger the click on the first thumbnail to initialize the slideshow
     $(".demo").first().click();
-  });
+  }
 
+  // Call the initializeSlideshow function after the content is fully loaded
+  document.addEventListener("DOMContentLoaded", initializeSlideshow);
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
