@@ -168,7 +168,7 @@ if ($this->session->userdata('id_akun')) {
 
   // Thumbnail image controls
   function currentSlide(n) {
-    showSlides(n);
+    showSlides(slideIndex=n);
   }
   // Attach click event handlers to arrow buttons
   $(".prev").on("click", function() {
