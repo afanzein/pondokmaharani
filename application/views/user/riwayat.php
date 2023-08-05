@@ -27,9 +27,9 @@
 
 
   <div class="container">
-      <ul class="nav nav-tabs nav-justified">
-        <li class="nav-item"><a  class="nav-link active" data-toggle="tab" href="#reservasi">Reservasi</a></li>
-        <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="#laundry">Laundry</a></li>
+      <ul class="nav nav-pills nav-justified navbar-gray-dark">
+        <li class="nav-item"><a  class="nav-link active" data-toggle="pill" href="#reservasi">Reservasi</a></li>
+        <li class="nav-item"><a  class="nav-link" data-toggle="pill" href="#laundry">Laundry</a></li>
       </ul>
 
       <div class="tab-content">
