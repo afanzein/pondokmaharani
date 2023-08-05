@@ -19,7 +19,7 @@
         }            
 
         public function dt_reservasi_user($id_akun) {
-            $this->db->select('p.id_pemesanan, p.tgl_pemesanan, k.no_kamar, tk.nama_tipe_kamar, ci.tgl_checkin, ci.tgl_checkout, s.status');
+            $this->db->select('p.id_pemesanan, p.tgl_pemesanan, k.nomor_kamar, tk.nama_tipe_kamar, ci.tgl_checkin, ci.tgl_checkout, s.status');
             $this->db->from('tb_pemesanan p');
             $this->db->join('tb_tamu t', 't.id_tamu = p.id_tamu');
             $this->db->join('tb_kamar k', 'k.id_kamar = p.id_kamar');
