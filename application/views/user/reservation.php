@@ -136,11 +136,9 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
   //slideshow
-  document.addEventListener("DOMContentLoaded", function () {
+  
   let slideIndex = 1;
-  let maxSlides = document.querySelectorAll(".mySlides").length;
-
-  showSlides(slideIndex);
+  
 
   function showSlides(n) {
     slideIndex = n;
@@ -173,6 +171,10 @@ if ($this->session->userdata('id_akun')) {
     showSlides((slideIndex = n));
   }
 
+  document.addEventListener("DOMContentLoaded", function () {
+  let maxSlides = document.querySelectorAll(".mySlides").length;
+
+  showSlides(slideIndex);
   // Add click event listeners to the prev/next buttons
   document.querySelector(".prev").addEventListener("click", function () {
     plusSlides(-1);
