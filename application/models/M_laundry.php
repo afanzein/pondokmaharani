@@ -16,17 +16,16 @@
             return $query->result_array();
         }
 
-        public function dt_laundry_user($nik) 
+        public function dt_laundry_user($id_akun) 
         {
             $this->db->select('l.no, l.id_laundry, l.id_pemesanan, l.harga_satuan, l.jumlah_laundry, l.harga_satuan, l.jumlah_laundry, l.subtotal');
             $this->db->from('tb_laundry l');
 
-            // Join with tb_tamu to filter data for the given NIK
-            $this->db->join('tb_tamu tamu', 'tamu.NIK = l.nik_tamu');
-            $this->db->where('tamu.NIK', $nik);
-
-            // Match tb_tamu.id_akun with tb_akun
-            $this->db->join('tb_akun akun', 'akun.id_akun = tamu.id_akun');
+            $this->db->join('tb_pemesanan p', 'p.id_pemesanan = l.id_pemesanan');
+            $this->db->join('tb_tamu t', 't.id_tamu = p.id_tamu');
+        
+            // Filter data for the given id_akun
+            $this->db->where('t.id_akun', $id_akun);
 
             $query = $this->db->get();
             return $query->result();
