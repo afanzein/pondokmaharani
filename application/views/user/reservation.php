@@ -152,10 +152,9 @@ if ($this->session->userdata('id_akun')) {
       slideIndex = maxSlides;
     }
 
-    for (let i = 0; i < slides.length; i++) {
+
+    for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
-    }
-    for (let i = 0; i < dots.length; i++) {
       dots[i].classList.remove("active");
     }
 
