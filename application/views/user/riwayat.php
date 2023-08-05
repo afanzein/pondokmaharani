@@ -27,14 +27,14 @@
 
 
   <div class="container">
-      <ul class="nav nav-pills nav-justified">
-        <li class="active"><a data-toggle="pill" href="#reservasi">Reservasi</a></li>
-        <li><a data-toggle="pill" href="#laundry">Laundry</a></li>
+      <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item"><a  class="nav-link active" data-toggle="tab" href="#reservasi">Reservasi</a></li>
+        <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="#laundry">Laundry</a></li>
       </ul>
 
       <div class="tab-content">
         
-        <div id="reservasi" class="tab-pane fade in active">
+        <div id="reservasi" class="tab-pane container active">
             <!-- History Pemesanan Table -->
           <h2 class="text-center display-4" style="margin-top: 50px;">Riwayat Pemesanan</h2>
             <div class="table-responsive">
@@ -68,7 +68,7 @@
             </div>
           </div>
           
-          <div id="laundry" class="tab-pane fade">
+          <div id="laundry" class="tab-pane container fade">
 
             <!-- Laundry Items Table -->
             <h2 class="text-center display-4" style="margin-top: 50px;">Layanan Laundry</h2>
@@ -101,23 +101,12 @@
           </div>
        </div>
        <script>
-          // Select all tabs
-          $('.nav-tabs a').click(function(){
-            $(this).tab('show');
-          });
-
-          // Select tab by name
-          $('.nav-tabs a[href="#home"]').tab('show');
-
-          // Select first tab
-          $('.nav-tabs a:first').tab('show');
-
-          // Select last tab
-          $('.nav-tabs a:last').tab('show');
-
-          // Select fourth tab (zero-based)
-          $('.nav-tabs li:eq(3) a').tab('show');
-        </script>
+    $(document).ready(function(){
+      $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+      });
+    });
+</script>
   </div>
 </section>
 
