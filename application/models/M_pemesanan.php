@@ -25,7 +25,7 @@
             $this->db->join('tb_kamar k', 'k.id_kamar = p.id_kamar');
             $this->db->join('tb_tipe_kamar tk', 'tk.id_tipe_kamar = k.id_tipe_kamar');
             $this->db->join('tb_checkinout ci', 'ci.id_pemesanan = p.id_pemesanan');
-            $this->db->join('tb_status_pemesanan s', 's.id_status = p.id_status');
+            $this->db->join('tb_status_pemesanan s', 's.id_pemesanan = p.id_pemesanan');
         
             // Filter data for the given id_akun
             $this->db->where('t.id_akun', $id_akun);
