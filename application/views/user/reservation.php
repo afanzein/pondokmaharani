@@ -136,55 +136,58 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
   //slideshow
+  let slideIndex = 1;
+  let maxSlides = document.querySelectorAll(".mySlides").length;
 
-// JavaScript for the slideshow gallery
-var slideIndex = 1;
+  showSlides(slideIndex);
 
-function showSlides(n) {
-  var i;
-  var slides = $(".mySlides");
-  var dots = $(".dot");
+  function showSlides(n) {
+    slideIndex = n;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
 
-  if (n > slides.length) {
-    slideIndex = 1;
+    if (n > maxSlides) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = maxSlides;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
   }
 
-  if (n < 1) {
-    slideIndex = slides.length;
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
   }
 
-  slides.removeClass("active").hide();
-    dots.removeClass("active");
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
 
-    slides.eq(slideIndex - 1).show().addClass("active");
-    dots.eq(slideIndex - 1).addClass("active");
-}
+  // Add click event listeners to the prev/next buttons
+  document.querySelector(".prev").addEventListener("click", function () {
+    plusSlides(-1);
+  });
 
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
+  document.querySelector(".next").addEventListener("click", function () {
+    plusSlides(1);
+  });
 
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-
-// Initialize the slideshow
-showSlides(slideIndex);
-
-// Add click event listeners to the prev/next buttons
-$(".prev").click(function () {
-  plusSlides(-1);
-});
-
-$(".next").click(function () {
-  plusSlides(1);
-});
-
-// Add click event listeners to the dots
-$(".dot").click(function () {
-  var index = $(this).index() + 1;
-  currentSlide(index);
-});
+  // Add click event listeners to the dots
+  let dotElements = document.getElementsByClassName("dot");
+  for (let i = 0; i < dotElements.length; i++) {
+    dotElements[i].addEventListener("click", function () {
+      currentSlide(i + 1);
+    });
+  }
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
