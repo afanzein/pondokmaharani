@@ -40,8 +40,7 @@ if ($this->session->userdata('id_akun')) {
             <?php foreach ($images as $index => $product): ?>
                     <div class="mySlides">
                     <div class="numbertext"><?php echo ($index + 1) . ' / ' . count($product); ?></div>
-                    <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $product['deskripsi_foto']); ?>" 
-                     onclick="currentSlide(<?php echo ($index + 1); ?>,<?php echo $selected_room['id_tipe_kamar']; ?>)">
+                    <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $product['deskripsi_foto']); ?>">
                     </div>
             <?php endforeach; ?>
             </div>
@@ -59,7 +58,7 @@ if ($this->session->userdata('id_akun')) {
                             onclick="currentSlide(<?php echo ($index + 1); ?>)">
                             </div>
                             <!-- Add a dot for each image (used to switch between slides) -->
-                            <span class="dot" onclick="currentSlide(<?php echo ($index + 1); ?>)"></span>
+                            <span class="dot"></span>
                         <?php endforeach; ?>
             </div>
           </div>
@@ -144,7 +143,7 @@ if ($this->session->userdata('id_akun')) {
 
     showSlides(slideIndex);
     function showSlides(n) {
-      slideIndex = n;
+    slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
 
@@ -170,7 +169,8 @@ if ($this->session->userdata('id_akun')) {
   
   // Thumbnail image controls
   function currentSlide(n) {
-    showSlides(n);
+    slideIndex = n;
+    showSlides(slideIndex);
   }
   
   // Attach click event handlers to arrow buttons
@@ -186,7 +186,10 @@ if ($this->session->userdata('id_akun')) {
     $(".demo").on("click", function() {
       currentSlide($(this).index() + 1);
     });
-  
+
+  // Trigger the click on the first thumbnail to initialize the slideshow
+  $(".demo").first().click();
+
   });
 
   
