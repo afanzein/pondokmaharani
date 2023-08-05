@@ -141,8 +141,8 @@ if ($this->session->userdata('id_akun')) {
     let slideIndex = 1;
     let maxSlides = document.querySelectorAll(".mySlides").length;
 
-    showSlides(slideIndex);
     $(document).ready(function() {
+      showSlides(slideIndex);
   function showSlides(n) {
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
