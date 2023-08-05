@@ -44,9 +44,9 @@ $('.nav-tabs li:eq(3) a').tab('show');
 
 
   <div class="container">
-      <ul class="nav nav-tabs nav-pills nav-justified">
-        <li class="active"><a data-toggle="tab" href="#reservasi">Reservasi</a></li>
-        <li><a data-toggle="tab" href="#laundry">Laundry</a></li>
+      <ul class="nav nav-pills nav-justified">
+        <li class="active"><a data-toggle="pill" href="#reservasi">Reservasi</a></li>
+        <li><a data-toggle="pill" href="#laundry">Laundry</a></li>
       </ul>
 
       <div class="tab-content">
