@@ -68,16 +68,16 @@ $('.nav-tabs li:eq(3) a').tab('show')
                 </thead>
                 <tbody>
                     <!-- Fetch and display data from the database (tb_pemesanan, tb_kamar, tb_tipe_kamar, tb_checkinout, tb_status_pemesanan) -->
-                    <?php foreach ($pemesanans as $pemesanan) { ?>
+                    <?php foreach ($riwayat as $r) { ?>
                     <tr>
-                        <td><?php echo $pemesanan->no; ?></td>
-                        <td><?php echo $pemesanan->id_pemesanan; ?></td>
-                        <td><?php echo $pemesanan->tgl_pemesanan; ?></td>
-                        <td><?php echo $pemesanan->no_kamar; ?></td>
-                        <td><?php echo $pemesanan->nama_tipe_kamar; ?></td>
-                        <td><?php echo $pemesanan->tgl_checkin; ?></td>
-                        <td><?php echo $pemesanan->tgl_checkout; ?></td>
-                        <td><?php echo $pemesanan->status; ?></td>
+                        <td><?php echo $r->no; ?></td>
+                        <td><?php echo $r->id_pemesanan; ?></td>
+                        <td><?php echo $r->tgl_pemesanan; ?></td>
+                        <td><?php echo $r->no_kamar; ?></td>
+                        <td><?php echo $r->nama_tipe_kamar; ?></td>
+                        <td><?php echo $r->tgl_checkin; ?></td>
+                        <td><?php echo $r->tgl_checkout; ?></td>
+                        <td><?php echo $r->status; ?></td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -105,14 +105,14 @@ $('.nav-tabs li:eq(3) a').tab('show')
                     </thead>
                     <tbody>
                         <!-- Fetch and display data from the database (tb_laundry) -->
-                        <?php foreach ($laundryItems as $laundry) { ?>
+                        <?php foreach ($laundry as $l) { ?>
                         <tr>
-                            <td><?php echo $laundry->no; ?></td>
-                            <td><?php echo $laundry->id_laundry; ?></td>
-                            <td><?php echo $laundry->id_pemesanan; ?></td>
-                            <td><?php echo $laundry->harga_satuan; ?></td>
-                            <td><?php echo $laundry->jumlah_laundry; ?></td>
-                            <td><?php echo $laundry->subtotal; ?></td>
+                            <td><?php echo $l->no; ?></td>
+                            <td><?php echo $l->id_laundry; ?></td>
+                            <td><?php echo $l->id_pemesanan; ?></td>
+                            <td><?php echo $l->harga_satuan; ?></td>
+                            <td><?php echo $l->jumlah_laundry; ?></td>
+                            <td><?php echo $l->subtotal; ?></td>
                         </tr>
                         <?php } ?>
                     </tbody>
