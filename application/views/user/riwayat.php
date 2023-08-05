@@ -71,7 +71,7 @@ $('.nav-tabs li:eq(3) a').tab('show')
                     <tr>
                         <td><?php echo $r->id_pemesanan; ?></td>
                         <td><?php echo $r->tgl_pemesanan; ?></td>
-                        <td><?php echo $r->no_kamar; ?></td>
+                        <td><?php echo $r->nomor_kamar; ?></td>
                         <td><?php echo $r->nama_tipe_kamar; ?></td>
                         <td><?php echo $r->tgl_checkin; ?></td>
                         <td><?php echo $r->tgl_checkout; ?></td>
