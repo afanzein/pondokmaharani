@@ -171,27 +171,30 @@ if ($this->session->userdata('id_akun')) {
     showSlides((slideIndex = n));
   }
 
+  // Encapsulate the script inside DOMContentLoaded event listener
   document.addEventListener("DOMContentLoaded", function () {
-  let maxSlides = document.querySelectorAll(".mySlides").length;
+    let prevBtn = document.querySelector(".prev");
+    let nextBtn = document.querySelector(".next");
+    maxSlides = document.querySelectorAll(".mySlides").length;
+    showSlides(slideIndex);
 
-  showSlides(slideIndex);
-  // Add click event listeners to the prev/next buttons
-  document.querySelector(".prev").addEventListener("click", function () {
-    plusSlides(-1);
-  });
-
-  document.querySelector(".next").addEventListener("click", function () {
-    plusSlides(1);
-  });
-
-  // Add click event listeners to the dots
-  let dotElements = document.getElementsByClassName("dot");
-  for (let i = 0; i < dotElements.length; i++) {
-    dotElements[i].addEventListener("click", function () {
-      currentSlide(i + 1);
+    // Add click event listeners to the prev/next buttons
+    prevBtn.addEventListener("click", function () {
+      plusSlides(-1);
     });
-  }
-});
+
+    nextBtn.addEventListener("click", function () {
+      plusSlides(1);
+    });
+
+    // Add click event listeners to the dots
+    let dotElements = document.getElementsByClassName("dot");
+    for (let i = 0; i < dotElements.length; i++) {
+      dotElements[i].addEventListener("click", function () {
+        currentSlide(i + 1);
+      });
+    }
+  });
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
