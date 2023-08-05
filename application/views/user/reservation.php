@@ -145,52 +145,45 @@ function showSlides(n) {
   var slides = $(".mySlides");
   var dots = $(".dot");
 
-  // Loop back to the first slide if reaching the end
   if (n > slides.length) {
     slideIndex = 1;
   }
-  // Loop back to the last slide if going back from the first slide
+
   if (n < 1) {
     slideIndex = slides.length;
   }
 
-  // Hide all slides and remove the active class from dots
   slides.hide();
   dots.removeClass("active");
 
-  // Display the current slide and add active class to the corresponding dot
   slides.eq(slideIndex - 1).show();
   dots.eq(slideIndex - 1).addClass("active");
 }
 
-// Next/previous controls
 function plusSlides(n) {
   showSlides((slideIndex += n));
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
   showSlides((slideIndex = n));
 }
 
-$(document).ready(function () {
-  // Initialize the slideshow
-  showSlides(slideIndex);
+// Initialize the slideshow
+showSlides(slideIndex);
 
-  // Add click event listeners to the prev/next buttons
-  $(".prev").click(function () {
-    plusSlides(-1);
-  });
+// Add click event listeners to the prev/next buttons
+$(".prev").click(function () {
+  plusSlides(-1);
+});
 
-  $(".next").click(function () {
-    plusSlides(1);
-  });
+$(".next").click(function () {
+  plusSlides(1);
+});
 
-  // Add click event listeners to the dots
-  $(".dot").click(function () {
-    var index = $(this).index() + 1;
-    currentSlide(index);
-  });
+// Add click event listeners to the dots
+$(".dot").click(function () {
+  var index = $(this).index() + 1;
+  currentSlide(index);
 });
   
 //Hitung bayar
