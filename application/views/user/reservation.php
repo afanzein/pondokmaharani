@@ -163,11 +163,15 @@ if ($this->session->userdata('id_akun')) {
   }
 
   function plusSlides(n) {
-    showSlides((slideIndex += n));
+    if (maxSlides) {
+      showSlides((slideIndex += n));
+    }
   }
 
   function currentSlide(n) {
-    showSlides((slideIndex = n));
+    if (maxSlides) {
+      showSlides((slideIndex = n));
+    }
   }
 
   // Encapsulate the script inside DOMContentLoaded event listener
