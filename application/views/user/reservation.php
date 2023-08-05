@@ -138,10 +138,10 @@ if ($this->session->userdata('id_akun')) {
   //slideshow
   
   $(document).ready(function() {
-  function showSlides(n) {
     let slideIndex = 1;
     let maxSlides = document.querySelectorAll(".mySlides").length;
     showSlides(slideIndex);
+  function showSlides(n) {
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
