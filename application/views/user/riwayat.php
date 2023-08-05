@@ -27,7 +27,8 @@
 
 
   <div class="container">
-      <ul class="nav nav-pills nav-justified bg-dark">
+    <h5>Pilih Riwayat Pemesanan</h5>
+      <ul class="nav nav-pills nav-tabs-right">
         <li class="nav-item"><a  class="nav-link active" data-toggle="pill" href="#reservasi">Reservasi</a></li>
         <li class="nav-item"><a  class="nav-link" data-toggle="pill" href="#laundry">Laundry</a></li>
       </ul>
@@ -36,7 +37,7 @@
         
         <div id="reservasi" class="tab-pane container active">
             <!-- History Pemesanan Table -->
-          <h2 class="text-center display-4" style="margin-top: 50px;">Riwayat Pemesanan</h2>
+          <h4 class="text-center display-4" style="margin-top: 50px;">Reservasi</h4>
             <div class="table-responsive">
                 <table class="table">
                 <thead>
@@ -71,7 +72,7 @@
           <div id="laundry" class="tab-pane container fade">
 
             <!-- Laundry Items Table -->
-            <h2 class="text-center display-4" style="margin-top: 50px;">Layanan Laundry</h2>
+            <h4 class="text-center display-4" style="margin-top: 50px;">Layanan Laundry</h4>
             <div class="table-responsive">
                     <table class="table">
                     <thead>
