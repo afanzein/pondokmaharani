@@ -136,6 +136,7 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
   //slideshow
+  document.addEventListener("DOMContentLoaded", function () {
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
 
@@ -188,6 +189,7 @@ if ($this->session->userdata('id_akun')) {
       currentSlide(i + 1);
     });
   }
+});
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
