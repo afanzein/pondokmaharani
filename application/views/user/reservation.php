@@ -131,7 +131,7 @@ if ($this->session->userdata('id_akun')) {
             </div>
         </div>
       </div>
-</div>
+
 
 <script>
 
@@ -246,5 +246,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("checkOutDate").addEventListener("change", calculateTotal);
 });
 </script>
+</div>
 </section>
 
