@@ -148,7 +148,7 @@ $(document).ready(function() {
 
   // Thumbnail image controls
   function currentSlide(n) {
-    showSlides(n);
+    showSlides(slideIndex = n);
   }
 
   function showSlides(n) {
