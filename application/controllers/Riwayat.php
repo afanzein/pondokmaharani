@@ -29,7 +29,7 @@
         $data['email'] = $email_session;
         $data['username'] = $username_session;
         $this->load->view('user/header', $data);
-        $this->load->view('user/profil', $data);
+        $this->load->view('user/riwayat', $data);
         $this->load->view('user/footer');
     }
 
