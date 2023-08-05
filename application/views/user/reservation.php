@@ -38,7 +38,7 @@ if ($this->session->userdata('id_akun')) {
             <!-- Slideshow container -->
             <div class="slideshow-container">
             <?php foreach ($images as $index => $product): ?>
-                    <div class="mySlides <?php echo ($index === 0) ? 'active' : ''; ?>">
+                    <div class="mySlides ">
                     <div class="numbertext"><?php echo ($index + 1) . ' / ' . count($product); ?></div>
                     <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $product['deskripsi_foto']); ?>">
                     </div>
