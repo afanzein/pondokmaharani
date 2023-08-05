@@ -58,7 +58,7 @@ if ($this->session->userdata('id_akun')) {
                             onclick="currentSlide(<?php echo ($index + 1); ?>)">
                             </div>
                             <!-- Add a dot for each image (used to switch between slides) -->
-                            <span class="dot"></span>
+                            <span class="dot" onclick="currentSlide(<?php echo ($index + 1); ?>)"></span>
                         <?php endforeach; ?>
             </div>
           </div>
