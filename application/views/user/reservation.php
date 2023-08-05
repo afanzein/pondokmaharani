@@ -133,6 +133,8 @@ if ($this->session->userdata('id_akun')) {
       </div>
 </div>
 
+</section>
+
 <script>
 
 $(document).ready(function() {
@@ -169,7 +171,7 @@ $(document).ready(function() {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
   }
-});
+
 
   // Attach click event handlers to arrow buttons
   $(".prev").on("click", function() {
@@ -187,7 +189,7 @@ $(document).ready(function() {
 
   // Trigger the click on the first thumbnail to initialize the slideshow
   $(".demo").first().click();
-
+});
 
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
@@ -246,4 +248,3 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("checkOutDate").addEventListener("change", calculateTotal);
 });
 </script>
-</section>
