@@ -137,7 +137,7 @@ if ($this->session->userdata('id_akun')) {
   //slideshow
   
 
-  $(document).ready(function() {
+  $(window).on("load", function() {
     let slideIndex = 1;
     let maxSlides = document.querySelectorAll(".mySlides").length;
 
@@ -169,8 +169,7 @@ if ($this->session->userdata('id_akun')) {
   
   // Thumbnail image controls
   function currentSlide(n) {
-    slideIndex = n;
-    showSlides(slideIndex);
+    showSlides(n);
   }
   
   // Attach click event handlers to arrow buttons
