@@ -162,7 +162,6 @@ if ($this->session->userdata('id_akun')) {
   }
   
   
-  $(document).ready(function() {
   // Next/previous controls
   function plusSlides(n) {
     showSlides(slideIndex + n);
@@ -173,6 +172,7 @@ if ($this->session->userdata('id_akun')) {
     showSlides(n);
   }
   
+  $(document).ready(function() {
   // Attach click event handlers to arrow buttons
   $(".prev").on("click", function() {
     plusSlides(-1);
