@@ -38,7 +38,7 @@ if ($this->session->userdata('id_akun')) {
             <!-- Slideshow container -->
             <div class="slideshow-container">
             <?php foreach ($images as $index => $product): ?>
-                    <div class="mySlides">
+                    <div class="mySlides <?php echo ($index === 0) ? 'active' : ''; ?>">
                     <div class="numbertext"><?php echo ($index + 1) . ' / ' . count($product); ?></div>
                     <img class="demo cursor" src="<?php echo base_url('uploads/foto_kamar/' . $product['deskripsi_foto']); ?>">
                     </div>
@@ -153,11 +153,11 @@ function showSlides(n) {
     slideIndex = slides.length;
   }
 
-  slides.hide();
-  dots.removeClass("active");
+  slides.removeClass("active").hide();
+    dots.removeClass("active");
 
-  slides.eq(slideIndex - 1).show();
-  dots.eq(slideIndex - 1).addClass("active");
+    slides.eq(slideIndex - 1).show().addClass("active");
+    dots.eq(slideIndex - 1).addClass("active");
 }
 
 function plusSlides(n) {
