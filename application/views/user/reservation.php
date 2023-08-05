@@ -139,6 +139,7 @@ if ($this->session->userdata('id_akun')) {
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
 
+  $(document).ready(function() {
   function showSlides(n) {
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
@@ -167,8 +168,8 @@ if ($this->session->userdata('id_akun')) {
     showSlides(n);
   }
 
-  $(document).ready(function() {
  showSlides(slideIndex);
+});
   // Attach click event handlers to arrow buttons
   $(".prev").on("click", function() {
     plusSlides(-1);
@@ -185,7 +186,7 @@ if ($this->session->userdata('id_akun')) {
 
   // Trigger the click on the first thumbnail to initialize the slideshow
   $(".demo").first().click();
-  });
+  
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
     // Assuming you have already fetched the prices from the database and stored them in these variables
