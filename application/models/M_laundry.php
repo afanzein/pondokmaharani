@@ -7,15 +7,30 @@
             return $this->db->get('tb_laundry')->result();
         }
 
-    public function dt_laundry()
-{
-    $this->db->select('l.id_laundry, p.id_pemesanan, p.tgl_pemesanan, l.harga_satuan, l.jumlah_laundry, l.subtotal');
-    $this->db->from('tb_laundry l');
-    $this->db->join('tb_pemesanan p', 'l.id_pemesanan = p.id_pemesanan');
-    $query = $this->db->get();
-    return $query->result_array();
-}
+            public function dt_laundry()
+        {
+            $this->db->select('l.id_laundry, p.id_pemesanan, p.tgl_pemesanan, l.harga_satuan, l.jumlah_laundry, l.subtotal');
+            $this->db->from('tb_laundry l');
+            $this->db->join('tb_pemesanan p', 'l.id_pemesanan = p.id_pemesanan');
+            $query = $this->db->get();
+            return $query->result_array();
+        }
 
+        public function dt_laundry_user($nik) 
+        {
+            $this->db->select('l.no, l.id_laundry, l.id_pemesanan, l.harga_satuan, l.jumlah_laundry, l.harga_satuan, l.jumlah_laundry, l.subtotal');
+            $this->db->from('tb_laundry l');
+
+            // Join with tb_tamu to filter data for the given NIK
+            $this->db->join('tb_tamu tamu', 'tamu.NIK = l.nik_tamu');
+            $this->db->where('tamu.NIK', $nik);
+
+            // Match tb_tamu.id_akun with tb_akun
+            $this->db->join('tb_akun akun', 'akun.id_akun = tamu.id_akun');
+
+            $query = $this->db->get();
+            return $query->result();
+        }
 
     public function dt_laundry_insert()
     {

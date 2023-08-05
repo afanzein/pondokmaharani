@@ -17,6 +17,26 @@
             $query = $this->db->get();
             return $query->result_array();
         }            
+
+        public function dt_reservasi_user() {
+            $this->db->select('p.no, p.id_pemesanan, p.tgl_pemesanan, k.no_kamar, tk.nama_tipe_kamar, ci.tgl_checkin, ci.tgl_checkout, s.status');
+            $this->db->from('tb_pemesanan p');
+            $this->db->join('tb_kamar k', 'k.id_kamar = p.id_kamar');
+            $this->db->join('tb_tipe_kamar tk', 'tk.id_tipe_kamar = k.id_tipe_kamar');
+            $this->db->join('tb_checkinout ci', 'ci.id_pemesanan = p.id_pemesanan');
+            $this->db->join('tb_status_pemesanan s', 's.id_status = p.id_status');
+        
+            // Join with tb_tamu to filter data for the given NIK
+            $this->db->join('tb_tamu tamu', 'tamu.NIK = p.nik_tamu');
+            $this->db->where('tamu.NIK', $nik);
+        
+            // Match tb_tamu.id_akun with tb_akun
+            $this->db->join('tb_akun akun', 'akun.id_akun = tamu.id_akun');
+        
+            $query = $this->db->get();
+            return $query->result();
+        }
+        
         
         public function dt_pemesanan_insert()
         {
