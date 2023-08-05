@@ -5,7 +5,7 @@
   <!-- Simulate user login -->
 
   <div class="container">
-        <h1 class="text-center display-4" style="margin: 20px 0 10px 0">Riwayat Pemesanan</h1>
+        <h1 class="text-center" style="margin: 20px 0 10px 0">Riwayat Pemesanan</h1>
         <hr>
         <div class="form-group row">
           <label for="username" class="col-sm-2 col-form-label">Username</label>
@@ -27,7 +27,7 @@
 
 
   <div class="container">
-    <h5 class="text-center display-4">Pilih Riwayat Pemesanan</h5>
+    <h6 class="text-center display-4">Pilih Riwayat Pemesanan</h6>
       <ul class="nav nav-tabs nav-justified">
         <li class="nav-item"><a  class="nav-link active" data-toggle="tab" href="#reservasi">Reservasi</a></li>
         <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="#laundry">Laundry</a></li>
@@ -72,7 +72,7 @@
           <div id="laundry" class="tab-pane container fade">
 
             <!-- Laundry Items Table -->
-            <h4 class="text-center display-4" style="margin-top: 30px;">Layanan Laundry</h4>
+            <h6 class="text-center display-4" style="margin-top: 30px;">Layanan Laundry</h6>
             <div class="table-responsive">
                     <table class="table">
                     <thead>
