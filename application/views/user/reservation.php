@@ -135,20 +135,22 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
   //slideshow
-  
+  // Global scope for the functions
+  let slideIndex = 1;
+  let maxSlides = 0;
 
-  $(window).on("load", function() {
-    let slideIndex = 1;
-    let maxSlides = document.querySelectorAll(".mySlides").length;
-
-    showSlides(slideIndex);
-    function showSlides(n) {
+  // Show slides function
+  function showSlides(n) {
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
 
-    if (n > maxSlides) { slideIndex = 1; }
-    if (n < 1) { slideIndex = maxSlides; }
+    if (n > maxSlides) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = maxSlides;
+    }
 
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
@@ -160,35 +162,39 @@ if ($this->session->userdata('id_akun')) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
   }
-  
-  
-  // Next/previous controls
+
+  // Plus slides function
   function plusSlides(n) {
     showSlides(slideIndex + n);
   }
-  
-  // Thumbnail image controls
+
+  // Current slide function
   function currentSlide(n) {
-    showSlides(n);
+    slideIndex = n;
+    showSlides(slideIndex);
   }
-  
-  // Attach click event handlers to arrow buttons
-  $(".prev").on("click", function() {
-    plusSlides(-1);
-  });
-  
-  $(".next").on("click", function() {
-    plusSlides(1);
-  });
-  
+
+  $(window).on("load", function() {
+    maxSlides = document.querySelectorAll(".mySlides").length;
+
+    showSlides(slideIndex);
+
+    // Attach click event handlers to arrow buttons
+    $(".prev").on("click", function() {
+      plusSlides(-1);
+    });
+
+    $(".next").on("click", function() {
+      plusSlides(1);
+    });
+
     // Attach click event handlers to thumbnail images
     $(".demo").on("click", function() {
       currentSlide($(this).index() + 1);
     });
 
-  // Trigger the click on the first thumbnail to initialize the slideshow
-  $(".demo").first().click();
-
+    // Trigger the click on the first thumbnail to initialize the slideshow
+    $(".demo").first().click();
   });
 
   
