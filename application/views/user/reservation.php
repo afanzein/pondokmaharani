@@ -138,7 +138,7 @@ if ($this->session->userdata('id_akun')) {
   //slideshow
   
   let slideIndex = 1;
-  
+  let maxSlides;
 
   function showSlides(n) {
     slideIndex = n;
