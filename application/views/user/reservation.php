@@ -132,13 +132,7 @@ if ($this->session->userdata('id_akun')) {
       </div>
 
 
-<script defer>
 
-let slideIndex = 1;
-  let maxSlides = 0;
-  showSlides(slideIndex);
-  // Show slides function
-  function showSlides(n) {
 <script>
 
   //slideshow
@@ -204,7 +198,7 @@ let slideIndex = 1;
     $(".demo").first().click();
   }
 
-]);
+});
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
