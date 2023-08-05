@@ -133,14 +133,12 @@ if ($this->session->userdata('id_akun')) {
       </div>
 </div>
 
-</section>
-
 <script>
 
-$(document).ready(function() {
-//slideshow
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
+$(document).ready(function() {
+//slideshow
   showSlides(slideIndex);
 
   // Next/previous controls
@@ -247,3 +245,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("checkOutDate").addEventListener("change", calculateTotal);
 });
 </script>
+</section>
+
