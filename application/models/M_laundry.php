@@ -22,7 +22,7 @@
             $this->db->from('tb_laundry l');
 
             $this->db->join('tb_pemesanan p', 'p.id_pemesanan = l.id_pemesanan');
-            $this->db->join('tb_tamu t', 't.id_tamu = p.id_tamu');
+            $this->db->join('tb_tamu t', 't.nik_tamu = p.nik_tamu');
         
             // Filter data for the given id_akun
             $this->db->where('t.id_akun', $id_akun);
