@@ -139,7 +139,7 @@ if ($this->session->userdata('id_akun')) {
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
 
-  $(document).ready(function() {
+
   function showSlides(n) {
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
@@ -158,6 +158,9 @@ if ($this->session->userdata('id_akun')) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
   }
+
+  $(document).ready(function() {
+    showSlides(slideIndex);
   // Next/previous controls
   function plusSlides(n) {
     showSlides(slideIndex + n);
@@ -167,17 +170,16 @@ if ($this->session->userdata('id_akun')) {
   function currentSlide(n) {
     showSlides(n);
   }
-
- showSlides(slideIndex);
 });
-  // Attach click event handlers to arrow buttons
-  $(".prev").on("click", function() {
-    plusSlides(-1);
-  });
 
-  $(".next").on("click", function() {
-    plusSlides(1);
-  });
+// Attach click event handlers to arrow buttons
+$(".prev").on("click", function() {
+  plusSlides(-1);
+});
+
+$(".next").on("click", function() {
+  plusSlides(1);
+});
 
   // Attach click event handlers to thumbnail images
   $(".demo").on("click", function() {
