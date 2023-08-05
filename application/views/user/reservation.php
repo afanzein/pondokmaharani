@@ -139,6 +139,16 @@ let slideIndex = 1;
   showSlides(slideIndex);
   // Show slides function
   function showSlides(n) {
+<script>
+
+  //slideshow
+
+  $(document).ready(function() {
+    let slideIndex = 1;
+    let maxSlides = document.querySelectorAll(".mySlides").length;
+
+    showSlides(slideIndex);
+    function showSlides(n) {
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
@@ -194,8 +204,7 @@ let slideIndex = 1;
     $(".demo").first().click();
   }
 
-  // Call the initializeSlideshow function after the content is fully loaded
-  document.addEventListener("DOMContentLoaded", initializeSlideshow);
+]);
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
