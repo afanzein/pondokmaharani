@@ -22,14 +22,16 @@
         <hr>
         
   </div>
+
+
   <div class="container">
       <ul class="nav nav-tabs nav-pills">
-        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-        <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+        <li class="active"><a data-toggle="tab" href="#reservasi">Reservasi</a></li>
+        <li><a data-toggle="tab" href="#laundry">Laundry</a></li>
       </ul>
 
       <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
+        <div id="reservasi" class="tab-pane fade in active">
 
           <!-- History Pemesanan Table -->
           <h2 class="text-center display-4" style="margin-top: 50px;">Riwayat Pemesanan</h2>
@@ -62,11 +64,8 @@
                 </tbody>
                 </table>
             </div>
-            <!-- End of History Pemesanan Table -->
-          <!-- End of History Pemesanan Table -->
           </div>
-        </div>
-        <div id="menu1" class="tab-pane fade">
+        <div id="laundry" class="tab-pane fade">
 
             <!-- Laundry Items Table -->
             <h2 class="text-center display-4" style="margin-top: 50px;">Layanan Laundry</h2>
@@ -99,6 +98,7 @@
         </div>
       </div>
   </div>
+ </div>
 </section>
 
 <script>
