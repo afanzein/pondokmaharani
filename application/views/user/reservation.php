@@ -135,7 +135,7 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
   //slideshow
-  // Global scope for the functions
+  // Global scope for the slide index
   let slideIndex = 1;
   let maxSlides = 0;
 
@@ -170,14 +170,13 @@ if ($this->session->userdata('id_akun')) {
 
   // Current slide function
   function currentSlide(n) {
+    // Update the slide index for both the main slideshow and the thumbnail images
     slideIndex = n;
     showSlides(slideIndex);
   }
 
   $(window).on("load", function() {
     maxSlides = document.querySelectorAll(".mySlides").length;
-
-    showSlides(slideIndex);
 
     // Attach click event handlers to arrow buttons
     $(".prev").on("click", function() {
