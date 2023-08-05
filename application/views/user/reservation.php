@@ -135,21 +135,9 @@ if ($this->session->userdata('id_akun')) {
 
 <script>
 
+  //slideshow
   let slideIndex = 1;
   let maxSlides = document.querySelectorAll(".mySlides").length;
-$(document).ready(function() {
-//slideshow
-  showSlides(slideIndex);
-
-  // Next/previous controls
-  function plusSlides(n) {
-    showSlides(slideIndex + n);
-  }
-
-  // Thumbnail image controls
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
 
   function showSlides(n) {
     slideIndex = n;
@@ -169,8 +157,18 @@ $(document).ready(function() {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
   }
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex + n);
+  }
 
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(n);
+  }
 
+  $(document).ready(function() {
+ showSlides(slideIndex);
   // Attach click event handlers to arrow buttons
   $(".prev").on("click", function() {
     plusSlides(-1);
@@ -187,7 +185,7 @@ $(document).ready(function() {
 
   // Trigger the click on the first thumbnail to initialize the slideshow
   $(".demo").first().click();
-});
+  });
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
     // Assuming you have already fetched the prices from the database and stored them in these variables
