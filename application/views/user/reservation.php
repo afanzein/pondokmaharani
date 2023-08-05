@@ -158,9 +158,9 @@ if ($this->session->userdata('id_akun')) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
   }
-
+  
+  showSlides(slideIndex);
   $(document).ready(function() {
-    showSlides(slideIndex);
   // Next/previous controls
   function plusSlides(n) {
     showSlides(slideIndex + n);
@@ -170,24 +170,24 @@ if ($this->session->userdata('id_akun')) {
   function currentSlide(n) {
     showSlides(n);
   }
-});
-
-// Attach click event handlers to arrow buttons
-$(".prev").on("click", function() {
-  plusSlides(-1);
-});
-
-$(".next").on("click", function() {
-  plusSlides(1);
-});
-
-  // Attach click event handlers to thumbnail images
-  $(".demo").on("click", function() {
-    currentSlide($(this).index() + 1);
+  // Attach click event handlers to arrow buttons
+  $(".prev").on("click", function() {
+    plusSlides(-1);
   });
+  
+  $(".next").on("click", function() {
+    plusSlides(1);
+  });
+  
+    // Attach click event handlers to thumbnail images
+    $(".demo").on("click", function() {
+      currentSlide($(this).index() + 1);
+    });
+  
+    // Trigger the click on the first thumbnail to initialize the slideshow
+    $(".demo").first().click();
+});
 
-  // Trigger the click on the first thumbnail to initialize the slideshow
-  $(".demo").first().click();
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
