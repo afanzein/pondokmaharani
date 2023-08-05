@@ -142,6 +142,7 @@ if ($this->session->userdata('id_akun')) {
     let maxSlides = document.querySelectorAll(".mySlides").length;
 
     showSlides(slideIndex);
+    
     function showSlides(n) {
     slideIndex = n;
     let slides = document.getElementsByClassName("mySlides");
@@ -176,10 +177,6 @@ if ($this->session->userdata('id_akun')) {
     showSlides(slideIndex);
   }
 
-  // Function to initialize the slideshow
-  function initializeSlideshow() {
-    maxSlides = document.querySelectorAll(".mySlides").length;
-
     // Attach click event handlers to arrow buttons
     $(".prev").on("click", function() {
       plusSlides(-1);
@@ -196,7 +193,6 @@ if ($this->session->userdata('id_akun')) {
 
     // Trigger the click on the first thumbnail to initialize the slideshow
     $(".demo").first().click();
-  }
 
 });
   
