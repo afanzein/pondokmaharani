@@ -27,7 +27,7 @@
 
 
   <div class="container">
-      <ul class="nav nav-pills nav-justified navbar-gray-dark">
+      <ul class="nav nav-pills nav-justified bg-dark">
         <li class="nav-item"><a  class="nav-link active" data-toggle="pill" href="#reservasi">Reservasi</a></li>
         <li class="nav-item"><a  class="nav-link" data-toggle="pill" href="#laundry">Laundry</a></li>
       </ul>
