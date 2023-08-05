@@ -13,15 +13,16 @@
         </div>
 
         <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
             <p class="form-control-plaintext"><?php echo $email; ?></p>
+          </div>
         </div>
-        </div>
-
+        
         <hr>
-
-      <div class="container">
+        
+  </div>
+  <div class="container">
       <ul class="nav nav-tabs nav-pills">
         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
         <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
@@ -97,7 +98,7 @@
           <!-- End of Laundry Items Table -->
         </div>
       </div>
- </div>
+  </div>
 </section>
 
 <script>
