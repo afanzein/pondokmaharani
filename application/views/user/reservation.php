@@ -137,7 +137,7 @@ if ($this->session->userdata('id_akun')) {
 
   //slideshow
   
-  
+  $(document).ready(function() {
   function showSlides(n) {
     let slideIndex = 1;
     let maxSlides = document.querySelectorAll(".mySlides").length;
@@ -160,7 +160,7 @@ if ($this->session->userdata('id_akun')) {
     dots[slideIndex - 1].className += " active";
   }
   
-  $(document).ready(function() {
+  
   // Next/previous controls
   function plusSlides(n) {
     showSlides(slideIndex + n);
