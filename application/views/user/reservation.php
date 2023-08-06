@@ -2,10 +2,10 @@
 <?php
 if (!$this->session->userdata('role')) {
        // Show an alert using JavaScript
-       echo '<script>alert("Lakukan proses login terlebih dahulu");</script>';
+       echo '<script>alert("Lakukan proses login terlebih dahulu");';
        // Redirect user to the login page or show an access denied message
        echo 'window.location.href = "' . base_url('login') . '";</script>';
-        exit();
+        exit;
 }
 if ($this->session->userdata('id_akun')) {
     $id_akun = $this->session->userdata('id_akun');
@@ -16,9 +16,9 @@ if ($this->session->userdata('id_akun')) {
 
     if (!$nik_tamu) {
         // Redirect user or show an access denied message
-        echo '<script>alert("Lakukan pengisian data profil terlebih dahulu");</script>';
-        echo 'window.location.href = "' . base_url('profile') . '";</script>';
-        exit();
+        echo '<script>alert("Lakukan pengisian data profil terlebih dahulu");';
+        echo 'window.location.href = "' . base_url('profil') . '";</script>';
+        exit;
     }
 }
 ?>
