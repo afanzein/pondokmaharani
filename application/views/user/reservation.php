@@ -136,68 +136,46 @@ if ($this->session->userdata('id_akun')) {
 <script>
 
   //slideshow
-  
   let slideIndex = 1;
-  let maxSlides;
 
-  function showSlides(n) {
-    slideIndex = n;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-
-    if (n > maxSlides) {
-      slideIndex = 1;
-    }
-    if (n < 1) {
-      slideIndex = maxSlides;
-    }
-
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-      dots[i].classList.remove("active");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].classList.add("active");
+function showSlides(n) {
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
   }
-
-  function plusSlides(n) {
-    if (maxSlides) {
-      showSlides((slideIndex += n));
-    }
+  if (n < 1) {
+    slideIndex = slides.length;
   }
-
-  function currentSlide(n) {
-    if (maxSlides) {
-      showSlides((slideIndex = n));
-    }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
 
-  // Encapsulate the script inside DOMContentLoaded event listener
-  document.addEventListener("DOMContentLoaded", function () {
-    let prevBtn = document.querySelector(".prev");
-    let nextBtn = document.querySelector(".next");
-    maxSlides = document.querySelectorAll(".mySlides").length;
-    showSlides(slideIndex);
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
 
-    // Add click event listeners to the prev/next buttons
-    prevBtn.addEventListener("click", function () {
-      plusSlides(-1);
-    });
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
 
-    nextBtn.addEventListener("click", function () {
-      plusSlides(1);
-    });
+// Auto-start the slideshow
+showSlides(slideIndex);
 
-    // Add click event listeners to the dots
-    let dotElements = document.getElementsByClassName("dot");
-    for (let i = 0; i < dotElements.length; i++) {
-      dotElements[i].addEventListener("click", function () {
-        currentSlide(i + 1);
-      });
-    }
-  });
+// Add event listeners to the prev and next buttons
+document.querySelector(".prev").addEventListener("click", function () {
+  plusSlides(-1);
+});
+
+document.querySelector(".next").addEventListener("click", function () {
+  plusSlides(1);
+});
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
