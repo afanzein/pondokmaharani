@@ -19,7 +19,8 @@ if ($this->session->userdata('id_akun')) {
         // Redirect user or show an access denied message
         echo '<script>alert("Lakukan pengisian data profil terlebih dahulu");</script>';
         echo '<script>setTimeout(function(){ window.location.href = "profil"; }, 1000);</script>';
-        redirect(base_url('profil')); // Replace 'other_page' with the URL of the page you want to redirect to.
+    
+         // Replace 'other_page' with the URL of the page you want to redirect to.
         // or
         // or\
     }
