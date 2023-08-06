@@ -36,9 +36,6 @@ if ($this->session->userdata('id_akun')) {
                 <hr>
         <!-- Container for the image gallery --
             <!-- Slideshow container -->
-            <script>
-              initializeSlideshow();
-            </script>
             <div class="slideshow-container">
             <?php foreach ($images as $index => $product): ?>
                     <div class="mySlides ">
@@ -141,29 +138,28 @@ if ($this->session->userdata('id_akun')) {
   </section>
 <script>
 // Initialize the slideshow after the DOM is ready
-
-function initializeSlideshow() {
-  //slideshow
-  // Initialize the slide index
+$(document).ready(function () {
+  // Initialize the slideshow
   let slideIndex = 1;
 
+  showSlides(slideIndex);
+
   function showSlides(n) {
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
+    let slides = $(".mySlides");
+    let dots = $(".dot");
+
     if (n > slides.length) {
       slideIndex = 1;
     }
     if (n < 1) {
       slideIndex = slides.length;
     }
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+
+    slides.hide();
+    dots.removeClass("active");
+
+    slides.eq(slideIndex - 1).show();
+    dots.eq(slideIndex - 1).addClass("active");
   }
 
   function plusSlides(n) {
@@ -175,26 +171,31 @@ function initializeSlideshow() {
   }
 
   // Auto-start the slideshow
-  showSlides(slideIndex);
+  setInterval(function () {
+    plusSlides(1);
+  }, 2000); // Change slide every 5 seconds
 
   // Add event listeners to the prev and next buttons
-  document.querySelector(".prev").addEventListener("click", function () {
+  $(".prev").on("click", function () {
     plusSlides(-1);
   });
 
-  document.querySelector(".next").addEventListener("click", function () {
+  $(".next").on("click", function () {
     plusSlides(1);
   });
 
   // Add event listeners to the dot elements
-  let dots = document.getElementsByClassName("dot");
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener("click", function () {
-      currentSlide(i + 1);
-    });
-  }
-}
-  
+  $(".dot").on("click", function () {
+    currentSlide($(this).index() + 1);
+  });
+});
+
+//Hitung bayar
+$(document).ready(function () {
+  // ... Your calculateTotal function code ...
+});
+
+
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
     // Assuming you have already fetched the prices from the database and stored them in these variables
