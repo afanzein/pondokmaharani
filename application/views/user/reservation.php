@@ -25,7 +25,12 @@ if ($this->session->userdata('id_akun')) {
     }
 }
 ?>
-
+<script>
+// Initialize the slideshow after the DOM is ready and all resources (including images) have finished loading
+window.onload = function () {
+  initializeSlideshow();
+};
+</script>
 <div class="container">
     <hr>
     <h1 class="text-center display-5">Pesan Kamar</h1>
@@ -61,10 +66,7 @@ if ($this->session->userdata('id_akun')) {
                             <span class="dot" onclick="currentSlide(<?php echo ($index + 1); ?>)"></span>
                         <?php endforeach; ?>
             </div>
-                <script>
-                // Initialize the slideshow after the DOM is ready
-                initializeSlideshow();
-                </script>
+
           </div>
         </div>
 
