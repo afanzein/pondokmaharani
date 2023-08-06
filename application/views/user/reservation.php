@@ -36,6 +36,9 @@ if ($this->session->userdata('id_akun')) {
                 <hr>
         <!-- Container for the image gallery --
             <!-- Slideshow container -->
+            <script>
+              initializeSlideshow();
+            </script>
             <div class="slideshow-container">
             <?php foreach ($images as $index => $product): ?>
                     <div class="mySlides ">
@@ -45,9 +48,7 @@ if ($this->session->userdata('id_akun')) {
             <?php endforeach; ?>
             </div>
         
-            <script>
-              initializeSlideshow();
-            </script>
+            
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
