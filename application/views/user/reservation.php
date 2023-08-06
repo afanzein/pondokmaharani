@@ -137,12 +137,8 @@ if ($this->session->userdata('id_akun')) {
     </div>
   </section>
 <script>
-// Initialize the slideshow after the DOM is ready
-$(document).ready(function () {
   // Initialize the slideshow
   let slideIndex = 1;
-
-  showSlides(slideIndex);
 
   function showSlides(n) {
     let slides = $(".mySlides");
@@ -170,31 +166,28 @@ $(document).ready(function () {
     showSlides((slideIndex = n));
   }
 
-  // Auto-start the slideshow
-  setInterval(function () {
-    plusSlides(1);
-  }, 2000); // Change slide every 5 seconds
+  $(document).ready(function () {
+    showSlides(slideIndex);
 
-  // Add event listeners to the prev and next buttons
-  $(".prev").on("click", function () {
-    plusSlides(-1);
+    // Auto-start the slideshow
+    setInterval(function () {
+      plusSlides(1);
+    }, 5000); // Change slide every 5 seconds
+
+    // Add event listeners to the prev and next buttons
+    $(".prev").on("click", function () {
+      plusSlides(-1);
+    });
+
+    $(".next").on("click", function () {
+      plusSlides(1);
+    });
+
+    // Add event listeners to the dot elements
+    $(".dot").on("click", function () {
+      currentSlide($(this).index() + 1);
+    });
   });
-
-  $(".next").on("click", function () {
-    plusSlides(1);
-  });
-
-  // Add event listeners to the dot elements
-  $(".dot").on("click", function () {
-    currentSlide($(this).index() + 1);
-  });
-});
-
-//Hitung bayar
-$(document).ready(function () {
-  // ... Your calculateTotal function code ...
-});
-
 
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
