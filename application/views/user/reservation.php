@@ -4,9 +4,8 @@ if (!$this->session->userdata('role')) {
        // Show an alert using JavaScript
        echo '<script>alert("Lakukan proses login terlebih dahulu");</script>';
        // Redirect user to the login page or show an access denied message
-       redirect(base_url('login'));
-
-    exit();
+       echo 'window.location.href = "' . base_url('login') . '";</script>';
+        exit();
 }
 if ($this->session->userdata('id_akun')) {
     $id_akun = $this->session->userdata('id_akun');
@@ -18,11 +17,8 @@ if ($this->session->userdata('id_akun')) {
     if (!$nik_tamu) {
         // Redirect user or show an access denied message
         echo '<script>alert("Lakukan pengisian data profil terlebih dahulu");</script>';
-        echo '<script>setTimeout(function(){ window.location.href = "profil"; }, 1000);</script>';
-    
-         // Replace 'other_page' with the URL of the page you want to redirect to.
-        // or
-        // or\
+        echo 'window.location.href = "' . base_url('profile') . '";</script>';
+        exit();
     }
 }
 ?>
