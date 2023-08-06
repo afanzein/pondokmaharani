@@ -138,6 +138,7 @@ if ($this->session->userdata('id_akun')) {
   </section>
 <script>
   // Initialize the slideshow
+  // Initialize the slideshow
   let slideIndex = 1;
 
   function showSlides(n) {
@@ -166,7 +167,8 @@ if ($this->session->userdata('id_akun')) {
     showSlides((slideIndex = n));
   }
 
-  $(document).ready(function () {
+  // Function to initialize the slideshow and set up event listeners
+  function initializeSlideshow() {
     showSlides(slideIndex);
 
     // Auto-start the slideshow
@@ -187,6 +189,11 @@ if ($this->session->userdata('id_akun')) {
     $(".dot").on("click", function () {
       currentSlide($(this).index() + 1);
     });
+  }
+
+  // Call the initialization function inside the document ready block
+  $(document).ready(function () {
+    initializeSlideshow();
   });
 
 //Hitung bayar
