@@ -61,6 +61,10 @@ if ($this->session->userdata('id_akun')) {
                             <span class="dot" onclick="currentSlide(<?php echo ($index + 1); ?>)"></span>
                         <?php endforeach; ?>
             </div>
+                <script>
+                // Initialize the slideshow after the DOM is ready
+                initializeSlideshow();
+                </script>
           </div>
         </div>
 
@@ -137,9 +141,7 @@ if ($this->session->userdata('id_akun')) {
   </section>
 <script>
 // Initialize the slideshow after the DOM is ready
-document.addEventListener("DOMContentLoaded", function () {
-  initializeSlideshow();
-});
+
 function initializeSlideshow() {
   //slideshow
   // Initialize the slide index
