@@ -136,9 +136,12 @@ if ($this->session->userdata('id_akun')) {
     </div>
   </section>
 <script>
-
+// Initialize the slideshow after the DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+  initializeSlideshow();
+});
+function initializeSlideshow() {
   //slideshow
-  document.addEventListener("DOMContentLoaded", function () {
   // Initialize the slide index
   let slideIndex = 1;
 
@@ -188,7 +191,7 @@ if ($this->session->userdata('id_akun')) {
       currentSlide(i + 1);
     });
   }
-});
+}
   
 //Hitung bayar
 document.addEventListener("DOMContentLoaded", function () {
