@@ -75,7 +75,7 @@
         ];
 
         if ($this->db->insert('tb_akun', $data)) {
-            $this->db->insert('user_akun',$user_token);
+            $this->db->insert('user_token',$user_token);
             $this->_sendEmail($token,'verify');
             // Registration successful
             return true;
