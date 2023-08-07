@@ -97,18 +97,6 @@
   <script>
 $(document).ready(function() {
   // Validasi form pendaftaran
-      // Fungsi untuk menampilkan pesan error
-      function showError(input, message) {
-        input.closest(".form-group").addClass("has-error");
-        input.after('<div class="error-msg">' + message + '</div>');
-      }
-      
-      // Fungsi untuk memvalidasi email dengan menggunakan regular expression
-      function isValidEmail(email) {
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
-      }
-      
   $("#registrationForm").submit(function(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -155,8 +143,19 @@ $(document).ready(function() {
       }
     });
     
+  });
+    // Fungsi untuk menampilkan pesan error
+      function showError(input, message) {
+        input.closest(".form-group").addClass("has-error");
+        input.after('<div class="error-msg">' + message + '</div>');
+      }
       
-    });
+      // Fungsi untuk memvalidasi email dengan menggunakan regular expression
+      function isValidEmail(email) {
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+      }
+      
       
 </script>
 
