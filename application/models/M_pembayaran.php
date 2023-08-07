@@ -26,7 +26,7 @@
 
             // Include the 'id_pembayaran' in the select query
             $this->db->select('p.id_pembayaran');
-
+            $this->db->select('p.id_pemesanan');
             return $this->db->get()->result_array();
         }
             

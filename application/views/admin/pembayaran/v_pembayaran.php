@@ -34,7 +34,7 @@
                   <div class="btn-group-vertical">
                 <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Menunggu Pembayaran'); ?>" class="btn btn-sm btn-primary">Menunggu Pembayaran</a>
                 <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Sudah dibayar'); ?>" class="btn btn-sm btn-warning">Sudah dibayar</a>
-                <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Pemesanan Dibatalkan'); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pemesanan</a>
+                <a href="<?php echo base_url('pembayaran/update_status?id=' . $data['id_pemesanan'] . '&status=Pembayaran Dibatalkan'); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pembayaran</a>
                 </div>  
               </td>
               </tr>

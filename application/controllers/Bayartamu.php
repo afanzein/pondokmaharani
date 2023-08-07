@@ -35,5 +35,16 @@ $data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran($i
         $this->load->view('user/bayar', $data);
         $this->load->view('user/footer');
     }
+
+    public function update_status()
+    {
+        $id_pembayaran = $this->input->get('id');
+        $status = $this->input->get('status');
+        // Update the status in the model
+        $this->M_pembayaran->dt_update_status($id_pembayaran, $status);
+        // Redirect to the page where the table is displayed
+        redirect(base_url('riwayat'));
+    }
+
 }
 ?>
