@@ -91,7 +91,7 @@ if ($this->session->userdata('id_akun')) {
                 </div>
             </div>
             <hr>
-            <a href="<?php echo base_url('bayartamu/update_status?id=' . $p['id_pemesanan'] . '&status=Pembayaran Dibatalkan'); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pembayaran</a>
+            <a href="<?php echo base_url('bayartamu/update_status?id=' . $p['id_pembayaran'] . '&status=Pembayaran Dibatalkan'); ?>" class="btn btn-sm btn-danger text-center" onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pembayaran</a>
         </div>
     <?php endforeach; ?>
 </div>
