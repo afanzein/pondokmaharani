@@ -24,7 +24,7 @@ $data['nama_tamu'] = $this->M_tamu->getuserNameByIdAkun($id_akun);
 $data['nik_tamu'] = $this->M_tamu->getNikTamuByIdAkun($id_akun);
 $data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_pemesanan);
 // Retrieve data for tb_detail_pembayaran
-$id_pembayaran = $data['pembayaran']['id_pembayaran'];
+$id_pembayaran = $data['pembayaran'][0]['id_pembayaran'];
 $data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran($id_pembayaran);
 
 
