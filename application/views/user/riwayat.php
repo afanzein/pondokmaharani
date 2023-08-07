@@ -49,6 +49,7 @@
                     <th>Tanggal Check-in</th>
                     <th>Tanggal Check-out</th>
                     <th>Status</th>
+                    <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,6 +63,9 @@
                         <td><?php echo $r->tgl_checkin; ?></td>
                         <td><?php echo $r->tgl_checkout; ?></td>
                         <td><?php echo $r->status; ?></td>
+                        <td>
+                            <a href="<?php echo base_url('bayartamu/tampil').'?id_pemesanan='.$reservasi['id_pemesanan']; ?>" class="btn btn-info col-sm">Pesan Sekarang</a>
+                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>
