@@ -64,7 +64,7 @@
                         <td><?php echo $r->tgl_checkout; ?></td>
                         <td><?php echo $r->status; ?></td>
                         <td>
-                            <a href="<?php echo base_url('bayartamu/tampil').'?id_pemesanan='.$r->id_pemesanan; ?>" class="btn btn-info col-sm">Pesan Sekarang</a>
+                            <a href="<?php echo base_url('bayartamu/tampil').'?id_pemesanan='.$r->id_pemesanan; ?>" class="btn btn-info btn-sm">Lihat Pembayaran</a>
                         </td>
                     </tr>
                     <?php } ?>
