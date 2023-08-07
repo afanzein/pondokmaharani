@@ -98,9 +98,7 @@ class Login extends CI_Controller {
     }
 
     public function forgotPassword(){
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
-        $this->form_validation->set_rules('retypePassword', 'Re-type Password', 'trim|required|matches[password]');
-
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         if ($this->form_validation->run() === false) {
         $data['title'] = 'Lupa Password';
         $this->load->view("forgot-password",$data);
@@ -123,11 +121,11 @@ class Login extends CI_Controller {
 
                 $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible"
                 role="alert"> Mohon cek Email anda untuk bisa melakukan reset password. </div>');
-                redirect(base_url('login'));
+                redirect(base_url('login/forgotpassword'));
             }else{
                 $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
             role="alert"> Email tidak terdaftar atau belum di aktivasi. </div>');
-            redirect(base_url('login'));
+            redirect(base_url('login/forgotpassword'));
             }
         }
     }
