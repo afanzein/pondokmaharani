@@ -70,7 +70,7 @@ if ($this->session->userdata('id_akun')) {
             </div>
             <hr>
             <div class="container">
-                <h4 class="toggle-detail" onclick="togglePaymentDetails()">Detail Pembayaran <i class="arrow-icon fas fa-chevron-right"></i></h4>
+                <h5 class="toggle-detail" onclick="togglePaymentDetails()">Detail Pembayaran <i class="arrow-icon fas fa-chevron-right"></i></h5>
                 <div class="detail-pembayaran" id="paymentDetails">
                     <table class="table table-borderless">
                         <tbody>
@@ -96,7 +96,17 @@ if ($this->session->userdata('id_akun')) {
                 </div>
             </div>
             <hr>
-            <a href="<?php echo base_url('bayartamu/update_status?id=' . $p['id_pembayaran'] . '&status=Pembayaran Dibatalkan'); ?>" class="btn btn-sm btn-danger text-center" onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pembayaran</a>
+            <div class="payment-instructions">
+                <h4>Cara Pembayaran</h4>
+                <ol>
+                    <li>Pembayaran dapat dilakukan secara tunai saat tiba di ruangan resepsionis pada hari check-in.</li>
+                    <li>Pastikan membawa jumlah yang sesuai dan identitas diri (surat nikah atau kartu keluarga) untuk pasangan demi proses check-in yang lebih cepat.</li>
+                </ol>
+                <p>Jika Anda memerlukan bantuan tambahan atau memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui <span class="contact-info">08115018800</span> atau <span class="contact-info">pondokmaharanibjm8@gmail.com</span>. 
+                Selamat datang dan semoga Anda memiliki pengalaman menginap yang menyenangkan bersama kami! Terima kasih atas kunjungan Anda!</p>
+            </div>
+            <hr>
+            <a href="<?php echo base_url('bayartamu/update_status?id=' . $p['id_pembayaran'] . '&status=Pembayaran Dibatalkan'); ?>" class="btn btn-sm btn-danger btn-align-content-center" onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pembayaran</a>
         </div>
     <?php endforeach; ?>
 </div>
