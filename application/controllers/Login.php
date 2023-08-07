@@ -119,7 +119,7 @@ class Login extends CI_Controller {
                 $this->db->insert('user_token',$user_token);
 
                 $this->load->model('M_akun');
-                $this->model->sendEmail($token,'forgot');
+                $this->model->_sendEmail($token,'forgot');
 
                 $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible"
                 role="alert"> Mohon cek Email anda untuk bisa melakukan reset password. </div>');
@@ -172,7 +172,7 @@ class Login extends CI_Controller {
         
         if ($this->form_validation->run() === false) {
         $data['title'] = 'Lupa Password';
-        $this->load->view("ganti--password",$data);
+        $this->load->view("ganti-password",$data);
         }else{
             $password = password_hash($this->input->post('password'),PASSWORD_BCRYPT);
 
