@@ -27,7 +27,10 @@ class Daftar extends CI_Controller
             // Call the M_daftar model to insert data into the database
             if ($this->M_akun->daftar_user()) {
                 // Registration successful, redirect to a success page or login page
-                redirect(base_url("login"));
+                $this->session->set_flashdata('message', '<div class="alert alert-success"
+                role="alert"> Akun anda berhasil terdaftar. Mohon lakukan aktivasi melalui email agar bisa melakukan
+                login </div>');
+                redirect(base_url('login'));
             } else {
                 // Registration failed, display an error message
                 $data['error_message'] = 'Registration failed. Please try again.';

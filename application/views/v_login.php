@@ -59,6 +59,9 @@ body {
           <div class="card-body">
             <img src="<?php echo base_url(); ?>assets/img/mainlogo.png" alt="Logo Perusahaan" class="logo-img">
             <h2 class="card-title mb-4">Halaman Login</h2>
+            <?php if ($this->session->flashdata('message')): ?>
+                      <?php echo $this->session->flashdata('message'); ?>
+            <?php endif; ?>
             <form id="loginForm" action="<?php echo base_url("login"); ?>" method="post">
               <div class="form-group">
                 <label for="username">Username atau Email</label>

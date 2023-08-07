@@ -38,9 +38,52 @@ class Login extends CI_Controller {
                     redirect(base_url("landing"));
                 }
             } else {
-                $this->load->view("v_login", $data);
+                $this->session->set_flashdata('message', '<div class="alert alert-danger"
+                role="alert"> Login gagal. Username atau Password anda salah </div>');
+                redirect(base_url('login'));
             }
         }       
+    }
+
+    public function verify(){
+        $email = $this->input->get('email');
+        $token = $this->input->get('token');
+
+        $user = $this->db->get_where('tb_akun',['email' => $emai])->row_array();
+
+        if($user){
+            $user_token = $this->db->get_where('user_token',['token' => $token])->row_array();
+
+            if($user_token){
+                if (time() - $user_token['created'] < (60 * 60 * 24)) {
+                    $this->db->set('is_active', 1);
+                    $this->db->where('email', $email);
+                    $this->db->update('tb_akun');
+
+                    $this->db->delete('user_token', ['email' => $email]);
+
+                    $this->session->set_flashdata('message', '<div class="alert alert-success"
+                    role="alert"> Aktivasi Akun'.$email.' <strong> Berhasil </strong> silahkan melakukan Login. </div>');
+                    redirect(base_url('login'));
+                } else {
+                    $this->db->delete('tb_akun',['email' => $email]);
+                    $this->db->delete('user_token', ['email' => $email]);
+
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger"
+                    role="alert"> Aktivasi Akun gagal, token tidak ditemukan. </div>');
+                    redirect(base_url('login'));
+                }
+            }else{
+            $this->session->set_flashdata('message', '<div class="alert alert-danger"
+            role="alert"> Aktivasi Akun gagal, token tidak ditemukan. </div>');
+            redirect(base_url('login'));
+            }
+        }else{
+            $this->session->set_flashdata('message', '<div class="alert alert-danger"
+            role="alert"> Aktivasi Akun gagal, email tidak ditemukan. </div>');
+            redirect(base_url('login'));
+        }
+
     }
 
     public function logout()

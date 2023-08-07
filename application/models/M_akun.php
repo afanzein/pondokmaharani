@@ -67,9 +67,16 @@
             'is_active'=> 0
         );
 
+        $token = base64_encode(random_bytes(32));
+        $user_token = [
+            'email' => $email,
+            'token' => $token,
+            'created' => time()
+        ];
 
         if ($this->db->insert('tb_akun', $data)) {
-            $this->_sendEmail();
+            $this->db->insert('user_akun',$user_token);
+            $this->_sendEmail($token,'verify');
             // Registration successful
             return true;
         } else {
@@ -78,7 +85,7 @@
         }
     }
     
-    public function _sendEmail(){
+    public function _sendEmail($token,$type){
         $config = [
             'protocol'  => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
@@ -94,11 +101,16 @@
         $this->email->initialize($config);
 
         $this->email->from('pondokmaharanibjm8@gmail.com', 'Pondok Maharani Syariah');
-        $this->email->to('afanaz99@gmail.com');
+        $this->email->to($this->input->post('email'));
 
-        $this->email->subject('Testing _sendEmail PM');
-        $this->email->message('BERHASIL');
-
+        if($type == 'verify'){
+        $this->email->subject('Aktivasi Akun');
+        $url = base_url() . 'login/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token);
+        $message = 'Link Aktivasi Akun hanya berlaku selama 24 Jam';
+        $message .= '<br>';
+        $message .= 'Silahkan Klik link berikut ini : <a href="' . $url . '">untuk melakukan Aktivasi Akun</a>';
+        $this->email->message($message);
+        }
         if($this->email->send()){
         return true;
         }else{
