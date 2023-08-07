@@ -100,10 +100,10 @@ if ($this->session->userdata('id_akun')) {
                 <h4>Cara Pembayaran</h4>
                 <ol>
                     <li>Pembayaran dapat dilakukan secara tunai saat tiba di ruangan resepsionis pada hari check-in.</li>
-                    <li>Pastikan membawa jumlah yang sesuai dan identitas diri (surat nikah atau kartu keluarga) untuk pasangan demi proses check-in yang lebih cepat.</li>
+                    <li>Pastikan membawa jumlah yang sesuai dan identitas diri juga surat nikah atau kartu keluarga untuk pasangan </li>
+                    <li>Kami berhak menolak kedatangan anda jika tidak bisa menunjukkan bukti sudah menikah.</li>
                 </ol>
-                <p>Jika Anda memerlukan bantuan tambahan atau memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui <span class="contact-info"> 08115018800 </span> atau <span class="contact-info"> pondokmaharanibjm8@gmail.com </span>. 
-                Selamat datang dan semoga Anda memiliki pengalaman menginap yang menyenangkan bersama kami! Terima kasih atas kunjungan Anda!</p>
+                <p>Jika Anda memerlukan bantuan tambahan atau memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui <span class="contact-info"> 08115018800 </span> atau <span class="contact-info"> pondokmaharanibjm8@gmail.com </span>. Selamat datang dan semoga Anda memiliki pengalaman menginap yang menyenangkan bersama kami! Terima kasih atas kunjungan Anda!</p>
             </div>
             <hr>
             <a href="<?php echo base_url('bayartamu/update_status?id=' . $p['id_pembayaran'] . '&status=Pembayaran Dibatalkan'); ?>" class="btn btn-sm btn-danger " onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pembayaran</a>
