@@ -28,8 +28,9 @@
     {
         // Assuming the table names are 'tb_pemesanan', 'tb_kamar', and 'tb_checkinout'
         $this->db->where('tb_kamar.id_tipe_kamar', $id_tipe_kamar);
-        $this->db->where("tb_kamar.id_kamar NOT IN (SELECT tb_kamar.id_kamar FROM tb_kamar 
-                            JOIN tb_pemesanan ON tb_kamar.id_tipe_kamar = tb_pemesanan.id_tipe_kamar
+        $this->db->where("tb_kamar.id_kamar NOT IN 
+                            (SELECT tb_kamar.id_kamar FROM tb_kamar 
+                            JOIN tb_pemesanan ON tb_kamar.id_kamar = tb_pemesanan.id_kamar
                             JOIN tb_checkinout ON tb_pemesanan.id_pemesanan = tb_checkinout.id_pemesanan 
                             WHERE tb_checkinout.tgl_checkin <= '$tgl_checkout' 
                             AND tb_checkinout.tgl_checkout >= '$tgl_checkin')");
