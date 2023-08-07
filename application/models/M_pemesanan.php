@@ -85,15 +85,12 @@
         $tgl_checkin = $this->input->post('tgl_checkin');
         $tgl_checkout = $this->input->post('tgl_checkout');
         $id_tipe_kamar = $this->input->post('id_tipe_kamar');
+        $id_kamar = $this->input->post('id_kamar');
         // Retrieve nik_tamu from tb_tamu based on id_akun from session
         $id_akun_session = $this->session->userdata('id_akun');
         $this->load->model('M_tamu');
         $nik_tamu = $this->M_tamu->getNikTamuByIdAkun($id_akun_session);
-
-        // Retrieve the available id_kamar based on the selected id_tipe_kamar and status_kamar
-        $this->load->model('M_kamar');
-        $id_kamar = $this->M_kamar->getAvailableKamarId($id_tipe_kamar);
-        echo $id_tipe_kamar;
+        
 
 
             try {

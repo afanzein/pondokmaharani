@@ -24,20 +24,25 @@
     $this->db->update('tb_kamar', array('status_kamar' => $status_kamar));
     }
 
-    public function getAvailableKamarId($id_tipe_kamar)
+    public function getAvailableKamarId($id_tipe_kamar, $tgl_checkin, $tgl_checkout)
     {
-        // Assuming the table name is 'tb_kamar'
-        $this->db->where('id_tipe_kamar', $id_tipe_kamar);
-        $this->db->where('status_kamar', 'Tersedia');
-        $this->db->order_by('id_kamar', 'RANDOM'); // Get a random available kamar ID
+        // Assuming the table names are 'tb_pemesanan', 'tb_kamar', and 'tb_checkinout'
+        $this->db->where('tb_kamar.id_tipe_kamar', $id_tipe_kamar);
+        $this->db->where('tb_kamar.status_kamar', 'Tersedia');
+        $this->db->where("tb_kamar.id_kamar NOT IN (SELECT tb_kamar.id_kamar FROM tb_kamar 
+                            JOIN tb_pemesanan ON tb_kamar.id_tipe_kamar = tb_pemesanan.id_tipe_kamar
+                            JOIN tb_checkinout ON tb_pemesanan.id_pemesanan = tb_checkinout.id_pemesanan 
+                            WHERE tb_checkinout.tgl_checkin <= '$tgl_checkout' 
+                            AND tb_checkinout.tgl_checkout >= '$tgl_checkin')");
+        $this->db->order_by('tb_kamar.id_kamar', 'RANDOM'); // Get a random available kamar ID
         $this->db->limit(1);
         $query = $this->db->get('tb_kamar');
-
+    
         if ($query->num_rows() > 0) {
             $row = $query->row();
             return $row->id_kamar;
         }
-
+    
         return null;
     }
 

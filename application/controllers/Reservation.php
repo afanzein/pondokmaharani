@@ -65,8 +65,13 @@ class Reservation extends CI_Controller
     public function pesan_submit()
     {
        
-        $this->form_validation->set_rules('tgl_checkin', 'Tanggal Check-In', 'required|callback_check_date_after_today', array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-In tidak boleh sebelum tanggal sekarang.'));
-        $this->form_validation->set_rules('tgl_checkout', 'Tanggal Check-Out', 'required|callback_check_date_after_today', array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-Out tidak boleh sebelum tanggal sekarang.'));
+        $this->form_validation->set_rules('tgl_checkin', 'Tanggal Check-In', 
+        'required|callback_check_date_after_today|callback_check_date_and_kamar', 
+        array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-In tidak boleh sebelum tanggal sekarang.'));
+       
+        $this->form_validation->set_rules('tgl_checkout', 'Tanggal Check-Out', 
+        'required|callback_check_date_after_today|callback_check_date_and_kamar', 
+        array('required' => '%s harus dipilih.', 'check_date_after_today' => 'Tanggal Check-Out tidak boleh sebelum tanggal sekarang.'));
     
         if ($this->form_validation->run() === FALSE) {
             // Validation failed, load the view with the validation errors
@@ -101,6 +106,36 @@ class Reservation extends CI_Controller
     
             return true;
         }
+
+                // Add the callback function for date and kamar validation
+        public function check_date_and_kamar($date)
+        {
+            $tgl_checkin = date('Y-m-d', strtotime($this->input->post('tgl_checkin')));
+            $tgl_checkout = date('Y-m-d', strtotime($this->input->post('tgl_checkout')));
+
+            if ($tgl_checkin && $tgl_checkout) {
+                $id_tipe_kamar = $this->input->post('id_tipe_kamar');
+
+                // Load the model
+                $this->load->model('M_kamar');
+
+                // Check if the selected date range overlaps with existing reservations for the given kamar
+                $id_kamar = $this->M_kamar->getAvailableKamarId($id_tipe_kamar, $tgl_checkin, $tgl_checkout);
+
+                if ($id_kamar) {
+                    // Set the id_kamar as a hidden form field value
+                    $this->form_validation->set_value('id_kamar', $id_kamar);
+                    return true;
+                } else {
+                    $this->form_validation->set_message('check_date_and_kamar', 
+                    'Tidak ada kamar yang tersedia untuk tipe kamar ini pada tanggal yang dipilih.');
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
 
 }
 ?>

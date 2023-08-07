@@ -97,6 +97,10 @@ class Login extends CI_Controller {
 
     }
 
+    public function forgotPassword(){
+        
+    }
+
     public function logout()
     {
         $this->session->unset_userdata('role'); // Remove user role from session
@@ -112,4 +116,5 @@ class Login extends CI_Controller {
         role="alert"> Logout berhasil </div>');
         redirect(base_url('login'));
     }
+    
 }
