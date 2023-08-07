@@ -144,10 +144,8 @@ class Login extends CI_Controller {
             if($user_token){
                 if (time() - $user_token['created'] < (10 * 60)) {
                     $this->session->set_userdata('reset_email', $email);
-                    $this->model->ganti_password();
+                    $this->ganti_password();
                 } else {
-                    $this->db->delete('tb_akun',['email' => $email]);
-                    $this->db->delete('user_token', ['email' => $email]);
 
                     $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
                     role="alert"> Reset Password gagal, token sudah tidak berlaku. </div>');

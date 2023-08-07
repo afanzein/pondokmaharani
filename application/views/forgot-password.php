@@ -58,7 +58,7 @@
         <div class="card">
           <div class="card-body">
             <h2 class="card-title mb-4 ">Reset Password</h2>
-            <form id="registrationForm" method="post" action="<?php echo base_url("login/forgotPassword"); ?>">
+            <form id="registrationForm" method="post" action="<?php echo base_url("login/forgotpassword"); ?>">
             <?php if ($this->session->flashdata('message')): ?>
                       <?php echo $this->session->flashdata('message'); ?>
             <?php endif; ?>
