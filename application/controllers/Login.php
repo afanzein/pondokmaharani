@@ -22,7 +22,7 @@ class Login extends CI_Controller {
 
             if ($user) {
 
-                if($user ='is_active' == 1){
+                if($user['is_active'] == 1){
 
                 $role = $user['id_role'];
                 $this->session->set_userdata('role', $role); // Set user role in session
@@ -33,13 +33,13 @@ class Login extends CI_Controller {
                 $email = $user['email'];
                 $this->session->set_userdata('email', $email);
     
-                if ($role == 1 || $role == 2) {
-                    // Redirect manager or admin to dashboard
-                    redirect(base_url("dashboard"));
-                } else if ($role == 3) {
-                    // Redirect user to user page
-                    redirect(base_url("landing"));
-                }
+                    if ($role == 1 || $role == 2) {
+                        // Redirect manager or admin to dashboard
+                        redirect(base_url("dashboard"));
+                    } else if ($role == 3) {
+                        // Redirect user to user page
+                        redirect(base_url("landing"));
+                    }
 
                 }
                 else{
