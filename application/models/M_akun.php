@@ -60,6 +60,7 @@
         );
     
         if ($this->db->insert('tb_akun', $data)) {
+            $this->_sendEmail();
             // Registration successful
             return true;
         } else {
@@ -68,8 +69,34 @@
         }
     }
     
-    
-    
+    public function _sendEmail(){
+        $config = [
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'pondokmaharanibjm8@gmail.com',
+            'smtp_pass' => 'hqjeqvuiiovoyexq',
+            'smtp_port' => 465,
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'newline'   => "\r\n"
+        ];
+
+        $this->load->library('email');
+        $this->email->initialize($config);
+
+        $this->email->from('pondokmaharanibjm8@gmail.com', 'Pondok Maharani Syariah');
+        $this->email->to('afanaz99@gmail.com');
+
+        $this->email->subject('Testing _sendEmail PM');
+        $this->email->message('BERHASIL');
+
+        if($this->email->send()){
+        return true;
+        }else{
+            echo $this->email->print_debugger();
+            die;
+        }
+    }
 
     public function encrypt_password($password)
     {
