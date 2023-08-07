@@ -117,7 +117,7 @@ class Login extends CI_Controller {
                 $this->db->insert('user_token',$user_token);
 
                 $this->load->model('M_akun');
-                $this->model->_sendEmail($token,'forgot');
+                $this->M_akun->_sendEmail($token,'forgot');
 
                 $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible"
                 role="alert"> Mohon cek Email anda untuk bisa melakukan reset password. </div>');
