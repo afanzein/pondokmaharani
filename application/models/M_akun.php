@@ -66,8 +66,6 @@
             'id_role' => 3,
             'is_active'=> 0
         );
-        $this->db->insert('tb_akun',$data);
-
 
         if ($this->db->insert('tb_akun', $data)) {
             $this->_sendEmail();

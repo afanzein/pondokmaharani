@@ -98,7 +98,6 @@
 $(document).ready(function() {
   // Validasi form pendaftaran
   $("#registrationForm").submit(function(event) {
-    event.preventDefault(); // Prevent the default form submission
 
     // Reset pesan error
     $(".form-group").removeClass("has-error");
@@ -141,18 +140,18 @@ $(document).ready(function() {
         // Prevent the default form submission if there are validation errors
         event.preventDefault();
       }
-      // Fungsi untuk menampilkan pesan error
-        function showError(input, message) {
-          input.closest(".form-group").addClass("has-error");
-          input.after('<div class="error-msg">' + message + '</div>');
-        }
-        
-        // Fungsi untuk memvalidasi email dengan menggunakan regular expression
-        function isValidEmail(email) {
-          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailPattern.test(email);
-        }
     });
+    // Fungsi untuk menampilkan pesan error
+      function showError(input, message) {
+        input.closest(".form-group").addClass("has-error");
+        input.after('<div class="error-msg">' + message + '</div>');
+      }
+      
+      // Fungsi untuk memvalidasi email dengan menggunakan regular expression
+      function isValidEmail(email) {
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+      }
     
     });
       
