@@ -82,7 +82,6 @@ class Reservation extends CI_Controller
             
             // Validation passed, proceed with data insertion
             $this->load->model('M_pemesanan');
-            $id_tipe_kamar = $this->input->get('id_tipe_kamar');
         $this->M_pemesanan->user_pemesanan();
 
         // Retrieve the generated id_pemesanan
