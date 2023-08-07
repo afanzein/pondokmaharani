@@ -21,6 +21,9 @@ class Login extends CI_Controller {
             $user = $this->M_login->cek_login(); // Use M_login model
 
             if ($user) {
+
+                if($user ='is_active' == 1){
+
                 $role = $user['id_role'];
                 $this->session->set_userdata('role', $role); // Set user role in session
                 $id_akun = $user['id_akun'];
@@ -37,6 +40,14 @@ class Login extends CI_Controller {
                     // Redirect user to user page
                     redirect(base_url("landing"));
                 }
+
+                }
+                else{
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger"
+                    role="alert"> Login gagal. Mohon aktivasi akun terlebih dahulu melalui email </div>');
+                    redirect(base_url('login'));
+                }
+
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger"
                 role="alert"> Login gagal. Username atau Password anda salah </div>');
