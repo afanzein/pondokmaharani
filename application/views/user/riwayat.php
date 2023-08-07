@@ -48,7 +48,8 @@
                     <th>Nama Tipe Kamar</th>
                     <th>Tanggal Check-in</th>
                     <th>Tanggal Check-out</th>
-                    <th>Status</th>
+                    <th>Status Pemesanan</th>
+                    <th>Status Pembayaran</th>
                     <th></th>
                     </tr>
                 </thead>
@@ -63,6 +64,7 @@
                         <td><?php echo $r->tgl_checkin; ?></td>
                         <td><?php echo $r->tgl_checkout; ?></td>
                         <td><?php echo $r->status; ?></td>
+                        <td><?php echo $r->status_pembayaran; ?></td>
                         <td>
                             <a href="<?php echo base_url('bayartamu/tampil').'?id_pemesanan='.$r->id_pemesanan; ?>" class="btn btn-info btn-sm">Lihat Pembayaran</a>
                         </td>

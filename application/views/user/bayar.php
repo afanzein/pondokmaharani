@@ -36,29 +36,34 @@ if ($this->session->userdata('id_akun')) {
                 <table class="table table-borderless">
                     <tbody>
                         <tr>
-                            <td><span class="label">Tanggal Pembayaran:</span></td>
+                            <td><span class="label">Tanggal Pembayaran</span></td>
                             <td>:</td>
                             <td><?php echo $p['tgl_pembayaran']; ?></td>
                         </tr>
                         <tr>
-                            <td><span class="label">Nama Pemesan:</span></td>
+                            <td><span class="label">Nama Pemesan</span></td>
                             <td>:</td>
                             <td><?php echo $nama_tamu; ?></td>
                         </tr>
                         <tr>
-                            <td><span class="label">NIK Pemesan:</span></td>
+                            <td><span class="label">NIK Pemesan</span></td>
                             <td>:</td>
                             <td><?php echo $nik_tamu; ?></td>
                         </tr>
                         <tr>
-                            <td><span class="label">Tanggal Pemesanan:</span></td>
+                            <td><span class="label">Tanggal Pemesanan</span></td>
                             <td>:</td>
                             <td><?php echo $p['tgl_pemesanan']; ?></td>
                         </tr>
                         <tr>
-                            <td><span class="label">Status Pemesanan:</span></td>
+                            <td><span class="label">Status Pemesanan</span></td>
                             <td>:</td>
                             <td><?php echo $p['status']; ?></td>
+                        </tr>
+                        <tr>
+                            <td><span class="label">Status Pembayaran</span></td>
+                            <td>:</td>
+                            <td><?php echo $p['status_pembayaran']; ?></td>
                         </tr>
                     </tbody>
                 </table>
