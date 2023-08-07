@@ -7,6 +7,8 @@
   <!-- Load Bootstrap CSS -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
   <!-- Load custom CSS -->
+  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
   <style>
   body {
   background-color: #f8f9fa;
@@ -88,9 +90,9 @@
 
 <!-- Load full version of jQuery -->
   <!-- Load Bootstrap JS and jQuery -->
-  <script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
+  
   <script src="<?php echo base_url(); ?>assets/adminlte/plugins/popper/popper.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+
 
   <script>
 $(document).ready(function() {
