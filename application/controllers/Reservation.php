@@ -123,8 +123,8 @@ class Reservation extends CI_Controller
                 $id_kamar = $this->M_kamar->getAvailableKamarId($id_tipe_kamar, $tgl_checkin, $tgl_checkout);
 
                 if ($id_kamar) {
-                    // Set the id_kamar as a hidden form field value
-                    $this->form_validation->set_value('id_kamar', $id_kamar);
+                    // Set the id_kamar in the $_POST array
+                    $_POST['id_kamar'] = $id_kamar;
                     return true;
                 } else {
                     $this->form_validation->set_message('check_date_and_kamar', 
