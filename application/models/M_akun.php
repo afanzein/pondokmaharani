@@ -108,9 +108,18 @@
         $url = base_url() . 'login/verify?email=' . $this->input->post('email') . '&token=' . urlencode($token);
         $message = 'Link Aktivasi Akun hanya berlaku selama 24 Jam';
         $message .= '<br>';
-        $message .= 'Silahkan Klik link berikut ini : <a href="' . $url . '">untuk melakukan Aktivasi Akun</a>';
+        $message .= 'Silahkan Klik link berikut ini : <a href="' . $url . '">Aktivasi Akun</a>';
         $this->email->message($message);
         }
+        else if($type == 'forgot'){
+            $this->email->subject('Reset Password');
+            $url = base_url() . 'login/resetpassword?email=' . $this->input->post('email') . '&token=' . urlencode($token);
+            $message = 'Link Reset Password hanya berlaku selama 10 Menit';
+            $message .= '<br>';
+            $message .= 'Silahkan Klik link berikut ini : <a href="' . $url . '">Reset Password</a>';
+            $this->email->message($message);
+            }
+
         if($this->email->send()){
         return true;
         }else{
@@ -118,6 +127,7 @@
             die;
         }
     }
+
 
     public function encrypt_password($password)
     {

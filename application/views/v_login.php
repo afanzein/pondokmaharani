@@ -73,7 +73,9 @@ body {
               </div>
               <button type="submit" class="btn btn-primary">Login</button>
             </form>
-            <p class="mt-3">Belum memiliki akun? <a href="<?php echo base_url("daftar"); ?>">Daftar</a></p>
+            <p class="mt-3">Belum memiliki akun? <a href="<?php echo base_url("login/forgotPassword"); ?>">Daftar</a></p>
+            <br>
+            <p class="mt-3">Lupa Password ? <a href="<?php echo base_url("daftar"); ?>">Klik disini</a></p>
           </div>
         </div>
       </div>
