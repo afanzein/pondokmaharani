@@ -43,13 +43,13 @@ class Login extends CI_Controller {
 
                 }
                 else{
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger"
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
                     role="alert"> Login gagal. Mohon aktivasi akun terlebih dahulu melalui email </div>');
                     redirect(base_url('login'));
                 }
 
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger"
+                $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
                 role="alert"> Login gagal. Username atau Password anda salah </div>');
                 redirect(base_url('login'));
             }
@@ -73,24 +73,24 @@ class Login extends CI_Controller {
 
                     $this->db->delete('user_token', ['email' => $email]);
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-success"
+                    $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible"
                     role="alert"> Aktivasi Akun'.$email.' <strong> Berhasil </strong> silahkan melakukan Login. </div>');
                     redirect(base_url('login'));
                 } else {
                     $this->db->delete('tb_akun',['email' => $email]);
                     $this->db->delete('user_token', ['email' => $email]);
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger"
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
                     role="alert"> Aktivasi Akun gagal, token sudah tidak berlaku. </div>');
                     redirect(base_url('login'));
                 }
             }else{
-            $this->session->set_flashdata('message', '<div class="alert alert-danger"
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
             role="alert"> Aktivasi Akun gagal, token tidak ditemukan. </div>');
             redirect(base_url('login'));
             }
         }else{
-            $this->session->set_flashdata('message', '<div class="alert alert-danger"
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
             role="alert"> Aktivasi Akun gagal, email tidak ditemukan. </div>');
             redirect(base_url('login'));
         }
@@ -108,7 +108,8 @@ class Login extends CI_Controller {
             $_SESSION['USERNAME'],
             $_SESSION['PASSWORD']
         );  
-        $data['pesan'] = 'Logout Sukses';
-        $this->load->view("v_login", $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
+        role="alert"> Logout berhasil </div>');
+        redirect(base_url('login'));
     }
 }
