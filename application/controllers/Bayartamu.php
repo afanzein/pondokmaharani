@@ -24,9 +24,16 @@ $data['nama_tamu'] = $this->M_tamu->getuserNameByIdAkun($id_akun);
 $data['nik_tamu'] = $this->M_tamu->getNikTamuByIdAkun($id_akun);
 $data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_pemesanan);
 // Retrieve data for tb_detail_pembayaran
-$id_pembayaran = $data['pembayaran']['id_pembayaran'];
-$data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran($id_pembayaran);
+if ($data['pembayaran'] !== null) {
+    // Assuming $data['pembayaran'] contains the 'id_pembayaran' field
+    $id_pembayaran = $data['pembayaran']['id_pembayaran'];
 
+    // Retrieve data for tb_detail_pembayaran using id_pembayaran as parameter
+    $data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran($id_pembayaran);
+} else {
+    // Handle the case when the $data['pembayaran'] is empty or not found
+    // You might want to display an error message or take appropriate action here.
+}
 
         // Use the id_pemesanan as needed, for example, pass it to the view
         $data['id_pemesanan'] = $id_pemesanan;
