@@ -23,8 +23,19 @@
             $this->db->join('tb_status_pemesanan s', 'pem.id_pemesanan = s.id_pemesanan');
             $this->db->where('p.id_pemesanan', $id_pemesanan);
             $this->db->order_by('p.tgl_pembayaran', 'desc');
-            return $this->db->get()->row(); // Use row() instead of result_array()
+            return $this->db->get()->result_array();
 
+            if (!empty($result)) {
+                // Since you mentioned that the query returns only one row, you can directly access the first element.
+                $pembayaran_data = $result[0];
+                
+                // Add the 'id_pembayaran' field to the result array
+                $pembayaran_data['id_pembayaran'] = $pembayaran_data['id_pembayaran'];
+                
+                return $pembayaran_data;
+            } else {
+                return null; // Or an empty array based on your application's needs
+            }
         }
             
    
