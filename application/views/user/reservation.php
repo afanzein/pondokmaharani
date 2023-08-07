@@ -102,7 +102,7 @@ if ($this->session->userdata('id_akun')) {
                         </table>
                         <hr>
                         <input type="hidden" name="id_tipe_kamar" value="<?php echo $id_tipe_kamar; ?>">
-                        <input type="hidden" name="id_kamar">
+                        <input type="hidden" name="id_kamar" value="<?php echo $id_kamar; ?>">
                         <h4 class="text-center py">Pilih tanggal</h4>
                         <div class="date-input row">
                             <div class="col-sm">
