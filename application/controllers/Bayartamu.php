@@ -20,11 +20,12 @@ $id_akun = $this->session->userdata('id_akun');
 // Retrieve the id_pemesanan from the URL query parameter
 $id_pemesanan = $this->input->get('id_pemesanan');
 // Retrieve data for tb_pembayaran
-$data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_pemesanan);
 $data['nama_tamu'] = $this->M_tamu->getuserNameByIdAkun($id_akun);
 $data['nik_tamu'] = $this->M_tamu->getNikTamuByIdAkun($id_akun);
+$data['pembayaran'] = $this->M_pembayaran->get_pembayaran_data($id_pemesanan);
 // Retrieve data for tb_detail_pembayaran
-$data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran($id_pemesanan);
+$id_pembayaran = $data['pembayaran']['id_pembayaran'];
+$data['detail_pembayaran'] = $this->M_detailpembayaran->get_detail_pembayaran($id_pembayaran);
 
 
         // Use the id_pemesanan as needed, for example, pass it to the view
