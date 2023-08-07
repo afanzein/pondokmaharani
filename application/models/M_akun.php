@@ -45,19 +45,19 @@
         $email = $this->input->post('email');
         $username = $this->input->post('username');
     
-        // // Check if email already exists in the database
-        // $existing_email = $this->db->get_where('tb_akun', array('email' => $email))->row();
-        // if ($existing_email) {
-        //     // Email already exists, return an error message or handle it as you prefer
-        //     return "<script>alert('Email sudah terdaftar')</script>";
-        // }
+        // Check if email already exists in the database
+        $existing_email = $this->db->get_where('tb_akun', array('email' => $email))->row();
+        if ($existing_email) {
+            // Email already exists, return an error message or handle it as you prefer
+            return "<script>alert('Email sudah terdaftar')</script>";
+        }
 
-        // // Check if email already exists in the database
-        // $existing_username = $this->db->get_where('tb_akun', array('username' => $username))->row();
-        // if ($existing_username) {
-        //     // Email already exists, return an error message or handle it as you prefer
-        //     return "<script>alert('Email sudah terdaftar')</script>";
-        // }
+        // Check if email already exists in the database
+        $existing_username = $this->db->get_where('tb_akun', array('username' => $username))->row();
+        if ($existing_username) {
+            // Email already exists, return an error message or handle it as you prefer
+            return "<script>alert('Email sudah terdaftar')</script>";
+        }
     
         $data = array(
             'email' => $email,
@@ -66,6 +66,7 @@
             'id_role' => 3,
             'is_active'=> 0
         );
+
 
         if ($this->db->insert('tb_akun', $data)) {
             $this->_sendEmail();
