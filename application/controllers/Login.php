@@ -147,15 +147,15 @@ class Login extends CI_Controller {
 
                     $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
                     role="alert"> Reset Password gagal, token sudah tidak berlaku. </div>');
-                    redirect(base_url('login'));
+                    redirect(base_url('login/forgotpassword'));
                 }
                 $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
                 role="alert"> Reset Password gagal Token tidak ditemukan ! </div>');
-                redirect(base_url('login'));
-        }else{
+                redirect(base_url('login/forgotpassword'));
+            }else{
                 $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible"
                 role="alert"> Email tidak terdaftar atau belum di aktivasi. </div>');
-                redirect(base_url('login'));
+                redirect(base_url('login/forgotpassword'));
              }
         }
     }

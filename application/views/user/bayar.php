@@ -103,8 +103,9 @@ if ($this->session->userdata('id_akun')) {
                     <li>Pastikan membawa jumlah yang sesuai dan identitas diri juga surat nikah atau kartu keluarga untuk pasangan </li>
                     <li>Kami berhak menolak kedatangan anda jika tidak bisa menunjukkan bukti sudah menikah.</li>
                 </ol>
-                <p class="contact-info">Jika Anda memerlukan bantuan tambahan atau memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui <a href="https://wa.me/08115018800"><strong>08115018800</strong></a> atau melalui <strong>pondokmaharanibjm8@gmail.com</strong>.</p>
-    <p>Selamat datang dan semoga Anda memiliki pengalaman menginap yang menyenangkan bersama kami! Terima kasih atas kunjungan Anda!</p>
+                <p class="contact-info">Jika Anda memerlukan bantuan tambahan atau memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui 
+                <a href="https://wa.me/08115018800"><strong>08115018800</strong></a> atau melalui <strong>pondokmaharanibjm8@gmail.com</strong>.</p>
+                <p>Selamat datang dan semoga Anda memiliki pengalaman menginap yang menyenangkan bersama kami! Terima kasih atas kunjungan Anda!</p>
             </div>
             <hr>
             <a href="<?php echo base_url('bayartamu/update_status?id=' . $p['id_pembayaran'] . '&status=Pembayaran Dibatalkan'); ?>" class="btn btn-sm btn-danger " onclick="return confirm('Apakah yakin ingin membatalkan Pembayaran?')">Batalkan Pembayaran</a>
