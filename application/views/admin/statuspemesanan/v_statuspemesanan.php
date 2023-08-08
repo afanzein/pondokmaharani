@@ -30,11 +30,10 @@
                                 <td><?php echo $data['tgl_pemesanan']; ?></td>
                                 <td><?php echo $data['status']; ?></td>
                                 <td>
-                                <div class="btn-group-vertical">
                                 <a  style="padding:20px margin:10px" href="<?php echo base_url('statuspemesanan/update_status?id=' . $data['id_status_pemesanan'] . '&status=Sedang Diproses'); ?>" class="btn btn-sm btn-primary">Sedang Diproses</a>
                                 <a style="padding:20px margin:10px" href="<?php echo base_url('statuspemesanan/update_status?id=' . $data['id_status_pemesanan'] . '&status=Selesai Diproses'); ?>" class="btn btn-sm btn-warning">Selesai Diproses</a>
                                 <a style="padding:20px margin:10px" href="<?php echo base_url('statuspemesanan/update_status?id=' . $data['id_status_pemesanan'] . '&status=Pemesanan Dibatalkan'); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah yakin ingin membatalkan Pemesanan?')">Batalkan Pemesanan</a>
-                                </div>    
+                                
                             </td>
                             </tr>
                             
