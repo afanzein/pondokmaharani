@@ -126,7 +126,7 @@ class Reservation extends CI_Controller
                     $_POST['id_kamar'] = $id_kamar;
                     return true;
                 } else {
-                    $this->form_validation->set_message('check_date_and_kamar', 
+                    $this->form_validation->set_message('check_date_and_kamar',
                     'Tidak ada kamar yang tersedia untuk tipe kamar ini pada tanggal yang dipilih.');
                     return false;
                 }
